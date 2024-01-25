@@ -1,0 +1,13 @@
+//BBesecke CSCI 130 Hello World made on 25 Jan 2024
+//J. Bergen 
+
+#include <iostream>
+
+using namespace std 
+
+int main ()
+{
+
+    cout << " Hello Professor Bergen. Would you like to play Global Thermonuclear War? " << endl;
+    return 0;
+}
