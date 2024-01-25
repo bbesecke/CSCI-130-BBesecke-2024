@@ -1,15 +1,21 @@
 
 Hello.cpp
-//BBesecke CSCI 130 Hello World made on 25 Jan 2024
-//J. Bergen 
+/* 
+Name: Burton Besecke 25 Jan 2024
 
-#include <iostream>
+First Modified Hello World
+*/
+ 
+ #include <iostream>
 
-using namespace std 
+ using namespace std;
 
-int main ()
-{
+ int main ()
+ {
+    // This will produce a modified quote from War Games 
+    // With Matthew Brodrick
+    cout << "Hello Professor Bergen. Would you like to play a game?" << endl;
+    
 
-    cout << " Hello Professor Bergen. Would you like to play Global Thermonuclear War? " << endl;
-    return 0;
-}
+    return 0; // This exits the program
+ }
