@@ -14,15 +14,10 @@ int main(int nNumberofArgs, char* pszArgs[])
   cout << "Enter the temperature in Fahrenheit:";
   cin >> fahrenheit;
 
-  // calculate conversion factor for Celsius
-  // to Fahrenheit
- double factor;
-  factor = 212.0 - 32.0;
-
   // use conversion factor to convert Celsius
   // into Fahrenheit values
  double celsius;
-  celsius = factor / 1.8;
+  celsius = (fahrenheit - 32) / 1.8;
 
   // output the results (followed by a NewLine)
   cout << "Celsius value is:";
