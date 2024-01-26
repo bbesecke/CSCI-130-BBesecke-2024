@@ -1,8 +1,7 @@
-//
 //  Conversion - Program to convert temperature from
 //             Celsius degrees into Fahrenheits:
 //             Fahrenheit = Celsius  * (212 - 32)/100 + 32
-//
+
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -29,8 +28,7 @@ int main(int nNumberofArgs, char* pszArgs[])
   cout << "Celsius value is:";
   cout << celsius << endl;
 
-  // wait until user is ready before terminating program
-  // to allow the user to see the program results
+  // End program when user is done
   system("PAUSE");
   return 0;
 }
