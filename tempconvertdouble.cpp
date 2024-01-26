@@ -29,6 +29,5 @@ int main(int nNumberofArgs, char* pszArgs[])
   cout << celsius << endl;
 
   // End program when user is done
-  system("PAUSE");
   return 0;
 }
