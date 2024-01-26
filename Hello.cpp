@@ -19,5 +19,5 @@ First Modified Hello World
     cout << "I like Global Thermonuclear War" << endl;
     
 
-    return 0; // This exits the program
+    return 0; // This exits the program, huzzah!
  }
