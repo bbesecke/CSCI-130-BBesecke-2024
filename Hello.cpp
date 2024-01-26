@@ -11,8 +11,9 @@ First Modified Hello World
 
  int main ()
  {
-    /* This will produce a modified quote from War Games 
-     with Matthew Brodrick
+    /* 
+    This will produce a modified quote from War Games 
+    with Matthew Brodrick
      */
     cout << "Hello Professor Bergen. Would you like to play a game?" << endl;
     cout << "I like Global Thermonuclear War" << endl;
