@@ -20,8 +20,6 @@ cout << " Player 2 ";
 cin >> Player2;
 
 
-endl;
-
 // wait for players to finish before exiting//
 return 0;
 
