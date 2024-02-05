@@ -2,13 +2,14 @@
 Stages of Hangman Game
 02 Feb 2024*/
 
+int main (string)
 {
-
+    
 #include <iostream>
 
  using namespace std;
 
- int main ()
+ 
 string Player1;
 
  cout << " Player 1 ";
