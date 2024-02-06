@@ -10,7 +10,7 @@ CXX = g++
 CXXFLAGS = -c -g -Wall -std=c++17
 
 # the build target executable file; .exe is not required
-PROGRAM = ascii.exe
+PROGRAM = main.out
 
 # list all .cpp files separated by space
 CPPFILES = main.cpp
@@ -29,3 +29,5 @@ clean:
 
 # FIXME
 # Add a rule to run the program
+run:
+	./$(PROGRAM)
