@@ -24,7 +24,7 @@ string playerOne;
 
  cin >> playerOne;
 
- cout << "Welcome " << playerOne << ". Gird your loins for battle!" << endl;
+ cout << "Welcome " << playerOne << ". Gird your loins for battle and rejoice for the chance to prove your metal!" << endl;
 
 string playerTwo;
 
@@ -32,9 +32,13 @@ cout << "Who is player 2?";
 
 cin >> playerTwo;
 
-cout << "Welcome " << playerTwo << ". Fear not either defeat or sucess!" << endl;
+cout << "Welcome " << playerTwo << ". Fear neither defeat or success for they are just different sides of the coin of life!" << endl;
+
+cout << " After entering player information, and game play is started, the scaffold in which \n";
+" to build the body of the victim is built";
 
 
 // wait for players to finish before exiting//
+getchar();
 return 0;
 }
