@@ -9,22 +9,30 @@ Started 02 Feb 2024*/
  int main()
 
 {
+    // string myName;
 
-string PlayerOne;
+    // cout << " Same my name";
+
+    // cin >> myName;
+
+    // cout << " Your name is " << myName << " master!" << endl;
+
+
+string playerOne;
 
  cout << "Who is Player 1?";
 
- cin >> PlayerOne;
+ cin >> playerOne;
 
- cout << "Welcome" << PlayerOne <<. "Gird your loins for battle!";
+ cout << "Welcome " << playerOne << ". Gird your loins for battle!" << endl;
 
-string PlayerTwo;
+string playerTwo;
 
 cout << "Who is player 2?";
 
-cin >> PlayerTwo;
+cin >> playerTwo;
 
-cout << "Welcome" << PlayerTwo << " Fear not either defeat or sucess!"; << endl;
+cout << "Welcome " << playerTwo << ". Fear not either defeat or sucess!" << endl;
 
 
 // wait for players to finish before exiting//
