@@ -2,22 +2,29 @@
 Stages of Hangman Game
 Started 02 Feb 2024*/
 
-int main ()
 #include <iostream>
 
  using namespace std;
 
+ int main()
+
 {
 
-string Player1;
+string Player1name;
 
- cout << " Player 1 is  ";
-cin >> Player1;
+ cout << "Who is Player 1?";
 
-string Player2;
+ cin >> Player1name;
 
-cout << " Player 2 is  ";
-cin >> Player2;
+ cout << "Welcome" << Player1name <<. "Gird your loins for battle!";
+
+string Player2name;
+
+cout << "Who is player 2?";
+
+cin >> Player2name;
+
+cout << "Welcome" << Player2name << " Fear not either defeat or sucess!"; << endl;
 
 
 // wait for players to finish before exiting//
