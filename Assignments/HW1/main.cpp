@@ -34,8 +34,11 @@ cin >> playerTwo;
 
 cout << "Welcome " << playerTwo << ". Fear neither defeat or success for they are just different sides of the coin of life!" << endl;
 
-cout << " After entering player information, and game play is started, the scaffold in which \n";
-" to build the body of the victim is built";
+string stage1 =  "After entering player information, and game play is started, the scaffold in which \n";
+"to build the body of the victim is built";
+cout << stage1;
+string stage2 = "The body is now starting to be constructed with pieces being added as players\n"
+"miss thier guesses for letters";
 
 
 // wait for players to finish before exiting//
