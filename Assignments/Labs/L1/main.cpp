@@ -54,7 +54,7 @@ int main()
     //Note: You can add more lines or print more ASCII arts of your choice if you'd like...
 
     cout << "\nGood bye... hit enter to exit the program: " << '\n';
-    //FIXME10: make the console wait for user input 
+    //FIXME10: make the console wait for user input FIXED
     /*FIXED via https://www.physicsforums.com/threads/c-console-help-show-output-and-
     close-on-enter-key.209736/#:~:text=To%20make%20a%20C%2B%2B%20console,
     and%20close%20the%20console%20window.*/
