@@ -10,21 +10,21 @@ Started 02 Feb 2024*/
 
 {
 
-string Player1name;
+string PlayerOne;
 
  cout << "Who is Player 1?";
 
- cin >> Player1name;
+ cin >> PlayerOne;
 
- cout << "Welcome" << Player1name <<. "Gird your loins for battle!";
+ cout << "Welcome" << PlayerOne <<. "Gird your loins for battle!";
 
-string Player2name;
+string PlayerTwo;
 
 cout << "Who is player 2?";
 
-cin >> Player2name;
+cin >> PlayerTwo;
 
-cout << "Welcome" << Player2name << " Fear not either defeat or sucess!"; << endl;
+cout << "Welcome" << PlayerTwo << " Fear not either defeat or sucess!"; << endl;
 
 
 // wait for players to finish before exiting//
