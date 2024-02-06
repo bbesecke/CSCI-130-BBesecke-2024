@@ -46,10 +46,12 @@ int main()
     cout << line3;
     string line4;
     string lin4 = "    >>x<<     *      CSCI 130      *   \n";
+    cout << line4;
     string line5;
     string line5 = " //  O  \\   ********************** ";
+    cout << line5;
     //FIXME6: use variable to print the second line line of the graphic FIXED
-    //FIXME7: print the third line of the graphics 
+    //FIXME7: print the third line of the graphics FIXED
     //FIXME8: use variable to print the fourth line FIXED
     //FIXME9: use variable to print the fifth line FIXED
     //Note: You can add more lines or print more ASCII arts of your choice if you'd like...
