@@ -33,22 +33,19 @@ int main()
     //FIXME5: greet the name using the variable as the following output FIXED
     //must output: Nice meeting you, <name>!
 
-    cout << "Welcome " << myName << ". It's nice to meet you, now hold on, is going to get wild";
+    cout << "Welcome  " << myName << ". It's nice to meet you, now hold on, it's going to get wild. ";
 
     cout << "Hope you like my Tom & Jerry ASCII art...\n\n";
 
-    string line1 = "  |\\_/|     **********************    (\\_/)\n";
+    string line1 = "   |\\_/|    **********************      (\\_/)\n";
     cout << line1;
-    string line2 = " |/ @ @ \\|  *       ASCII Lab    *    (='.'=)\n";
+    string line2 = "  / @ @ \\   *     ASCII Lab      *     (='.'=)\n";
     cout << line2; 
-    string line3;
-    string line3 = " ( > 0 < )   *  By Burton Besecke *   (\" )_( \")\n";
+    string line3 = " ( > 0 < )  *  By Burton Besecke *     (\")_(\")\n";
     cout << line3;
-    string line4;
-    string lin4 = "    >>x<<     *      CSCI 130      *   \n";
+    string line4 = "   >>x<<    *      CSCI 130      * \n";
     cout << line4;
-    string line5;
-    string line5 = " //  O  \\   ********************** ";
+    string line5 = "  /  O  \\   ********************** ";
     cout << line5;
     //FIXME6: use variable to print the second line line of the graphic FIXED
     //FIXME7: print the third line of the graphics FIXED
