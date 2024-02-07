@@ -22,10 +22,10 @@ Started 02 Feb 2024*/
 
  cin >> playerTwo;
 
- cout << "Welcome " << playerOne << "&" << playerTwo << ". Fear neither defeat or success,\n"
+ cout << "Welcome " << playerOne << " & " << playerTwo << ". Fear neither defeat or success,"
  " for they are just different sides of the same coin of life!\n";
 
- string line1 = " First stage after entering player information, and game play is started, the scaffold in which \n";
+ string line1 = "First stage: After entering player information, and game play is started, the scaffold in which \n";
  "to build the body of the victim is built";
  cout << line1;
  string line2 = "Stage 2: The body is now starting to be constructed with pieces being added as players\n";
