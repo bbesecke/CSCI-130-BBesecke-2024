@@ -22,6 +22,8 @@ Started 02 Feb 2024*/
 
  cin >> playerTwo;
 
+ cout << "\n";
+
  cout << "Welcome " << playerOne << " & " << playerTwo << ". These are the 7 stages of Handgman.\n";
  cout << "\n"
  "Yes, the stages start at 0. It's a programming thing.\n";
