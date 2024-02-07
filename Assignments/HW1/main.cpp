@@ -25,8 +25,8 @@ Started 02 Feb 2024*/
  cout << "Welcome " << playerOne << " & " << playerTwo << " These are the stages of Handgman.\n";
 
  cout << "Stage 0:\n" 
- "           |----------------\n";
- cout <<"    |/           |\n";
+         "   |----------------\n";
+ cout << "   |/          |\n";
  cout << "   |\n";
  cout << "   |\n";
  cout << "   |\n";
