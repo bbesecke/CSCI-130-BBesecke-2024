@@ -31,7 +31,7 @@ Started 02 Feb 2024*/
  string line2 = "Stage 2: The body is now starting to be constructed with pieces being added as players\n";
  "miss their guesses for letters";
  cout << line2;
- string line3 = "Stage 3: The head appears with the 1st missed letter";
+ string line3 = "Stage 3: The head appears with the 1st missed letter\n";
  cout << line3;
  string line4 = "Stage 4: Then after the second missed letter, the body is added to the bottom of the head\n";
  cout << line4;
