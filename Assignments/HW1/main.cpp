@@ -22,8 +22,9 @@ Started 02 Feb 2024*/
 
  cin >> playerTwo;
 
- cout << "Welcome " << playerOne << " & " << playerTwo << ". These are the 7 stages of Handgman.\n"
- "Yes, the stages start at 0\n";
+ cout << "Welcome " << playerOne << " & " << playerTwo << ". These are the 7 stages of Handgman.\n";
+ cout << "\n"
+ "Yes, the stages start at 0. It's a programming thing.\n";
  cout << "\n";
  cout << "Stage 0:\n" 
          "   |----------------\n";
@@ -109,7 +110,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "It was later discovered the poor person was innocent and exonerated of all crimes on record\n";
+ cout << "It was later discovered the poor person was innocent and exonerated of all crimes on record.\n";
 
  cout << "\n";
  // wait for players to finish before exiting//
