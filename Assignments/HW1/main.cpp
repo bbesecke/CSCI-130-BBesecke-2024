@@ -26,7 +26,7 @@ Started 02 Feb 2024*/
  cin >> playerTwo;
 
  cout << "Welcome " << playerTwo << ". Fear neither defeat or success,\n"
- " for they are just different sides of the coin of life!\n\n";
+ " for they are just different sides of the coin of life!";
 
  string stage1 = "After entering player information, and game play is started, the scaffold in which \n";
  "to build the body of the victim is built";
