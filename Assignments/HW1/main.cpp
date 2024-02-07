@@ -43,6 +43,7 @@ Started 02 Feb 2024*/
  string stage6 = "The legs come next one at a time to the bottom of the body\n";
  cout << stage6;
  string stage7 = "The game ends when the word is completed or the victims body is completed"; 
+ cout << stage7 << endl;
 
 
  // wait for players to finish before exiting//
