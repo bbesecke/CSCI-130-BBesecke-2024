@@ -112,7 +112,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Congratulations, you have now executed a stick man.\n";
+ cout << "Congratulations, you have now executed a stickman.\n";
 
  cout << "\n";
 
