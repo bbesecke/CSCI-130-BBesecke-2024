@@ -76,7 +76,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 4: Followed bythe left arm.\n" 
+ cout << "Stage 4: Followed by the left arm.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
