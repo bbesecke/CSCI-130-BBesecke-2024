@@ -24,11 +24,11 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Welcome " << playerOne << " & " << playerTwo << ". These are the 7 stages of Handgman.\n";
+ cout << "Welcome " << playerOne << " & " << playerTwo << ". These are the 7 stages of Hangman.\n";
  cout << "\n"
  "Yes, the stages start at 0. It's a programming thing.\n";
  cout << "\n";
- cout << "Stage 0:\n" 
+ cout << "Stage 0: Starts with the scaffolding.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |\n";
@@ -40,7 +40,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 1:\n" 
+ cout << "Stage 1: The head appears after the first missed letter.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -52,7 +52,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 2:\n" 
+ cout << "Stage 2: The body is next.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -64,7 +64,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 3:\n" 
+ cout << "Stage 3: Then the right arm,\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -76,7 +76,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 4:\n" 
+ cout << "Stage 4: Followed bythe left arm.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -88,7 +88,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 5:\n" 
+ cout << "Stage 5: After the arms, comes the legs, right first,\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -100,7 +100,7 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "Stage 6:\n" 
+ cout << "Stage 6: Then the left.\n" 
          "   |----------------\n";
  cout << "   |/          |\n";
  cout << "   |           O\n";
@@ -112,7 +112,11 @@ Started 02 Feb 2024*/
 
  cout << "\n";
 
- cout << "It was later discovered the poor person was innocent and exonerated of all crimes on record.\n";
+ cout << "Congratulations, you have now executed a stick man.\n";
+
+ cout << "\n";
+
+ cout << "It was later discovered the stickman was innocent and exonerated of all crimes.\n";
 
  cout << "\n";
  // wait for players to finish before exiting//
