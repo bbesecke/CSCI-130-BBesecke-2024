@@ -14,23 +14,30 @@ Herons formula for area and adding length of sides. */
     float sideOne, sideTwo, sideThree;
 
     cout << "To determine the area and permiter of your triangle,\n"
-    "please enter the length of the sides.\n";
+    "please enter the length of the sides.\n"
     "\n"
-    "Length of side 1?";
+    "What is the length of side 1?";
 
     cin >> sideOne;
 
     cout << "The first side is "<< sideOne <<".\n"
-    "Enter the length of the second side.";
+     "\n"
+    "Enter the length of the second side,";
 
     cin >> sideTwo;
 
+    cout << "\n";
+
       cout << "The second side is "<< sideTwo <<".\n"
-    "Enter the length of the last side.";
+     "\n"
+    "Enter the length of the last side,";
 
     cin >> sideThree;
 
-    cout << "Your triangle sides are," << sideOne << "," << sideTwo << ",and" << sideThree;
+    cout << "\n";
+
+    cout << "Your triangle sides are, " << sideOne << ", " << sideTwo << ",and " << sideThree;
+    cout << "\n";
 
 
 
