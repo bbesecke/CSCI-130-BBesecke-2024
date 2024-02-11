@@ -58,7 +58,7 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
     // Summing the 3 sides to give perimeter length
     cout << "The triangles perimeter length is " << sum1;
 
-    //Setting up Herons formula by setting variable sum2 = s in terms of sideOne, sideTwo and sideThree. 
+    //Setting up Herons formula by setting variable s = sum2 in terms of sideOne, sideTwo and sideThree. 
     float sum2;
     
     sum2 = (sum1/2);
