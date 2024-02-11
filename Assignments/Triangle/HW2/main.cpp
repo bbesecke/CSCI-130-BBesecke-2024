@@ -23,6 +23,8 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cin >> sideOne;
 
+    cout << "\n";
+
     cout << "The first side is "<< sideOne <<".\n"
      "\n"
     "Enter the length of the second side: ";
