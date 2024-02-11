@@ -31,7 +31,7 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "\n";
 
-      cout << "The second side is "<< sideTwo <<".\n"
+    cout << "The second side is "<< sideTwo <<".\n"
      "\n"
     "Enter the length of the third side: ";
 
@@ -39,8 +39,13 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "\n";
 
+    cout << "The third side is " << sideThree;
+
+    cout << "\n";
+    cout << "\n";
+
     //Telling user what values they entered in case of improper input
-    cout << "Your triangle sides are, " << sideOne << ", " << sideTwo << ",and " << sideThree;
+    cout << "Your triangle sides are, 1: " << sideOne << ", 2: " << sideTwo << ", and 3: " << sideThree;
 
     cout << "\n";
 
@@ -65,9 +70,10 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
     cout << "The triangles area is " << sum2;
 
     cout << "\n";
+    cout << "\n";
 
     getchar();
     return 0;
-
+    
 
  }
