@@ -74,6 +74,12 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
     cout << "\n";
     cout << "\n";
 
+    // Wait for user input to exit program
+
+    cout << "Press enter to exit";
+
+     cout << "\n";
+
     getchar();
     return 0;
     
