@@ -78,10 +78,11 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "Press enter to exit";
 
-     cout << "\n";
+    cout << "\n";
 
     getchar();
+
     return 0;
     
-    
+
  }
