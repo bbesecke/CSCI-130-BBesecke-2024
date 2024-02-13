@@ -20,4 +20,15 @@ Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Assignmen
 Self Grade:	100/100
 Notes: Nothing particular to note other than I didn't realize for several days
         that there was a second page on the assignment.
+
+ # CSCI-130-BBesecke-2024
+Homework 2
+Name: Burton Besecke
+Name: Triangle/HW2
+Description: Area and perimeter of a triangle
+Due Date: 26 Feb 2024
+Status: Working version 13 Feb 0850
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Assignments/Triangle/HW2/main.cpp
+Self Grade: 95/100
+Notes: This was fun. I want to work on making the answers to be limited to 2 decimal points at some time. 
         
