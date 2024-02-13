@@ -69,7 +69,7 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "\n";
 
-    cout << "The triangles area is " << sum2;
+    cout << "The triangles area is " << sum3;
 
     cout << "\n";
     cout << "\n";
