@@ -71,12 +71,10 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "The triangles area is " << sum3;
 
-    cout << "\n";
-    cout << "\n";
 
     // Wait for user input to exit program
 
-    cout << "Press enter to exit";
+   //  cout << "Press enter to exit";
 
     cout << "\n";
 
