@@ -83,5 +83,5 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
     getchar();
     return 0;
     
-
+    
  }
