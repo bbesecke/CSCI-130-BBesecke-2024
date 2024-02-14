@@ -6,10 +6,11 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
  #include <iostream>
  #include <cmath>
+ #include <iomanip>
 
  using namespace std;
 
- int main ()
+ float main ()
  {
     // setting up variables and prompting user input for side lengths of triangle
 
@@ -68,6 +69,8 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
     sum3 = sqrt(sum2 * (sum2 - sideOne) * (sum2 - sideTwo) * (sum2 - sideThree));
 
     cout << "\n";
+
+    cout << setprecision (2);
 
     cout << "The triangles area is " << sum3;
 
