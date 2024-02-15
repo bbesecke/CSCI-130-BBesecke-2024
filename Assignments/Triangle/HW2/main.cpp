@@ -95,6 +95,8 @@ then sqrt(s * (s - sideOne) * (s - sideTwo) * (s - sideThree)*/
 
     cout << "\n";
 
+    cin.get();
+
     getchar();
 
     return 0;
