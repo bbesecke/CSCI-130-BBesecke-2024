@@ -12,7 +12,12 @@ Class: CSCI 130-002
  {
     cout << " Yip Yip Haw" << endl;
 
-    get char()
-    return 0
+    cout << "\n";
 
+    cin.get();
+
+    getchar();
+
+    return 0;
+    
  }
