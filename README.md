@@ -27,8 +27,8 @@ Name: Burton Besecke
 Name: Triangle/HW2
 Description: Area and perimeter of a triangle
 Due Date: 26 Feb 2024
-Status: Working version 13 Feb 0850
+Status: Working version 15 Feb 0825
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Assignments/Triangle/HW2/main.cpp
 Self Grade: 95/100
-Notes: This was fun. I want to work on making the answers to be limited to 2 decimal points at some time. 
+Notes: Got all the outputs limited to 2 decimal places, and program doesnt end until return is pressed.
         
