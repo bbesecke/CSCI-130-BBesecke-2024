@@ -45,11 +45,11 @@ int main() //main entry function that returns 0
 	area = pi * pow(radius, 2); // same as: area = pi * radius * radius;
 	//FIXME4: find circumference FIXED
 
-	circumference = pi * pow(radius, 2);
+	circumference = 2 * pi * radius;
 
-	cout << "Your circle has radius: " << fixed << setprecision(6) << radius << endl;
-	cout << "Area of the circle is:\t" << area << '\n';
-	cout << "Circumference of the circle is:\t" << circumference << '\n';
+	cout << "Your circle has radius:\t" << fixed << setprecision(2) << radius << '\n';
+	cout << "Area of the circle is:\t" << fixed << setprecision(2) << area << '\n';
+	cout << "Circumference of the circle is:\t" << setprecision(2) << circumference <<  endl;
 	//FIXME5: Output the value of circumference FIXED
 
 	// the following code may be required to make your console pause...
