@@ -32,3 +32,15 @@ Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Assignmen
 Self Grade: 95/100
 Notes: Got all the outputs limited to 2 decimal places, and program doesnt end until return is pressed.
         
+ # CSCI-130-BBesecke-2024
+Lab 2
+Name: Burton Besecke
+Name: L2/circle
+Description: Area and circumference of a circle given a radius
+Due Date: 26 Feb 2024
+Status: Working version 19 Feb 0820
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L2
+Self Grade: 100/100
+Notes: Got all the outputs limited to 2 decimal places, and program doesnt end until return is pressed.  
+Moved Lab folder out of Assgnments folder
+        
