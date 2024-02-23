@@ -39,11 +39,8 @@ void test();
 void clearScreen() 
 {
     // use "cls" in windows and "clear" command in Mac and Linux
-    #ifdef _WIN32
-        system("clS");
-    #else
         system("clear");
-    #endif
+
 }
 
 int main()
@@ -64,7 +61,7 @@ int main()
 
         cout << "Enter a second point in the form (x, y): ";
         cin >> ch >> x2 >> ch >> y2 >> ch;
-         printf("(x1, y1) = (%d, %d)\n", x2, y2);
+        printf("(x1, y1) = (%d, %d)\n", x2, y2);
         //FIXME3 - Read/parse the second point and store data into variables x2 and y2 FIXED
         //FIXME4 - Call test function FIXED
 
