@@ -1,8 +1,8 @@
 /*
 Functions Lab
-Updated By: FIXME1
-CSCI 111
-Date: FIXME2
+Updated By: Burton Besecke
+CSCI 130-002
+Date: 23 Feb 2024 
 
 Program prompts the user to enter two points in the form (x1, y1) and (x2, y2) and finds the distance between the two points using a function.
 Algorithm steps:
@@ -35,8 +35,9 @@ double findDistance(int, int, int, int);
 void test();
 
 // function clears the screen system call
-// NOTE: system call is not a security best pracice!
-void clearScreen() {
+// NOTE: system call is not a security best practice!
+void clearScreen() 
+{
     // use "cls" in windows and "clear" command in Mac and Linux
     #ifdef _WIN32
         system("clS");
@@ -47,7 +48,8 @@ void clearScreen() {
 
 int main()
 {
-    int x1, y1, x2, y2; // variables to store two points (x1, y1) and (x2, y2)
+    // variables to store two points (x1, y1) and (x2, y2)
+    int x1, y1, x2, y2; 
     char ch;
 
     //FIXME-bonus - 10 bonus points - add loop until user wants to quit
@@ -61,8 +63,10 @@ int main()
         printf("(x1, y1) = (%d, %d)\n", x1, y1);
 
         cout << "Enter a second point in the form (x, y): ";
-        //FIXME3 - Read/parse the second point and store data into variables x2 and y2
-        //FIXME4 - Call test function
+        cin >> ch >> x2 >> ch >> y2 >> ch;
+         printf("(x1, y1) = (%d, %d)\n", x2, y2);
+        //FIXME3 - Read/parse the second point and store data into variables x2 and y2 FIXED
+        //FIXME4 - Call test function FIXED
 
         //FIXME5 - call findDistance function passing proper arguments
         //FIXME6 – Using printf function display the returned distance with proper description
@@ -88,7 +92,8 @@ void test()
 {
     float result =  findDistance(4, 3, 5, 1);
     float expected = 2.236067f;
-    assert( fabs(result - expected) <= epsilon); //accept the result if it's less than the error of margin
+    assert( fabs(result - expected) <= epsilon); 
+    //accept the result if it's less than the error of margin
     // FIXME8 - add at least two more test cases
     cerr << "all tests passed..." << endl;
 }
