@@ -73,7 +73,7 @@ int main()
 
         //FIXME5 - call findDistance function passing proper arguments FIXED
        findDistance(x1, y1, x2, y2);
-        //FIXME6 – Using printf function display the returned distance with proper description
+        //FIXME6 – Using printf function display the returned distance with proper description FIXED
         printf("The distance between the 2 points is %f ", findDistance(x1, y1, x2, y2));
     }
 
