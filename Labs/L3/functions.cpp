@@ -80,7 +80,8 @@ int main()
         // FIXME6 – Using printf function display the returned distance with proper description FIXED
         printf("The distance between the 2 points is %f \n", findDistance(x1, y1, x2, y2));
 
-        cout << "Do you want to calculate another distance? Enter y for yes, or n for no: ";
+        cout << "Do you want to calculate another distance?\n" 
+        "Enter y for yes, or n for no: " << endl;
         cin >> repeat;
     }
 
@@ -92,7 +93,7 @@ double findDistance(int x1, int y1, int x2, int y2)
 {
 
     // FIXME7 - Find the distance between (x1, y1) and (x2, y2) FIXED
-    double result = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    double result = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); 
     // following the algorithm in step 1
     // return the calculated distance
     return result;
