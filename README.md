@@ -43,4 +43,14 @@ Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L2
 Self Grade: 100/100
 Notes: Got all the outputs limited to 2 decimal places, and program doesnt end until return is pressed.  
 Moved Lab folder out of Assgnments folder
-        
+
+# CSCI-130-BBesecke-2024
+Lab 3
+Name: Burton Besecke
+Name: L3/functions
+Description: Fix issues with calculating the distance between 2 points
+Due Date: 04 Mar 2024
+Status: Working version 01 Mar
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Labs/L3/functions.cpp
+Self Grade: 100/100
+Notes: Got it working
