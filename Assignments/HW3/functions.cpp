@@ -1,11 +1,11 @@
-/* Name: Burton Besecke 
+/* Name: Burton Besecke
 Class: CSCI 130-002
 
 1)Define a function that takes two numbers, adds two numbers and returns the
-sum. The function must be templated so it works for integers and floats. 
+sum. The function must be templated so it works for integers and floats.
 
 2) Define a function that takes two numbers, multiplies the two numbers and returns
-the product. The function must be templated so it works for integers and floats. 
+the product. The function must be templated so it works for integers and floats.
 
 3) Define a function that takes two numbers; divides the first number by the second
 and returns the quotient. The function must be templated so it works for integers
@@ -34,22 +34,33 @@ results with proper descriptions.
 10) Write a test function to automatically test each function with at least two different
 test cases. (5*7 = 35 points)
 */
- 
- #include <iostream>
 
- using namespace std;
+#include <iostream>
+#include <cmath>
 
- int main ()
+using namespace std;
 
- {
-    cout << " Yip Yip Haw" << endl;
 
-    cout << "\n";
+float sumTwoFloats(float float1, float float2)
+{
+    return float1 + float2;
+}
+{
+    float sum = float1 + float2;
+}
 
-    cin.get();
+int main()
 
+{
+    float float1, float2;
+
+    cout << "Enter 2 numbers separated by a space";
+
+    cin >> float1 >> float2;
+
+    cout << " The sum is " << sum << endl;
+    
     getchar();
 
     return 0;
-    
- }
+}
