@@ -51,6 +51,6 @@ Name: L3/functions
 Description: Fix issues with calculating the distance between 2 points
 Due Date: 04 Mar 2024
 Status: Working version 01 Mar
-Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Labs/L3/functions.cpp
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Labs/L3/main.cpp
 Self Grade: 100/100
 Notes: Got it working
