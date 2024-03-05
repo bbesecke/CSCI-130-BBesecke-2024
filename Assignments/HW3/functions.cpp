@@ -1,18 +1,13 @@
 /* Name: Burton Besecke
 Class: CSCI 130-002
 
-1)Define a function that takes two numbers, adds two numbers and returns the
-sum. The function must be templated so it works for integers and floats.
+
 
 2) Define a function that takes two numbers, multiplies the two numbers and returns
 the product. The function must be templated so it works for integers and floats.
 
 3) Define a function that takes two numbers; divides the first number by the second
 and returns the quotient. The function must be templated so it works for integers
-and floats.
-
-4) Define a function that takes two numbers, subtracts the second from the first and
-returns the difference. The function must be templated so it works for integers
 and floats.
 
 5) Define a function that takes two numbers, finds and returns the remainder of the
@@ -40,23 +35,53 @@ test cases. (5*7 = 35 points)
 
 using namespace std;
 
+/* Define a function that takes two numbers, adds two numbers and returns the sum.*/
+
 float add(float num1, float num2)
+
 {
-return num1 + num2;
+    return num1 + num2;
 }
-int main()
+
+/* Define a function that takes two numbers, subtracts the second from the first and returns the difference.*/
+float subtract(float num1, float num2)
 
 {
-    float num1, num2, sum;
+    return num2 - num1;
+}
 
-    cout << "Please enter 2 numbers seperated by a space: ";
-    cin >> num1 >> num2;
+void clearScreen()
+{
+    // use "cls" in windows and "clear" command in Mac and Linux
+    system("clear");
+}
 
-    add(num1, num2);
-    sum = (num1 + num2);
-    cout << "The sum of " << num1 << " and " << num2 << " is " << sum << endl;
+int main()
+{
 
-    getchar();
+    char repeat = 'y';
+
+    while (repeat != 'n')
+
+    {
+        clearScreen();
+        float num1, num2, sum;
+
+        /* Prompt the user to enter two numbers.*/
+        cout << "Please enter 2 numbers seperated by a space: ";
+        cin >> num1 >> num2;
+        cout << "\n";
+        sum = add(num1, num2);
+        cout << "The sum of " << num1 << " and " << num2 << " is " << sum << endl;
+        cout << "\n";
+        sum = subtract(num1, num2);
+        cout << "The subtraction of " << num1 << " from " << num2 << " is " << sum << endl;
+        cout << "\n";
+        cout << "Do you want to run another set of numbers?\n"
+                "Enter y for yes, or n for no: "
+             << endl;
+        cin >> repeat;
+    }
 
     return 0;
 }
