@@ -79,19 +79,24 @@ int main()
         cin >> num1 >> num2;
 
         cout << "\n";
+
         // Adding the numbers//
         sum = add(num1, num2);
         cout << "The sum of " << num1 << " and " << num2 << " is " << sum << endl;
 
         cout << "\n";
+
         // Subtracting the numbers//
         sum = subtract(num1, num2);
         cout << "The subtraction of " << num1 << " from " << num2 << " is " << sum << endl;
 
         cout << "\n";
+
         // Multiplying the numbers//
         sum = multiply(num1, num2);
         cout << "The product of " << num1 << " and " << num2 << " is " << sum << endl;
+
+        cout << "\n";
 
         // Dividing the numbers//
         sum = divide(num1, num2);
