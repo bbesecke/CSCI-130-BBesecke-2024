@@ -40,26 +40,19 @@ test cases. (5*7 = 35 points)
 
 using namespace std;
 
-
-float sumTwoFloats(float float1, float float2)
-{
-    return float1 + float2;
-}
-{
-    float sum = float1 + float2;
-}
+float addTwoNums(int num1, int num2);
 
 int main()
 
 {
-    float float1, float2;
+    int num1, num2;
 
-    cout << "Enter 2 numbers separated by a space";
+    cout << "Please enter 2 numbers seperated by a space:  ";
+    cin >> num1 >> num2;
 
-    cin >> float1 >> float2;
+    addTwoNums(num1, num2);
+    cout << "The sum of " << num1 << " and " << num2 << " is " << num1 + num2 << endl;
 
-    cout << " The sum is " << sum << endl;
-    
     getchar();
 
     return 0;
