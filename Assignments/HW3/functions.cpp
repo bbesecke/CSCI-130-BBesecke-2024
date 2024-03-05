@@ -2,9 +2,6 @@
 Class: CSCI 130-002
 
 
-5) Define a function that takes two numbers, finds and returns the remainder of the
-first number divided by the second. The function must be templated so it works
-for integers and floats.
 
 6) Define a function that takes two numbers, finds the first to the power of the
 second number and returns the result. The function must be templated so it
@@ -56,6 +53,14 @@ float divide(float num1, float num2)
     return num1 / num2;
 }
 
+// Define a function that takes two numbers, finds and returns the remainder of the first number divided by the second.//
+
+float remainder(float num1, float num2)
+
+{
+    return num1 / num2;
+}
+
 // Clears screen when program is run//
 void clearScreen()
 {
@@ -101,6 +106,11 @@ int main()
         // Dividing the numbers//
         sum = divide(num1, num2);
         cout << "The quotient of " << num1 << " and " << num2 << " is " << sum << endl;
+
+        cout << "\n";
+
+        // Remainder after dividing the numbers//
+        
 
         cout << "\n";
 
