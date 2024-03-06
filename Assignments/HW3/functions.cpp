@@ -24,7 +24,7 @@ test cases. (5*7 = 35 points)
 
 using namespace std;
 
-/* Define a function that takes two numbers, adds two numbers and returns the sum.*/
+/*Define a function that takes two numbers, adds two numbers and returns the sum.*/
 
 float add(float num1, float num2)
 
@@ -46,19 +46,19 @@ float multiply(float num1, float num2)
 }
 
 /*Define a function that takes two numbers; divides the first number by the second and returns the quotient.*/
-
 float divide(float num1, float num2)
 
 {
     return num1 / num2;
 }
 
-// Define a function that takes two numbers, finds and returns the remainder of the first number divided by the second.//
-
+/* Define a function that takes two numbers, finds and returns the remainder of the 
+first number divided by the second.*/
 float remainder(float num1, float num2)
 
 {
-    return num1 / num2;
+    // Typecast float to int//
+    return ((int)num1 % (int)num2);
 }
 
 // Clears screen when program is run//
@@ -110,7 +110,8 @@ int main()
         cout << "\n";
 
         // Remainder after dividing the numbers//
-        
+
+        cout << ("remainder of the quotient is %f\n", remainder(sum));
 
         cout << "\n";
 
