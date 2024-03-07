@@ -41,12 +41,12 @@ float divide(float num1, float num2)
 }
 
 /* Define a function that takes two numbers, finds and returns the remainder of the
-first number divided by the second.
-float remainder(float num1, float num2, remainder)
+first number divided by the second.*/
+float rmainder(float num1, float num2)
 {
     // Typecast float to int//
     return ((int)num1 % (int)num2);
-}*/
+}
 
 /*Define a function that takes two numbers, finds the first to the power of the
 second number and returns the result.*/
@@ -104,11 +104,11 @@ int main()
 
         // Dividing the numbers//
         sum = divide(num1, num2);
-        cout << "The quotient of " << num1 << " and " << num2 << " is " << sum << endl;
+        cout << "The quotient of " << num1 << " and " << num2 << " is: " << sum << endl;
 
         // Remainder after dividing the numbers//
-        /*sum = remainder((int)num1 % (int)num2);
-         cout << "remainder of the quotient is %f\n" << sum << endl;*/
+         sum = rmainder(num1, num2);
+         cout << "remainder of the quotient is: " << sum << endl;
 
         cout << "\n";
 
@@ -119,6 +119,7 @@ int main()
             cout << num1 << " to the power of " << num2 << " is: ";
             cout.precision(0);
             cout << scientific << result << endl;
+            cout << fixed;
         }
 
         cout << "\n";
