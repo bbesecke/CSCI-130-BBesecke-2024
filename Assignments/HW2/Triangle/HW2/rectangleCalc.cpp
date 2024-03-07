@@ -22,8 +22,7 @@
  //Display greeting
  void greetUser(string name)
  {
-    cout << "welcome " << name << "to the rectangle calculator";
-    << endl;
+    cout << "welcome " << name << "to the rectangle calculator"; << endl;
  }
 
  //Prompt for side 1 and then side 2 (float)
@@ -32,7 +31,7 @@
  //Calc perimiter <perim = 2(side2 + side2)>
  float calcPerim(float, float)
 
- return 0.0;
+ return 0;
 
   
    }
