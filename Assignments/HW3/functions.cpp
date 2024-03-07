@@ -1,7 +1,7 @@
 /* Name: Burton Besecke
 Class: CSCI 130-002
 Making a basic calculator that takes in 2 mubers and displays results
-describing what the reult is 
+describing what the reult is
 
 Call all the functions passing those two entered numbers and print the calculated
 results with proper descriptions.
@@ -63,6 +63,7 @@ float sroot(float num1)
 
 // Clears screen when program is run//
 void clearScreen()
+
 {
     system("clear");
 }
@@ -104,39 +105,47 @@ int main()
 
         // Dividing the numbers//
         sum = divide(num1, num2);
-        cout << "The quotient of " << num1 << " and " << num2 << " is: " << sum << endl;
+        cout << "The quotient of " << num1 << " divded by " << num2 << " is: " << sum << endl;
 
         // Remainder after dividing the numbers//
-         sum = rmainder(num1, num2);
-         cout << "remainder of the quotient is: " << sum << endl;
+        sum = rmainder(num1, num2);
+        cout << "remainder of the quotient is: " << sum << endl;
 
         cout << "\n";
+
+        // square root of num1 and num2//
+        {
+            float result1 = sqrt(num1);
+
+            cout << "The square root of " << num1 << " is:" << result1 << endl;
+
+            float result2 = sqrt(num2);
+
+            cout << "The square root of " << num2 << " is:" << result2 << endl;
+
+            cout << "\n";
+        }
 
         // num1 to the power of num2//
         {
             float result = (pow(num1, num2));
 
             cout << num1 << " to the power of " << num2 << " is: ";
-            cout.precision(0);
+            cout.precision(3);
             cout << scientific << result << endl;
             cout << fixed;
         }
 
         cout << "\n";
 
-        // square root of num1 and num2//
-        float result = sqrt(num1);
+        
 
-        cout << "The square root of " << num1 << " is:" << result << endl;
-
-        cout << "\n";
-
-        // Loop to use a different set of numbers//
-        cout << "Do you want to run another set of numbers?\n"
-                "Enter y for yes, or n for no: "
-             << endl;
-        cin >> repeat;
+            // Loop to use a different set of numbers//
+            cout << "Do you want to run another set of numbers?\n"
+                    "Enter y for yes, or n for no: "
+                 << endl;
+            cin >> repeat;
+        
+    
     }
-
-    return 0;
 }
