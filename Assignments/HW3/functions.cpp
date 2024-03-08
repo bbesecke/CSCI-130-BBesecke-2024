@@ -204,4 +204,6 @@ int main()
     float result14 = power(tnum3, tnum1);
     float expected14 = 3;
     assert(fabs(result14 - expected14) <= .001);
+
+    cout << " Test functions passed" << endl;
 }
