@@ -193,15 +193,15 @@ int main()
     float expected11 = 2;
     assert(fabs(result11 - expected11) <= .001);
 
-    float result11 = sroot(tnum1);
-    float expected11 = 1;
-    assert(fabs(result11 - expected11) <= .001);
-
-    float result12 = power(tnum2, tnum3);
-    float expected12 = 8;
+    float result12 = sroot(tnum1);
+    float expected12 = 1;
     assert(fabs(result12 - expected12) <= .001);
 
-    float result12 = power(tnum3, tnum1);
-    float expected12 = 3;
-    assert(fabs(result12 - expected12) <= .001);
+    float result13 = power(tnum2, tnum3);
+    float expected13 = 8;
+    assert(fabs(result13 - expected13) <= .001);
+
+    float result14 = power(tnum3, tnum1);
+    float expected14 = 3;
+    assert(fabs(result14 - expected14) <= .001);
 }
