@@ -13,6 +13,7 @@ test cases. (5*7 = 35 points)
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <cassert>
 
 using namespace std;
 
@@ -138,14 +139,44 @@ int main()
 
         cout << "\n";
 
-        
-
-            // Loop to use a different set of numbers//
-            cout << "Do you want to run another set of numbers?\n"
-                    "Enter y for yes, or n for no: "
-                 << endl;
-            cin >> repeat;
-        
-    
+        // Loop to use a different set of numbers//
+        cout << "Do you want to run another set of numbers?\n"
+                "Enter y for yes, or n for no: "
+             << endl;
+        cin >> repeat;
     }
+    // Testing each function of the program//
+    float tnum1 = 1, tnum2 = 2, tnum3 = 3, tnum4 = 4;
+
+    float result1 = add(tnum1, tnum2);
+    float expected1 = 3;
+    assert(fabs(result1 - expected1) <= .001);
+
+    float result2 = add(tnum3, tnum4);
+    float expected2 = 7;
+    assert(fabs(result2 - expected2) <= .001);
+
+    float result3 = subtract(tnum4, tnum2);
+    float expected3 = 2;
+    assert(fabs(result3 - expected3) <= .001);
+
+    float result4 = subtract(tnum3, tnum1);
+    float expected4 = 2;
+    assert(fabs(result4 - expected4) <= .001);
+
+    float result5 = multiply(tnum1, tnum2);
+    float expected5 = 2;
+    assert(fabs(result5 - expected5) <= .001);
+
+    float result6 = multiply(tnum3, tnum4);
+    float expected6 = 12;
+    assert(fabs(result6 - expected6) <= .001);
+
+    float result7 = divide(tnum4, tnum2);
+    float expected7 = 2;
+    assert(fabs(result7 - expected7) <= .001);
+
+    float result8 = divide(tnum3, tnum1);
+    float expected8 = 3;
+    assert(fabs(result8 - expected8) <= .001);
 }
