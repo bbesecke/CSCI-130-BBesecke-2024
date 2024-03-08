@@ -14,6 +14,7 @@ test cases. (5*7 = 35 points)
 #include <cmath>
 #include <iomanip>
 #include <cassert>
+#include <string>
 
 using namespace std;
 
@@ -156,12 +157,12 @@ int main()
     float expected2 = 7;
     assert(fabs(result2 - expected2) <= .001);
 
-    float result3 = subtract(tnum4, tnum2);
+    float result3 = subtract(tnum2, tnum4);
     float expected3 = 2;
     assert(fabs(result3 - expected3) <= .001);
 
-    float result4 = subtract(tnum3, tnum1);
-    float expected4 = 2;
+    float result4 = subtract(tnum1, tnum4);
+    float expected4 = 3;
     assert(fabs(result4 - expected4) <= .001);
 
     float result5 = multiply(tnum1, tnum2);
@@ -179,4 +180,28 @@ int main()
     float result8 = divide(tnum3, tnum1);
     float expected8 = 3;
     assert(fabs(result8 - expected8) <= .001);
+
+    float result9 = rmainder(tnum3, tnum1);
+    float expected9 = 0;
+    assert(fabs(result9 - expected9) <= .001);
+
+    float result0 = rmainder(tnum4, tnum2);
+    float expected0 = 0;
+    assert(fabs(result0 - expected0) <= .001);
+
+    float result11 = sroot(tnum4);
+    float expected11 = 2;
+    assert(fabs(result11 - expected11) <= .001);
+
+    float result11 = sroot(tnum1);
+    float expected11 = 1;
+    assert(fabs(result11 - expected11) <= .001);
+
+    float result12 = power(tnum2, tnum3);
+    float expected12 = 8;
+    assert(fabs(result12 - expected12) <= .001);
+
+    float result12 = power(tnum3, tnum1);
+    float expected12 = 3;
+    assert(fabs(result12 - expected12) <= .001);
 }
