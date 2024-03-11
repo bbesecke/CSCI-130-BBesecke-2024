@@ -54,3 +54,14 @@ Status: Working version 01 Mar
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/blob/main/Labs/L3/main.cpp
 Self Grade: 100/100
 Notes: Got it working
+
+# CSCI-130-BBesecke-2024
+Homework 3
+Name: Burton Besecke
+Name: Functions/HW3
+Description: Use functions to make a calculator that gives various results of 2 numbers
+Due Date:11 Mar 2024
+Status: Working version 08 Mar 0900
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW3
+Self Grade: 95/100
+Notes: Couldn't get the prototypes working correctly in the second version
