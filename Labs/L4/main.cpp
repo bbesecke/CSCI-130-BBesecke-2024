@@ -122,9 +122,11 @@ double findProduct(const double &n1, const double &n2) {
 void findAverage(const double &n1, const double &n2, double &avg) 
 {
     //FIXME5 - find the average of n1 and n2 and update avg FIXED
-    return ((n1 + n2)/2);
+   
+      avg = findSum(n1, n2) / 2;
 
-    //FIXME6 - Must call findSum function to find the sum of n1 and n2
+
+    //FIXME6 - Must call findSum function to find the sum of n1 and n2 FIXED
     // Note: this void function doesn't return a value but
     // the average will be stored in avg
 }   
