@@ -53,14 +53,15 @@ bool program();
 
 // function clears the screen using system call
 // NOTE: system call is not a security best pracice!
-void clearScreen() 
-{
-   
-   
+void clearScreen()
+ {
+    // use "cls" in windows and "clear" command in Mac and Linux
+    #ifdef _WIN32
+        system("clS");
+    #else
         system("clear");
-    
+    #endif
 }
-
 int main(int argc, char* argv[]) {
     bool keepRunning = true;
     if(argc == 2 && string(argv[1]) == "test") {
@@ -124,7 +125,6 @@ void findAverage(const double &n1, const double &n2, double &avg)
     //FIXME5 - find the average of n1 and n2 and update avg FIXED
    
       avg = findSum(n1, n2) / 2;
-
 
     //FIXME6 - Must call findSum function to find the sum of n1 and n2 FIXED
     // Note: this void function doesn't return a value but
