@@ -1,8 +1,9 @@
 /*
 Conditional Lab
+Updated By: Burton Besecke
+CSCI 130-002
+Date: 11 Mar 2024
 
-FIXME1: Write programmer information
-FIXME2: Today's Date
 
 Program finds statistical values of two given numbers using user-defined functions.
 
@@ -52,13 +53,12 @@ bool program();
 
 // function clears the screen using system call
 // NOTE: system call is not a security best pracice!
-void clearScreen() {
-    // use "cls" in windows and "clear" command in Mac and Linux
-    #ifdef _WIN32
-        system("clS");
-    #else
+void clearScreen() 
+{
+   
+   
         system("clear");
-    #endif
+    
 }
 
 int main(int argc, char* argv[]) {
@@ -108,17 +108,22 @@ double findSum(const double &n1, const double &n2) {
 }
 
 double findDifference(const double &n1, const double &n2) {
-    //FIXME3 - subtract n2 from n1 and return the difference
-    return 0;
+    //FIXME3 - subtract n2 from n1 and return the difference FIXED
+
+
+    return (n1 - n2);
 }
 
 double findProduct(const double &n1, const double &n2) {
-    //FIXME4 - multiply n1 by n2 and return the product
-    return 0;
+    //FIXME4 - multiply n1 by n2 and return the product FIXED
+    return (n1 * n2);
 }
 
-void findAverage(const double &n1, const double &n2, double &avg) {
-    //FIXME5 - find the average of n1 and n2 and update avg
+void findAverage(const double &n1, const double &n2, double &avg) 
+{
+    //FIXME5 - find the average of n1 and n2 and update avg FIXED
+    return ((n1 + n2)/2);
+
     //FIXME6 - Must call findSum function to find the sum of n1 and n2
     // Note: this void function doesn't return a value but
     // the average will be stored in avg
