@@ -259,7 +259,6 @@ bool program()
         printf("The quotient of %.2f & %.2f = %.2f\n", num1, num2, quotient);
         break;
     }
-    
     case 5:
     {
         // get two numbers
@@ -267,6 +266,21 @@ bool program()
         // find the larger of the two numbers
         double max = findLarger(num1, num2);
         // print the result
+        printf("larger between %.2f & %.2f is %.2f\n", num1, num2, max);
+        break;
+    }
+    case 6:
+    {
+        getTwoNumbers(num1, num2);
+        double smaller = findSmaller(num1, num2);
+        printf("larger between %.2f & %.2f is %.2f\n", num1, num2, smaller);
+        break;
+    }
+    case 7:
+    {
+
+        getTwoNumbers(num1, num2);
+         find the larger of the two numbersdouble max = findLarger(num1, num2);
         printf("larger between %.2f & %.2f is %.2f\n", num1, num2, max);
         break;
     }
