@@ -137,14 +137,17 @@ double findLarger(const double &n1, const double &n2) {
     return larger;
 }
 
-double findSmaller(const double &n1, const double &n2) {
-    //FIXME7 - find the smaller of n1 and n2 and return it
-    return 0;
+double findSmaller(const double &n1, const double &n2)
+ {
+    //FIXME7 - find the smaller of n1 and n2 and return it Fixed
+    double smaller = (n2 >= n1) ? n1 : n2;
+    return smaller;
 }
 
 double findQuotient(const double &n1, const double &n2) {
-    //FIXME8 - divide n1 by n2 and return the quotient
-    return 0;
+    //FIXME8 - divide n1 by n2 and return the quotient FIXED
+   double quotient = (n1 / n2);
+    return quotient;
 }
 
 // functions to run automated testing for various user-defined functions
