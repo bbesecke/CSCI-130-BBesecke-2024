@@ -175,9 +175,23 @@ void test()
     assert(findLarger(2, 10) == 10);
     assert(findLarger(10, 5) == 10);
 
-        // FIXME9 – Using assert function write at least 2 test cases for each of the following functions
+    assert(findSmaller(2, 10) == 2);
+    assert(findSmaller(10, 5) == 5);
+
+    assert(findQuotient(10, 10) == 1);
+    assert(findQuotient(10, 5) == 2);
+
+    double avg, avg2;
+    findAverage(10, 10, avg);
+    assert(avg == 10);
+    findAverage(10, 8, avg2);
+    assert(avg2 == 9);
+
+
+        /* FIXME9 – Using assert function write at least 2 test cases for each of the following functions
         // findDifference(), findProduct(), findLarger(),
         // findSmaller(), findQuotient(), findAverage()
+        FIXED*/
         printf("%s\n", "all test cases passed...");
 }
 
