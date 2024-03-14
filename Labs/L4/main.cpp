@@ -234,16 +234,32 @@ bool program()
     }
     case 2:
     {
-        // FIXME10: call getTwoNumbers function
-        // FIXME11: call findDifference function and print the result
+        // FIXME10: call getTwoNumbers function FIxed
+        getTwoNumbers(num1, num2);
+        // FIXME11: call findDifference function and print the result Fixed
+        double difference = findDifference(num1, num2);
+
+        printf("%.2f - %.2f = %.2f\n", num1, num2, difference);
         break;
     }
     case 3:
     {
         // FIXME12: get two numbers and find their product using functions
+        getTwoNumbers(num1, num2);
+        double product = findProduct(num1, num2);
+        printf("%.2f x %.2f = %.2f\n", num1, num2, product);
         break;
+    
     }
     // FIXME13: complete the rest of the cases 4, 6, and 7
+    case 4:
+    {
+        getTwoNumbers(num1, num2);
+        double quotient = findQuotient(num1, num2);
+        printf("The quotient of %.2f & %.2f = %.2f\n", num1, num2, quotient);
+        break;
+    }
+    
     case 5:
     {
         // get two numbers
