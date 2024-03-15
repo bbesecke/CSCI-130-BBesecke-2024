@@ -234,9 +234,9 @@ bool program()
     }
     case 2:
     {
-        // FIXME10: call getTwoNumbers function FIxed
+        // FIXME10: call getTwoNumbers function FIXED
         getTwoNumbers(num1, num2);
-        // FIXME11: call findDifference function and print the result Fixed
+        // FIXME11: call findDifference function and print the result FIXED
         double difference = findDifference(num1, num2);
 
         printf("%.2f - %.2f = %.2f\n", num1, num2, difference);
@@ -244,14 +244,14 @@ bool program()
     }
     case 3:
     {
-        // FIXME12: get two numbers and find their product using functions
+        // FIXME12: get two numbers and find their product using functions FIXED
         getTwoNumbers(num1, num2);
         double product = findProduct(num1, num2);
         printf("%.2f x %.2f = %.2f\n", num1, num2, product);
         break;
     
     }
-    // FIXME13: complete the rest of the cases 4, 6, and 7
+    // FIXME13: complete the rest of the cases 4, 6, and 7 FIXED
     case 4:
     {
         getTwoNumbers(num1, num2);
@@ -261,27 +261,26 @@ bool program()
     }
     case 5:
     {
-        // get two numbers
+      // find the larger of the two numbers
         getTwoNumbers(num1, num2);
-        // find the larger of the two numbers
         double max = findLarger(num1, num2);
-        // print the result
-        printf("larger between %.2f & %.2f is %.2f\n", num1, num2, max);
+        printf("The larger number between %.2f & %.2f is %.2f\n", num1, num2, max);
         break;
     }
     case 6:
     {
+        // find the smaller of the two numbers
         getTwoNumbers(num1, num2);
         double smaller = findSmaller(num1, num2);
-        printf("larger between %.2f & %.2f is %.2f\n", num1, num2, smaller);
+        printf("The smaller number between %.2f & %.2f is %.2f\n", num1, num2, smaller);
         break;
     }
     case 7:
     {
-
+// find the average of the two numbers
         getTwoNumbers(num1, num2);
-         find the larger of the two numbersdouble max = findLarger(num1, num2);
-        printf("larger between %.2f & %.2f is %.2f\n", num1, num2, max);
+        double avg = findAverage(num1, num2);
+        printf("The average of %.2f & %.2f is %.2f\n", num1, num2, avg);
         break;
     }
     case 8:
