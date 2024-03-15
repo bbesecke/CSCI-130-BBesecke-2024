@@ -279,7 +279,8 @@ bool program()
     {
 // find the average of the two numbers
         getTwoNumbers(num1, num2);
-        double avg = findAverage(num1, num2);
+        double avg;
+        findAverage(num1, num2, avg);
         printf("The average of %.2f & %.2f is %.2f\n", num1, num2, avg);
         break;
     }
