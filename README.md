@@ -64,4 +64,15 @@ Due Date:11 Mar 2024
 Status: Working version 08 Mar 0900
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW3
 Self Grade: 95/100
-Notes: Couldn't get the prototypes working correctly in the second version
+Notes: Couldn't get the prototypes working correctly in a second version I tried to make.
+
+# CSCI-130-BBesecke-2024
+Lab 4
+Name: Burton Besecke
+Name: L4/Conditionals
+Description: Make functions and test cases
+Due Date: 15 Mar 2024
+Status: Working version 15 Mar
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L4
+Self Grade: 100/100
+Notes: Got it working
