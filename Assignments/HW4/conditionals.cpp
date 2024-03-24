@@ -1,11 +1,7 @@
-/* Name: Burton Besecke 
+/* Name: Burton Besecke
 Class: CSCI 130-002
 Conditionals HW
 6. Write algorithm steps.
-
-7. Write and use a Makefile to build and run your program. (5 points)
-
-8. Use function prototypes. (5 points)
 
 9. Define a function that takes 5 numbers, calculates and returns the sum of the
 numbers. (5 points)
@@ -50,15 +46,24 @@ calculate the statistical values of as many sets of 5 numbers as a user wishes
 until they want to quit the program.
 
 */
- 
- #include <iostream>
 
- using namespace std;
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <cassert>
+#include <string>
 
- int main ()
+using namespace std;
+//Use function prototypes//
+ sum (double1, double2, double3, double4, double5);
+{
+    cout << 
+}
+int main()
 
- {
-    cout << " Yip Yip Haw" << endl;
+{
+    cout << boolalpha << "42 is not equal to 50. True or flase?\n"
+         << (42 != 50) << endl;
 
     cout << "\n";
 
@@ -67,5 +72,4 @@ until they want to quit the program.
     getchar();
 
     return 0;
-    
- }
+}
