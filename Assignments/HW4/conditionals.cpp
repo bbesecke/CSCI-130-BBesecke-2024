@@ -55,11 +55,12 @@ until they want to quit the program.
 
 using namespace std;
 // Use function prototypes//
-double sum(double, double, double, double, double)
-double product(double, double, double, double, double)
-double avg(double, double, double, double, double)
-double lgst(double, double, double, double, double)
-double smlst(double, double, double, double, double)
+double sum(double, double, double, double, double);
+double product(double, double, double, double, double);
+double avg(double, double, double, double, double);
+double lgst(double, double, double, double, double);
+double smlst(double, double, double, double, double);
+
 
 int main()
 
