@@ -24,7 +24,7 @@ any built-in function.
  Define a function that takes five numbers and returns if the floor of the sum of
 those numbers is even, odd or zero.
 
- At least one function must be templated to work on various types .
+ At least one function must be templated to work on various types.
 
  Greet the user by their name and prompt them to enter 5 numbers.
 
@@ -60,13 +60,17 @@ double product(double, double, double, double, double);
 double avg(double, double, double, double, double);
 double lgst(double, double, double, double, double);
 double smlst(double, double, double, double, double);
-
+double floor(double, double, double, double, double);
 
 int main()
 
 {
-    cout << boolalpha << "42 is not equal to 50. True or flase?\n"
-         << (42 != 50) << endl;
+    string name;
+    cout << "Greeting, enter your name:" << endl;
+
+    cin >> name;
+
+    cout << "Hello " << name << ", please enter 5 numbers seperated by a space:" << endl;
 
     cout << "\n";
 
