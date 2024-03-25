@@ -66,12 +66,16 @@ int main()
 
 {
     string name;
-    cout << "Greeting, enter your name:" << endl;
+    cout << "Greeting, enter your name:";
 
     cin >> name;
 
-    cout << "Hello " << name << ", please enter 5 numbers seperated by a space:" << endl;
+    cout << "Hello " << name << ", please enter 5 numbers seperated by a space:";
 
+    double nums5;
+
+    cin >> nums5;
+    
     cout << "\n";
 
     cin.get();
