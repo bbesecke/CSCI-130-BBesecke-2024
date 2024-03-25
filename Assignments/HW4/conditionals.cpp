@@ -55,10 +55,12 @@ until they want to quit the program.
 
 using namespace std;
 //Use function prototypes//
- sum (double1, double2, double3, double4, double5);
-{
-    cout << 
-}
+void sum (double, double, double, double, double)
+
+void product (double, double, double, double, double)
+
+void avg (double, double, double, double, double)
+
 int main()
 
 {
