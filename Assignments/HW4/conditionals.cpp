@@ -74,11 +74,15 @@ bool program();
 int main(int argc, char *argv[])
 
 {
-
+double choice;
 string name;
 cout << "Greeting, enter your name: ";
 
 cin >> name;
+
+double num1, num2, num3, num4, num5;
+getFiveNums(num1, num2, num3, num4, num5);
+
 
 cout << "Hello " << name << ", choose an option from the menu:\n";
 
@@ -91,6 +95,15 @@ cout << "Hello " << name << ", choose an option from the menu:\n";
     cout << "[6]The floor value of 5 numbers\n";
     cout << "[7] Quit the program\n";
     cout << "Enter one of the menu options [1-7]: ";
+
+cin >> choice;
+//user picks 1, sum nums//
+if (choice)
+{
+    /* code */
+}
+
+    return 0;
 }
 
 void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
@@ -100,6 +113,9 @@ void getFiveNums(double &num1, double &num2, double &num3, double &num4, double 
     cin >> num1 >> num2 >> num3 >> num4 >> num5;
 
 }
-{
-    return 0;
-}
+    double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
+    {
+        return ( num1 + num2 + num3 + num4 + num5);
+    }
+    
+    
