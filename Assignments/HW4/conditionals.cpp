@@ -108,17 +108,12 @@ void printMenu(void)
 
 void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
-    cout << "Now  enter 5 numbers seperated by a space:";
+    cout << "Now enter 5 numbers seperated by a space:";
 
-    cin >> num1 >> num2 >> num3 >> num4 >> num5 >> ;
+    cin >> num1 >> num2 >> num3 >> num4 >> num5 >>;
 }
 
 {
-double nums5;
-
-cin >> nums5;
-
-cout << "\n";
 
 cin.get();
 
