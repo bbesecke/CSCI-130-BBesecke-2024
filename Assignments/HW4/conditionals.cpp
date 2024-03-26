@@ -70,32 +70,19 @@ double floor(double &, double &, double &, double &, double &);
 void test();
 bool program();
 
-void clearscreen()
-{
-// use "cls" in windows and "clear" command in Mac and Linux
-#ifdef _WIN32
-    system("clS");
-#else
-    system("clear");
-#endif
-}
 
 int main(int argc, char *argv[])
 
 {
 
 string name;
-cout << "Greeting, enter your name:";
+cout << "Greeting, enter your name: ";
 
 cin >> name;
 
-cout << "Hello " << name << ", choose an option from the menu:";
-}
+cout << "Hello " << name << ", choose an option from the menu:\n";
 
-void printMenu(void)
-
-{
-    cout << "Menu options:\n";
+    cout << "   Menu\n";
     cout << "[1] Sum of 5 numbers\n";
     cout << "[2] Product of 5 numbers\n";
     cout << "[3] Average of 5 numbers\n";
@@ -103,21 +90,16 @@ void printMenu(void)
     cout << "[5] Smallest of 5 numbers\n";
     cout << "[6]The floor value of 5 numbers\n";
     cout << "[7] Quit the program\n";
-    cout << "Enter one of the menu options [1-8]: ";
+    cout << "Enter one of the menu options [1-7]: ";
 }
 
 void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
-    cout << "Now enter 5 numbers seperated by a space:";
+    cout << "Now enter 5 numbers seperated by a space: ";
 
-    cin >> num1 >> num2 >> num3 >> num4 >> num5 >>;
+    cin >> num1 >> num2 >> num3 >> num4 >> num5;
+
 }
-
 {
-
-cin.get();
-
-getchar();
-
-return 0;
+    return 0;
 }
