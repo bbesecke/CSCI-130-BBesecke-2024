@@ -84,35 +84,36 @@ int main(int argc, char *argv[])
 
 {
 
-    string name;
-    cout << "Greeting, enter your name:";
+string name;
+cout << "Greeting, enter your name:";
 
-    cin >> name;
+cin >> name;
 
-    cout << "Hello " << name << ", choose an option from the menu:";
-
-    void printMenu(void);
-
-    {
-        cout << "Menu options:\n";
-        cout << "[1] Sum of 5 numbers\n";
-        cout << "[2] Product of 5 numbers\n";
-        cout << "[3] Average of 5 numbers\n";
-        cout << "[4] Largest of 5 numbers\n";
-        cout << "[5] Smallest of 5 numbers\n";
-        cout << "[6]The floor value of 5 numbers\n";
-        cout << "[7] Quit the program\n";
-        cout << "Enter one of the menu options [1-8]: ";
-    }
-
-    void getFiveNums(doublenum1, doublenum2, doublenum3, doublenum4, doublenum5);
-    {
-        cout << "Now  enter 5 numbers seperated by a space:";
-
-        cin >> num1 >> num2 >> num3 >> num4 >> num5 >> ;
-    }
+cout << "Hello " << name << ", choose an option from the menu:";
 }
 
+void printMenu(void)
+
+{
+    cout << "Menu options:\n";
+    cout << "[1] Sum of 5 numbers\n";
+    cout << "[2] Product of 5 numbers\n";
+    cout << "[3] Average of 5 numbers\n";
+    cout << "[4] Largest of 5 numbers\n";
+    cout << "[5] Smallest of 5 numbers\n";
+    cout << "[6]The floor value of 5 numbers\n";
+    cout << "[7] Quit the program\n";
+    cout << "Enter one of the menu options [1-8]: ";
+}
+
+void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    cout << "Now  enter 5 numbers seperated by a space:";
+
+    cin >> num1 >> num2 >> num3 >> num4 >> num5 >> ;
+}
+
+{
 double nums5;
 
 cin >> nums5;
