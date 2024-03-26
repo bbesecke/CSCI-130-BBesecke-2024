@@ -1,7 +1,7 @@
 /* HW4
 Updated By: Burton Besecke
 CSCI 130-002
-Date: 11 Mar 2024
+Date: 25 Mar 2024
 */
 
 #include <iostream>
@@ -16,22 +16,12 @@ void printMenu(void);
 
 void getFiveNumbers(double &, double &, double &,double &,double &);
 
-// function takes 5 numbers; finds and returns the sum of the 5
+
 double findSum(const double &, const double &, const double &, const double &, const double &);
-
-// function takes 5 numbers; finds and returns the product of the 5
 double findProduct(const double &, const double &, const double &, const double &, const double &);
-
-// function takes 5 numbers; finds and returns the average of the 5
 void findAvg(const double &, const double &, const double &, const double &, const double &, const double &);
-
-// function takes 5 numbers; finds and returns the larger of the 5
 double findLrgst(const double &, const double &, const double &, const double &, const double &);
-
-// function takes 5 numbers; finds and returns the smaller of the 5
-double findSmalst(const double &, const double &, const double &, const double &, const double &);
-
-// function takes 5 numbers; finds and returns the floor of the 5
+double findSmlst(const double &, const double &, const double &, const double &, const double &);
 double floor(const double &, const double &, const double &, const double &, const double &);
 
 void test();
@@ -87,111 +77,82 @@ void printMenu(void)
     cout << "Enter one of the menu options [1-8]: ";
 }
 
-void getTwoNumbers(double &n1, double &n2)
+void getFiveNumbers(double &n1, double &n2, double &n3, double &n4, double &n5)
 {
     cout << "Enter two numbers separated by a space: ";
-    cin >> n1 >> n2;
+    cin >> n1 >> n2 >> n3 >> n4 >> n5;
 }
 
-double findSum(const double &n1, const double &n2)
+double findSum(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5)
 {
-    return (n1 + n2);
+    return (n1 + n2 + n3 + n4 + n5);
 }
 
-double findDifference(const double &n1, const double &n2)
+double findProduct(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5)
 {
-    // FIXME3 - subtract n2 from n1 and return the difference FIXED
-
-    return (n1 - n2);
-}
-
-double findProduct(const double &n1, const double &n2)
-{
-    // FIXME4 - multiply n1 by n2 and return the product FIXED
     return (n1 * n2);
 }
 
-void findAverage(const double &n1, const double &n2, double &avg)
+void findAvg(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5, double &avg)
 {
-    // FIXME5 - find the average of n1 and n2 and update avg FIXED
+    avg = findSum(n1, n2, n3, n4, n5) / 2;
 
-    avg = findSum(n1, n2) / 2;
-
-    // FIXME6 - Must call findSum function to find the sum of n1 and n2 FIXED
-    //  Note: this void function doesn't return a value but
-    //  the average will be stored in avg
 }
 
-double findLarger(const double &n1, const double &n2)
+double findLrgst(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5)
 {
-    // find the larger of n1 and n2 and return it
-    double larger = (n1 >= n2) ? n1 : n2;
+    double larger = (n1 >= n2, n2 >= n3, n3 >= n4, n4 >= n5) ? n1 : n5;
     return larger;
 }
 
-double findSmaller(const double &n1, const double &n2)
+double findSmlest(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5)
 {
-    // FIXME7 - find the smaller of n1 and n2 and return it Fixed
-    double smaller = (n2 >= n1) ? n1 : n2;
+
+    double smaller = (n5 >= n4, n4 >= n3, n3 >= n2, n2 >= n1) ? n1 : n5;
     return smaller;
 }
 
-double findQuotient(const double &n1, const double &n2)
+double floor(const double &n1, const double &n2, const double &n3, const double &n4, const double &n5)
 {
-    // FIXME8 - divide n1 by n2 and return the quotient FIXED
-    double quotient = (n1 / n2);
-    return quotient;
+    double floor = (n1 , n2, n3, n4, n5);
+    return floor;
 }
 
-// functions to run automated testing for various user-defined functions
 void test()
 {      
-    assert(findSum(-5, 10.5) == 5.5); 
-    assert(findSum(10, 10) == 20);
+    assert(findSum(-5, 10, 4, 6, 2) == 17); 
+    assert(findSum(10, 10, 10, 10, 10) == 50);
 
-    assert(findDifference(10, 10) == 0);
-    assert(findDifference(10, 5) == 5);
+    assert(findProduct(10, 10, 1, 1, 2) == 200);
+    assert(findProduct(10, 5, 1, 1, 2) == 100);
 
-    assert(findProduct(10, 10) == 100);
-    assert(findProduct(10, 5) == 50);
+    assert(findLrgst(2, 10, 2, 4, 5) == 10);
+    assert(findLrgst(10, 5, 1, 8, 4) == 10);
 
-    assert(findLarger(2, 10) == 10);
-    assert(findLarger(10, 5) == 10);
-
-    assert(findSmaller(2, 10) == 2);
-    assert(findSmaller(10, 5) == 5);
-
-    assert(findQuotient(10, 10) == 1);
-    assert(findQuotient(10, 5) == 2);
+    assert(findSmlest(2, 10, 4, 7, 4) == 2);
+    assert(findSmlest(10, 5, 4, 7, 9) == 4);
 
     double avg, avg2;
-    findAverage(10, 10, avg);
+    findAvg(10, 10, 10, 10, 10, avg);
     assert(avg == 10);
-    findAverage(10, 8, avg2);
-    assert(avg2 == 9);
+    findAvg(10, 8, 2, 2, 2 avg2);
+    assert(avg2 == 12);
 
-
-        /* FIXME9 – Using assert function write at least 2 test cases for each of the following functions
-        // findDifference(), findProduct(), findLarger(),
-        // findSmaller(), findQuotient(), findAverage()
-        FIXED*/
         printf("%s\n", "all test cases passed...");
 }
 
-// the crux of the program that uses all the defined functions
-// the program is menu driven
+
 bool program()
 {
-    int option = 1;            // variable to store user entered option
-    double num1 = 0, num2 = 0; // variables to store two numbers entered by user
-    // display menu options
+    int option = 1;           
+    double num1 = 0, num2 = 0; 
     printMenu();
-    // Input validation
+
     do
     {
         if (cin >> option && option >= 1 && option <= 8)
         {
-            // input is valid, break loop
+        
             break;
         }
         else
@@ -202,27 +163,26 @@ bool program()
         }
     } while (true);
 
-    // Call the function(s) or perform some operations based on user input
     switch (option)
     {
     case 1:
     {
-        // get two numbers and store them into num1 and num2 using function
-        getTwoNumbers(num1, num2);
-        // call findSum function; store the returned value in sum variable
-        double sum = findSum(num1, num2);
+    
+        getFiveNumbers(num1, num2, num3, num4, num5);
+       
+        double sum = findSum(num1, num2, num3, num4, num5);
         // display the result with proper description
-        printf("%.2f + %.2f = %.2f\n", num1, num2, sum);
+        printf("%.2f + %.2f = %.2f\n", num1, num2, num3, num4, num5, sum);
         break;
     }
     case 2:
     {
-        // FIXME10: call getTwoNumbers function FIXED
-        getTwoNumbers(num1, num2);
-        // FIXME11: call findDifference function and print the result FIXED
-        double difference = findDifference(num1, num2);
 
-        printf("%.2f - %.2f = %.2f\n", num1, num2, difference);
+        getFiveNumbers(num1, num2, num3, num4, num5);
+       
+        double product = findProduct(num1, num2, num3, num4, num5);
+
+        printf("%.2f - %.2f = %.2f\n", num1, num2, product);
         break;
     }
     case 3:
