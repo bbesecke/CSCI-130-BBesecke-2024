@@ -54,53 +54,74 @@ until they want to quit the program.
 #include <string>
 
 using namespace std;
+
 // Use function prototypes//
-double sum(double, double, double, double, double);
-double product(double, double, double, double, double);
-double avg(double, double, double, double, double);
-double lgst(double, double, double, double, double);
-double smlst(double, double, double, double, double);
-double floor(double, double, double, double, double);
 void printMenu(void);
 
-int main()
+void getFiveNums(double &, double &, double &, double &, double &);
+
+double sum(double &, double &, double &, double &, double &);
+double product(double &, double &, double &, double &, double &);
+double avg(double &, double &, double &, double &, double &);
+double lgst(double &, double &, double &, double &, double &);
+double smlst(double &, double &, double &, double &, double &);
+double floor(double &, double &, double &, double &, double &);
+
+void test();
+bool program();
+
+void clearscreen()
+{
+// use "cls" in windows and "clear" command in Mac and Linux
+#ifdef _WIN32
+    system("clS");
+#else
+    system("clear");
+#endif
+}
+
+int main(int argc, char *argv[])
 
 {
-    
 
     string name;
     cout << "Greeting, enter your name:";
 
     cin >> name;
 
-    cout << "Hello " << name << ", please choose an option from the menu:";
+    cout << "Hello " << name << ", choose an option from the menu:";
 
     void printMenu(void);
 
     {
-    cout << "Menu options:\n";
-    cout << "[1] Sum of 5 numbers\n";
-    cout << "[2] Product of 5 numbers\n";
-    cout << "[3] Average of 5 numbers\n";
-    cout << "[4] Largest of 5 numbers\n";
-    cout << "[5] Smallest of 5 numbers\n";
-    cout << "[6]The floor value of 5 numbers\n";
-    cout << "[7] Quit the program\n";
-    cout << "Enter one of the menu options [1-8]: ";
-    
+        cout << "Menu options:\n";
+        cout << "[1] Sum of 5 numbers\n";
+        cout << "[2] Product of 5 numbers\n";
+        cout << "[3] Average of 5 numbers\n";
+        cout << "[4] Largest of 5 numbers\n";
+        cout << "[5] Smallest of 5 numbers\n";
+        cout << "[6]The floor value of 5 numbers\n";
+        cout << "[7] Quit the program\n";
+        cout << "Enter one of the menu options [1-8]: ";
     }
-cin >> 
-    cout << "Hello " << name << ", please enter 5 numbers seperated by a space:";
 
-    double nums5;
+    void getFiveNums(doublenum1, doublenum2, doublenum3, doublenum4, doublenum5);
+    {
+        cout << "Now  enter 5 numbers seperated by a space:";
 
-    cin >> nums5;
-    
-    cout << "\n";
+        cin >> num1 >> num2 >> num3 >> num4 >> num5 >> ;
+    }
+}
 
-    cin.get();
+double nums5;
 
-    getchar();
+cin >> nums5;
 
-    return 0;
+cout << "\n";
+
+cin.get();
+
+getchar();
+
+return 0;
 }
