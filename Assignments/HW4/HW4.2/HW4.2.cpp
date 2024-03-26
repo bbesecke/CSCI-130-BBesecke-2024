@@ -65,15 +65,14 @@ int main(int argc, char *argv[])
 
 void printMenu(void)
 {
-    cout << "Menu options:\n";
+
     cout << "[1] Add two numbers\n";
-    cout << "[2] Subtract two numbers\n";
-    cout << "[3] Multiply two numbers\n";
-    cout << "[4] Divide two numbers\n";
-    cout << "[5] Find larger of two numbers\n";
-    cout << "[6] Find smaller of two numbers\n";
-    cout << "[7] Find average of two numbers\n";
-    cout << "[8] Quit the program\n";
+    cout << "[2] Multiply 5 numbers\n";
+    cout << "[3] Find larger of 5 numbers\n";
+    cout << "[4] Find smaller of 5 numbers\n";
+    cout << "[5] Find average of 5 numbers\n";
+     cout <<"[6] Find the floor of 5 numbers\n";
+    cout << "[7] Quit the program\n";
     cout << "Enter one of the menu options [1-8]: ";
 }
 
@@ -145,12 +144,12 @@ void test()
 bool program()
 {
     int option = 1;           
-    double num1 = 0, num2 = 0; 
+    double num1 = 0, num2 = 0, num3 = 0, num4 = 0, num5 = 0; 
     printMenu();
 
     do
     {
-        if (cin >> option && option >= 1 && option <= 8)
+        if (cin >> option && option >= 1 && option <= 7)
         {
         
             break;
@@ -159,7 +158,7 @@ bool program()
         {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "Invalid option, please enter a value between 1 and 8" << endl;
+            cout << "Invalid option, please enter a value between 1 and 7" << endl;
         }
     } while (true);
 
@@ -188,7 +187,7 @@ bool program()
     case 3:
     {
         // FIXME12: get two numbers and find their product using functions FIXED
-        getTwoNumbers(num1, num2);
+        getFiveNumbers(num1, num2);
         double product = findProduct(num1, num2);
         printf("%.2f x %.2f = %.2f\n", num1, num2, product);
         break;
