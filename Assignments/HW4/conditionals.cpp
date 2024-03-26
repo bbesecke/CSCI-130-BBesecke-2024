@@ -61,15 +61,35 @@ double avg(double, double, double, double, double);
 double lgst(double, double, double, double, double);
 double smlst(double, double, double, double, double);
 double floor(double, double, double, double, double);
+void printMenu(void);
 
 int main()
 
 {
+    
+
     string name;
     cout << "Greeting, enter your name:";
 
     cin >> name;
 
+    cout << "Hello " << name << ", please choose an option from the menu:";
+
+    void printMenu(void);
+
+    {
+    cout << "Menu options:\n";
+    cout << "[1] Sum of 5 numbers\n";
+    cout << "[2] Product of 5 numbers\n";
+    cout << "[3] Average of 5 numbers\n";
+    cout << "[4] Largest of 5 numbers\n";
+    cout << "[5] Smallest of 5 numbers\n";
+    cout << "[6]The floor value of 5 numbers\n";
+    cout << "[7] Quit the program\n";
+    cout << "Enter one of the menu options [1-8]: ";
+    
+    }
+cin >> 
     cout << "Hello " << name << ", please enter 5 numbers seperated by a space:";
 
     double nums5;
