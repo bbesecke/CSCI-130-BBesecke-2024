@@ -64,7 +64,7 @@ double sum(double &, double &, double &, double &, double &);
 double product(double &, double &, double &, double &, double &);
 double avg(double &, double &, double &, double &, double &);
 double lgst(double &, double &, double &, double &, double &);
-double smlst(double &, double &, double &, double &, double &);
+double min(double &, double &, double &, double &, double &);
 double floor(double &, double &, double &, double &, double &);
 
 void test();
@@ -89,12 +89,12 @@ int main(int argc, char *argv[])
     cout << "Hello " << name << ", choose an option from the menu:\n";
 
     cout << "   Menu\n";
-    cout << "[1] Sum of 5 numbers\n";
-    cout << "[2] Product of 5 numbers\n";
-    cout << "[3] Average of 5 numbers\n";
-    cout << "[4] Largest of 5 numbers\n";
-    cout << "[5] Smallest of 5 numbers\n";
-    cout << "[6]The floor value of 5 numbers\n";
+    cout << "[1] Sum of the 5 numbers\n";
+    cout << "[2] Product of the 5 numbers\n";
+    cout << "[3] Average of the 5 numbers\n";
+    cout << "[4] Largest of the 5 numbers\n";
+    cout << "[5] Smallest of the 5 numbers\n";
+    cout << "[6]The floor value of the 5 numbers\n";
     cout << "[7] Quit the program\n";
     cout << "Enter one of the menu options [1-7]: ";
 
@@ -112,7 +112,11 @@ int main(int argc, char *argv[])
     }
     case 3:
     {
-        cout << "The average is " << avg(num1, num2, num3, num4, num5)/5 << "\n";
+        cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
+    }
+    case 4:
+    {
+        cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
     }
     }
 
@@ -139,7 +143,13 @@ double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
     avg = (sum(num1, num2, num3, num4, num5) / 5);
     return avg;
 }
-    void clearscreen()
-    {
-        system("clear");
-    }
+double lgst(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double lgst;
+     double lgst = max(num1, num2);
+    return lgst;
+}
+void clearscreen()
+{
+    system("clear");
+}
