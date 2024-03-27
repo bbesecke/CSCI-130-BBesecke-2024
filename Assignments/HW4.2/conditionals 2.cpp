@@ -181,24 +181,24 @@ bool program()
        
         double product = findProduct(num1, num2, num3, num4, num5);
 
-        printf("%.2f - %.2f = %.2f\n", num1, num2, product);
+        printf("%.2f - %.2f = %.2f\n", num1, num2, num3, num4, num5, product);
         break;
     }
     case 3:
     {
-        // FIXME12: get two numbers and find their product using functions FIXED
-        getFiveNumbers(num1, num2);
-        double product = findProduct(num1, num2);
-        printf("%.2f x %.2f = %.2f\n", num1, num2, product);
+        
+        getFiveNumbers(num1, num2, num3, num4, num5);
+        double product = findProduct(num1, num2, num3, num4, num5);
+        printf("%.2f x %.2f = %.2f\n", num1, num2, num3, num4, num5, product);
         break;
     
     }
-    // FIXME13: complete the rest of the cases 4, 6, and 7 FIXED
+   
     case 4:
     {
-        getTwoNumbers(num1, num2);
-        double quotient = findQuotient(num1, num2);
-        printf("The quotient of %.2f & %.2f = %.2f\n", num1, num2, quotient);
+        getTwoNumbers(num1, num2, num3, num4, num5);
+        double quotient = findQuotient(num1, num2, num3, num4, num5);
+        printf("The quotient of %.2f & %.2f = %.2f\n", num1, num2, num3, num4, num5, quotient);
         break;
     }
     case 5:

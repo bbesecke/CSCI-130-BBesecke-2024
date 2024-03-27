@@ -73,7 +73,7 @@ bool program();
 int main(int argc, char *argv[])
 
 {
-    double choice;
+    int choice;
     string name;
 
     // user enters name//
@@ -100,10 +100,12 @@ int main(int argc, char *argv[])
 
     cin >> choice;
     // user picks 1, sum 5 nums//
-    if (choice)
+    switch (choice)
     {
-
-        return (num1 + num2 + num3 + num4 + num5);
+        case 1:
+        {
+            cout << "The sum is " << sum(num1 , num2 , num3 , num4 , num5) << "\n";
+        }
     }
 
     return 0;
