@@ -70,21 +70,23 @@ double floor(double &, double &, double &, double &, double &);
 void test();
 bool program();
 
-
 int main(int argc, char *argv[])
 
 {
-double choice;
-string name;
-cout << "Greeting, enter your name: ";
+    double choice;
+    string name;
 
-cin >> name;
+    // user enters name//
+    cout << "Greeting, enter your name: ";
 
-double num1, num2, num3, num4, num5;
-getFiveNums(num1, num2, num3, num4, num5);
+    cin >> name;
 
+    // user enters 5 nums//
+    double num1, num2, num3, num4, num5;
+    getFiveNums(num1, num2, num3, num4, num5);
 
-cout << "Hello " << name << ", choose an option from the menu:\n";
+    // user chooses action to perform//
+    cout << "Hello " << name << ", choose an option from the menu:\n";
 
     cout << "   Menu\n";
     cout << "[1] Sum of 5 numbers\n";
@@ -96,13 +98,13 @@ cout << "Hello " << name << ", choose an option from the menu:\n";
     cout << "[7] Quit the program\n";
     cout << "Enter one of the menu options [1-7]: ";
 
-cin >> choice;
-//user picks 1, sum nums//
-if (choice)
-{
-   choice == 1;
-   return (num1 + num2 + num3 + num4 + num5);
-}
+    cin >> choice;
+    // user picks 1, sum 5 nums//
+    if (choice)
+    {
+
+        return (num1 + num2 + num3 + num4 + num5);
+    }
 
     return 0;
 }
@@ -112,11 +114,8 @@ void getFiveNums(double &num1, double &num2, double &num3, double &num4, double 
     cout << "Now enter 5 numbers seperated by a space: ";
 
     cin >> num1 >> num2 >> num3 >> num4 >> num5;
-
 }
-    double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        return ( num1 + num2 + num3 + num4 + num5);
-    }
-    
-    
+double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    return (num1 + num2 + num3 + num4 + num5);
+}
