@@ -68,14 +68,14 @@ double smlst(double &, double &, double &, double &, double &);
 double floor(double &, double &, double &, double &, double &);
 
 void test();
-bool program();
+void clearscreen();
 
 int main(int argc, char *argv[])
 
 {
     int choice;
     string name;
-
+    clearscreen();
     // user enters name//
     cout << "Greeting, enter your name: ";
 
@@ -102,10 +102,18 @@ int main(int argc, char *argv[])
     // user picks 1, sum 5 nums//
     switch (choice)
     {
-        case 1:
-        {
-            cout << "The sum is " << sum(num1 , num2 , num3 , num4 , num5) << "\n";
-        }
+    case 1:
+    {
+        cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
+    }
+    case 2:
+    {
+        cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
+    }
+    case 3:
+    {
+        cout << "The average is " << avg(num1, num2, num3, num4, num5)/5 << "\n";
+    }
     }
 
     return 0;
@@ -121,3 +129,17 @@ double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     return (num1 + num2 + num3 + num4 + num5);
 }
+double product(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    return (num1 * num2 * num3 * num4 * num5);
+}
+double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double avg;
+    avg = (sum(num1, num2, num3, num4, num5) / 5);
+    return avg;
+}
+    void clearscreen()
+    {
+        system("clear");
+    }
