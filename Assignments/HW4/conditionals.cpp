@@ -100,7 +100,8 @@ cin >> choice;
 //user picks 1, sum nums//
 if (choice)
 {
-    /* code */
+   choice == 1;
+   return (num1 + num2 + num3 + num4 + num5);
 }
 
     return 0;
