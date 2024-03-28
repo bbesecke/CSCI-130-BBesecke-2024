@@ -64,7 +64,7 @@ double sum(double &, double &, double &, double &, double &);
 double product(double &, double &, double &, double &, double &);
 double avg(double &, double &, double &, double &, double &);
 double lgst(double &, double &, double &, double &, double &);
-double min(double &, double &, double &, double &, double &);
+double smlst(double &, double &, double &, double &, double &);
 double floor(double &, double &, double &, double &, double &);
 
 void test();
@@ -102,26 +102,37 @@ int main(int argc, char *argv[])
     // user picks 1, sum 5 nums//
     switch (choice)
     {
+
     case 1:
     {
         cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
         break;
     }
+
     case 2:
     {
         cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
         break;
     }
+
     case 3:
     {
         cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
         break;
     }
+
     case 4:
     {
         cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
         break;
     }
+
+    case 5:
+    {
+        cout << "The smallest number is " << smlst(num1, num2, num3, num4, num5) << "\n";
+        break;
+    }
+    
     }
 
     return 0;
@@ -133,30 +144,44 @@ void getFiveNums(double &num1, double &num2, double &num3, double &num4, double 
 
     cin >> num1 >> num2 >> num3 >> num4 >> num5;
 }
+
 double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     return (num1 + num2 + num3 + num4 + num5);
 }
+
 double product(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     return (num1 * num2 * num3 * num4 * num5);
 }
+
 double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     double avg;
     avg = (sum(num1, num2, num3, num4, num5) / 5);
     return avg;
 }
+
 double lgst(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
-    double lgst;
     double lgst1 = max(num1, num2);
     double lgst2 = max(lgst1, num3);
     double lgst3 = max(lgst2, num4);
     double lgst4 = max(lgst3, num5);
-    return lgst;
+    return lgst4;
 }
+
+double smlst(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double smlst1 = min(num1, num2);
+    double smlst2 = min(num1, num2);
+    double smlst3 = min(num1, num2);
+    double smlst4 = min(num1, num2);
+    return smlst4;
+}
+
 void clearscreen()
+
 {
     system("clear");
 }
