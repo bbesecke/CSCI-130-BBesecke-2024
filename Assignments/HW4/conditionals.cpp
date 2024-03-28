@@ -136,10 +136,14 @@ int main(int argc, char *argv[])
     // user picks 6, floor of 5 nums//
     case 6:
     {
-        if (flor / 2 ==0)
-        cout << "The floor " << flor << " is even.";
+        if (flor == 0)
+            cout << "The floor " << flor << " is even.\n";
         else
-            cout << "Th floor " << flor << " is odd.";
+            cout << "The floor " << flor << " is odd.\n";
+            break;
+    }
+    case 7:
+    {
 
         break;
     }
@@ -193,8 +197,7 @@ double smlst(double &num1, double &num2, double &num3, double &num4, double &num
 double flor(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     double flor;
-    double avg;
-    flor = (avg /2);
+    flor = ((avg(num1, num2, num3, num4, num5) / 5) / 2);
     return flor;
 }
 
