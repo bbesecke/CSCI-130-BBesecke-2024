@@ -99,40 +99,40 @@ int main(int argc, char *argv[])
     cout << "Enter one of the menu options [1-7]: ";
 
     cin >> choice;
-    // user picks 1, sum 5 nums//
+    
     switch (choice)
     {
-
+ // user picks 1, sum 5 nums//
     case 1:
     {
         cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
         break;
     }
-
+ // user picks 2, product of 5 nums//
     case 2:
     {
         cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
         break;
     }
-
+ // user picks 3, average of 5 nums//
     case 3:
     {
         cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
         break;
     }
-
+ // user picks 4, largest of 5 nums//
     case 4:
     {
         cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
         break;
     }
-
+ // user picks 5, smallest of 5 nums//
     case 5:
     {
         cout << "The smallest number is " << smlst(num1, num2, num3, num4, num5) << "\n";
         break;
     }
-    
+
     }
 
     return 0;
