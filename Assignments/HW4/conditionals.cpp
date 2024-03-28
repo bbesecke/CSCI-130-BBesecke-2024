@@ -65,7 +65,7 @@ double product(double &, double &, double &, double &, double &);
 double avg(double &, double &, double &, double &, double &);
 double lgst(double &, double &, double &, double &, double &);
 double smlst(double &, double &, double &, double &, double &);
-double floor(double &, double &, double &, double &, double &);
+double flor(double &, double &, double &, double &, double &);
 
 void test();
 void clearscreen();
@@ -99,40 +99,50 @@ int main(int argc, char *argv[])
     cout << "Enter one of the menu options [1-7]: ";
 
     cin >> choice;
-    
+
     switch (choice)
     {
- // user picks 1, sum 5 nums//
+        // user picks 1, sum 5 nums//
     case 1:
     {
         cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
         break;
     }
- // user picks 2, product of 5 nums//
+        // user picks 2, product of 5 nums//
     case 2:
     {
         cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
         break;
     }
- // user picks 3, average of 5 nums//
+        // user picks 3, average of 5 nums//
     case 3:
     {
         cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
         break;
     }
- // user picks 4, largest of 5 nums//
+        // user picks 4, largest of 5 nums//
     case 4:
     {
         cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
         break;
     }
- // user picks 5, smallest of 5 nums//
+        // user picks 5, smallest of 5 nums//
     case 5:
     {
         cout << "The smallest number is " << smlst(num1, num2, num3, num4, num5) << "\n";
         break;
     }
 
+    // user picks 6, floor of 5 nums//
+    case 6:
+    {
+        if (flor / 2 ==0)
+        cout << "The floor " << flor << " is even.";
+        else
+            cout << "Th floor " << flor << " is odd.";
+
+        break;
+    }
     }
 
     return 0;
@@ -174,10 +184,18 @@ double lgst(double &num1, double &num2, double &num3, double &num4, double &num5
 double smlst(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     double smlst1 = min(num1, num2);
-    double smlst2 = min(num1, num2);
-    double smlst3 = min(num1, num2);
-    double smlst4 = min(num1, num2);
+    double smlst2 = min(smlst1, num3);
+    double smlst3 = min(smlst2, num4);
+    double smlst4 = min(smlst3, num5);
     return smlst4;
+}
+
+double flor(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double flor;
+    double avg;
+    flor = (avg /2);
+    return flor;
 }
 
 void clearscreen()
