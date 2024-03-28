@@ -105,18 +105,22 @@ int main(int argc, char *argv[])
     case 1:
     {
         cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
+        break;
     }
     case 2:
     {
         cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
+        break;
     }
     case 3:
     {
         cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
+        break;
     }
     case 4:
     {
         cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
+        break;
     }
     }
 
