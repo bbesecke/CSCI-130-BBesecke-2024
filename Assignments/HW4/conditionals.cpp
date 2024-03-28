@@ -65,7 +65,7 @@ double product(double &, double &, double &, double &, double &);
 double avg(double &, double &, double &, double &, double &);
 double lgst(double &, double &, double &, double &, double &);
 double smlst(double &, double &, double &, double &, double &);
-double flor(double &, double &, double &, double &, double &);
+int flor(double &, double &, double &, double &, double &);
 
 void test();
 void clearscreen();
@@ -75,80 +75,92 @@ int main(int argc, char *argv[])
 {
     int choice;
     string name;
+    bool keepRunning = true;
     clearscreen();
     // user enters name//
     cout << "Greeting, enter your name: ";
 
     cin >> name;
+    while (keepRunning)
+    {
+        // user enters 5 nums//
+        double num1, num2, num3, num4, num5;
+        getFiveNums(num1, num2, num3, num4, num5);
 
-    // user enters 5 nums//
-    double num1, num2, num3, num4, num5;
-    getFiveNums(num1, num2, num3, num4, num5);
+        // user chooses action to perform//
+        cout << "Hello " << name << ", choose an option from the menu:\n";
 
-    // user chooses action to perform//
-    cout << "Hello " << name << ", choose an option from the menu:\n";
+        cout << "   Menu\n";
+        cout << "[1] Sum of the 5 numbers\n";
+        cout << "[2] Product of the 5 numbers\n";
+        cout << "[3] Average of the 5 numbers\n";
+        cout << "[4] Largest of the 5 numbers\n";
+        cout << "[5] Smallest of the 5 numbers\n";
+        cout << "[6]The floor value of the 5 numbers\n";
+        cout << "[7] Quit the program\n";
+        cout << "Enter one of the menu options [1-7]: ";
 
-    cout << "   Menu\n";
-    cout << "[1] Sum of the 5 numbers\n";
-    cout << "[2] Product of the 5 numbers\n";
-    cout << "[3] Average of the 5 numbers\n";
-    cout << "[4] Largest of the 5 numbers\n";
-    cout << "[5] Smallest of the 5 numbers\n";
-    cout << "[6]The floor value of the 5 numbers\n";
-    cout << "[7] Quit the program\n";
-    cout << "Enter one of the menu options [1-7]: ";
+        cin >> choice;
 
-    cin >> choice;
-
-    switch (choice)
-    {
-        // user picks 1, sum 5 nums//
-    case 1:
-    {
-        cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
-        break;
-    }
-        // user picks 2, product of 5 nums//
-    case 2:
-    {
-        cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
-        break;
-    }
-        // user picks 3, average of 5 nums//
-    case 3:
-    {
-        cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
-        break;
-    }
-        // user picks 4, largest of 5 nums//
-    case 4:
-    {
-        cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
-        break;
-    }
-        // user picks 5, smallest of 5 nums//
-    case 5:
-    {
-        cout << "The smallest number is " << smlst(num1, num2, num3, num4, num5) << "\n";
-        break;
-    }
-
-    // user picks 6, floor of 5 nums//
-    case 6:
-    {
-        if (flor == 0)
-            cout << "The floor " << flor << " is even.\n";
-        else
-            cout << "The floor " << flor << " is odd.\n";
+        switch (choice)
+        {
+            // user picks 1, sum 5 nums//
+        case 1:
+        {
+            cout << "The sum is " << sum(num1, num2, num3, num4, num5) << "\n";
             break;
-    }
-    case 7:
-    {
+        }
+            // user picks 2, product of 5 nums//
+        case 2:
+        {
+            cout << "The product is " << product(num1, num2, num3, num4, num5) << "\n";
+            break;
+        }
+            // user picks 3, average of 5 nums//
+        case 3:
+        {
+            cout << "The average is " << avg(num1, num2, num3, num4, num5) / 5 << "\n";
+            break;
+        }
+            // user picks 4, largest of 5 nums//
+        case 4:
+        {
+            cout << "The largest number is " << lgst(num1, num2, num3, num4, num5) << "\n";
+            break;
+        }
+            // user picks 5, smallest of 5 nums//
+        case 5:
+        {
+            cout << "The smallest number is " << smlst(num1, num2, num3, num4, num5) << "\n";
+            break;
+        }
 
-        break;
-    }
-    }
+        // user picks 6, floor of 5 nums//
+        case 6:
+        {
+            int flor = floor(sum(num1, num2, num3, num4, num5));
 
+            if (flor == 0)
+            {
+                cout << "The floor is zero.\n";
+            }
+            else if (flor % 2 == 1)
+            {
+                cout << "The floor is odd.\n";
+            }
+            else
+            {
+                cout << "The floor is even.\n";
+            }
+            break;
+        }
+        case 7:
+        {
+            keepRunning = false; 
+            break;
+        }
+        }
+    }
     return 0;
 }
 
@@ -194,10 +206,10 @@ double smlst(double &num1, double &num2, double &num3, double &num4, double &num
     return smlst4;
 }
 
-double flor(double &num1, double &num2, double &num3, double &num4, double &num5)
+int flor(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
-    double flor;
-    flor = ((avg(num1, num2, num3, num4, num5) / 5) / 2);
+    int flor;
+    flor = floor(sum(num1, num2, num3, num4, num5));
     return flor;
 }
 
