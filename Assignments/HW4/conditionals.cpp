@@ -146,7 +146,10 @@ double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
 double lgst(double &num1, double &num2, double &num3, double &num4, double &num5)
 {
     double lgst;
-     double lgst = max(num1, num2);
+    double lgst1 = max(num1, num2);
+    double lgst2 = max(lgst1, num3);
+    double lgst3 = max(lgst2, num4);
+    double lgst4 = max(lgst3, num5);
     return lgst;
 }
 void clearscreen()
