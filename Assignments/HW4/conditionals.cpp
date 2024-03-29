@@ -16,8 +16,6 @@ At least one function must be templated to work on various types.
 Try to come up with corner cases (various data) to confirm the functions
 still provide the correct results.
 
-Call the test function only if the “test” argument is passed to main. (5 points)
-
 */
 
 #include <iostream>
