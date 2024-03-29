@@ -28,6 +28,9 @@ all:
 clean:
 	rm -f $(PROGRAM) *.o
 
+test:
+./$(PROGRAM) test
+
 # FIXME
 # Add a rule to run the program
 run:
