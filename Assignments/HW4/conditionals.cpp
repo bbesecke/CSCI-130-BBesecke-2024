@@ -13,9 +13,6 @@ Run on a loop until user chooses the option to quit.
 Run 3 tests for each function.
 
 At least one function must be templated to work on various types.
-Try to come up with corner cases (various data) to confirm the functions
-still provide the correct results.
-
 */
 
 #include <iostream>
@@ -27,18 +24,26 @@ still provide the correct results.
 using namespace std;
 
 // Use function prototypes//
+// Menu for user
 void printMenu(void);
-
+// Users choice of numebrs
 void getFiveNums(double &, double &, double &, double &, double &);
-
-double sum(double &, double &, double &, double &, double &);
+// Sum with templatefor multiple types
+template <class t1, class t2, class t3, class t4, class t5>
+t1 sum(t1 &, t2 &, t3 &, t4 &, t5 &);
+// Product
 double product(double &, double &, double &, double &, double &);
+// Average
 double avg(double &, double &, double &, double &, double &);
+// Largest number
 double lgst(double &, double &, double &, double &, double &);
+// Smallest number
 double smlst(double &, double &, double &, double &, double &);
+// Floor of the sum
 int flor(double &, double &, double &, double &, double &);
-
+// Test functions
 void test();
+// Clear screen when program is started
 void clearscreen();
 
 int main(int argc, char *argv[])
@@ -140,146 +145,145 @@ int main(int argc, char *argv[])
             }
             }
         }
-        
     }
     return 0;
 }
-    void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        cout << "Now enter 5 numbers seperated by a space: ";
+void getFiveNums(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    cout << "Now enter 5 numbers seperated by a space: ";
 
-        cin >> num1 >> num2 >> num3 >> num4 >> num5;
-    }
+    cin >> num1 >> num2 >> num3 >> num4 >> num5;
+}
+template <class t1, class t2, class t3, class t4, class t5>
+t1 sum(t1 &num1, t2 &num2, t3 &num3, t4 &num4, t5 &num5)
+{
+    return (num1 + num2 + num3 + num4 + num5);
+}
 
-    double sum(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        return (num1 + num2 + num3 + num4 + num5);
-    }
+double product(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    return (num1 * num2 * num3 * num4 * num5);
+}
 
-    double product(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        return (num1 * num2 * num3 * num4 * num5);
-    }
+double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double avg;
+    avg = (sum(num1, num2, num3, num4, num5) / 5);
+    return avg;
+}
 
-    double avg(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        double avg;
-        avg = (sum(num1, num2, num3, num4, num5) / 5);
-        return avg;
-    }
+double lgst(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double lgst1 = max(num1, num2);
+    double lgst2 = max(lgst1, num3);
+    double lgst3 = max(lgst2, num4);
+    double lgst4 = max(lgst3, num5);
+    return lgst4;
+}
 
-    double lgst(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        double lgst1 = max(num1, num2);
-        double lgst2 = max(lgst1, num3);
-        double lgst3 = max(lgst2, num4);
-        double lgst4 = max(lgst3, num5);
-        return lgst4;
-    }
+double smlst(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    double smlst1 = min(num1, num2);
+    double smlst2 = min(smlst1, num3);
+    double smlst3 = min(smlst2, num4);
+    double smlst4 = min(smlst3, num5);
+    return smlst4;
+}
 
-    double smlst(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        double smlst1 = min(num1, num2);
-        double smlst2 = min(smlst1, num3);
-        double smlst3 = min(smlst2, num4);
-        double smlst4 = min(smlst3, num5);
-        return smlst4;
-    }
+int flor(double &num1, double &num2, double &num3, double &num4, double &num5)
+{
+    int flor;
+    flor = floor(sum(num1, num2, num3, num4, num5));
+    return flor;
+}
 
-    int flor(double &num1, double &num2, double &num3, double &num4, double &num5)
-    {
-        int flor;
-        flor = floor(sum(num1, num2, num3, num4, num5));
-        return flor;
-    }
-    
-    void test()
+void test()
 
-    {
-        // Testing each function of the program//
-        double tnum1 = 1, tnum2 = 2, tnum3 = 3, tnum4 = 4, tnum5 = 5, tnum6 = 6, tnum7 = 7, tnum8 = 8;
-        // Sum function
-        double result1 = sum(tnum1, tnum2, tnum3, tnum4, tnum6);
-        double expected1 = 16;
-        assert(fabs(result1 - expected1) <= .001);
+{
+    // Testing each function of the program//
+    double tnum1 = 1, tnum2 = 2, tnum3 = 3, tnum4 = 4, tnum5 = 5, tnum6 = 6, tnum7 = 7, tnum8 = 8;
+    // Sum function
+    double result1 = sum(tnum1, tnum2, tnum3, tnum4, tnum6);
+    double expected1 = 16;
+    assert(fabs(result1 - expected1) <= .001);
 
-        double result2 = sum(tnum2, tnum4, tnum6, tnum8, tnum6);
-        double expected2 = 26;
-        assert(fabs(result2 - expected2) <= .001);
+    double result2 = sum(tnum2, tnum4, tnum6, tnum8, tnum6);
+    double expected2 = 26;
+    assert(fabs(result2 - expected2) <= .001);
 
-        double result3 = sum(tnum1, tnum3, tnum5, tnum7, tnum6);
-        double expected3 = 22;
-        assert(fabs(result3 - expected3) <= .001);
+    double result3 = sum(tnum1, tnum3, tnum5, tnum7, tnum6);
+    double expected3 = 22;
+    assert(fabs(result3 - expected3) <= .001);
 
-        // Product function
-        double result4 = product(tnum1, tnum2, tnum3, tnum4, tnum6);
-        double expected4 = 144;
-        assert(fabs(result4 - expected4) <= .001);
+    // Product function
+    double result4 = product(tnum1, tnum2, tnum3, tnum4, tnum6);
+    double expected4 = 144;
+    assert(fabs(result4 - expected4) <= .001);
 
-        double result5 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
-        double expected5 = 384;
-        assert(fabs(result5 - expected5) <= .001);
+    double result5 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
+    double expected5 = 384;
+    assert(fabs(result5 - expected5) <= .001);
 
-        double result6 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
-        double expected6 = 288;
-        assert(fabs(result6 - expected6) <= .001);
+    double result6 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
+    double expected6 = 288;
+    assert(fabs(result6 - expected6) <= .001);
 
-        // Average Function
-        double result7 = avg(tnum2, tnum2, tnum3, tnum4, tnum6);
-        double expected7 = 8.5;
-        assert(fabs(result7 - expected7) <= .001);
+    // Average Function
+    double result7 = avg(tnum2, tnum2, tnum3, tnum4, tnum6);
+    double expected7 = 8.5;
+    assert(fabs(result7 - expected7) <= .001);
 
-        double result8 = avg(tnum2, tnum1, tnum3, tnum4, tnum6);
-        double expected8 = 8;
-        assert(fabs(result8 - expected8) <= .001);
+    double result8 = avg(tnum2, tnum1, tnum3, tnum4, tnum6);
+    double expected8 = 8;
+    assert(fabs(result8 - expected8) <= .001);
 
-        double result9 = avg(tnum5, tnum3, tnum5, tnum7, tnum6);
-        double expected9 = 13;
-        assert(fabs(result9 - expected9) <= .001);
+    double result9 = avg(tnum5, tnum3, tnum5, tnum7, tnum6);
+    double expected9 = 13;
+    assert(fabs(result9 - expected9) <= .001);
 
-        // Largest function
-        double result0 = lgst(tnum5, tnum3, tnum4, tnum7, tnum6);
-        double expected0 = 7;
-        assert(fabs(result0 - expected0) <= .001);
+    // Largest function
+    double result0 = lgst(tnum5, tnum3, tnum4, tnum7, tnum6);
+    double expected0 = 7;
+    assert(fabs(result0 - expected0) <= .001);
 
-        double result11 = lgst(tnum1, tnum5, tnum2, tnum4, tnum8);
-        double expected11 = 8;
-        assert(fabs(result11 - expected11) <= .001);
+    double result11 = lgst(tnum1, tnum5, tnum2, tnum4, tnum8);
+    double expected11 = 8;
+    assert(fabs(result11 - expected11) <= .001);
 
-        double result12 = lgst(tnum5, tnum3, tnum1, tnum2, tnum4);
-        double expected12 = 5;
-        assert(fabs(result12 - expected12) <= .001);
+    double result12 = lgst(tnum5, tnum3, tnum1, tnum2, tnum4);
+    double expected12 = 5;
+    assert(fabs(result12 - expected12) <= .001);
 
-        // Smallest function
-        double result13 = smlst(tnum5, tnum3, tnum1, tnum2, tnum4);
-        double expected13 = 1;
-        assert(fabs(result13 - expected13) <= .001);
+    // Smallest function
+    double result13 = smlst(tnum5, tnum3, tnum1, tnum2, tnum4);
+    double expected13 = 1;
+    assert(fabs(result13 - expected13) <= .001);
 
-        double result14 = smlst(tnum5, tnum3, tnum7, tnum2, tnum4);
-        double expected14 = 2;
-        assert(fabs(result14 - expected14) <= .001);
+    double result14 = smlst(tnum5, tnum3, tnum7, tnum2, tnum4);
+    double expected14 = 2;
+    assert(fabs(result14 - expected14) <= .001);
 
-        double result15 = smlst(tnum5, tnum3, tnum7, tnum6, tnum4);
-        double expected15 = 3;
-        assert(fabs(result15 - expected15) <= .001);
+    double result15 = smlst(tnum5, tnum3, tnum7, tnum6, tnum4);
+    double expected15 = 3;
+    assert(fabs(result15 - expected15) <= .001);
 
-        // Foor function
-        double result16 = flor(tnum5, tnum3, tnum1, tnum2, tnum4);
-        double expected16 = 15;
-        assert(fabs(result16 - expected16) <= .001);
+    // Foor function
+    double result16 = flor(tnum5, tnum3, tnum1, tnum2, tnum4);
+    double expected16 = 15;
+    assert(fabs(result16 - expected16) <= .001);
 
-        double result17 = flor(tnum5, tnum5, tnum2, tnum2, tnum4);
-        double expected17 = 18;
-        assert(fabs(result17 - expected17) <= .001);
+    double result17 = flor(tnum5, tnum5, tnum2, tnum2, tnum4);
+    double expected17 = 18;
+    assert(fabs(result17 - expected17) <= .001);
 
-        double result18 = flor(tnum2, tnum2, tnum3, tnum8, tnum7);
-        double expected18 = 22;
-        assert(fabs(result18 - expected18) <= .001);
+    double result18 = flor(tnum2, tnum2, tnum3, tnum8, tnum7);
+    double expected18 = 22;
+    assert(fabs(result18 - expected18) <= .001);
 
-        cout << " Test functions passed" << endl;
-    }
+    cout << " Test functions passed" << endl;
+}
 
-    void clearscreen()
-    {
-        system("clear");
-    }
+void clearscreen()
+{
+    system("clear");
+}
