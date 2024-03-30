@@ -28,7 +28,7 @@ using namespace std;
 void printMenu(void);
 // Users choice of numebrs
 void getFiveNums(double &, double &, double &, double &, double &);
-// Sum with templatefor multiple types
+// Sum with template for multiple types
 template <class t1, class t2, class t3, class t4, class t5>
 t1 sum(t1 &, t2 &, t3 &, t4 &, t5 &);
 // Product
@@ -71,8 +71,11 @@ int main(int argc, char *argv[])
             double num1, num2, num3, num4, num5;
             getFiveNums(num1, num2, num3, num4, num5);
 
-            // user chooses action to perform//
-            cout << "Hello " << name << ", choose an option from the menu:\n";
+            //Loop uses 5 new numbers entered
+            while (keepRunning)
+
+                // user chooses action to perform//
+                cout << "Hello " << name << ", choose an option from the menu:\n";
 
             cout << "   Menu\n";
             cout << "[1] Sum of the 5 numbers\n";
