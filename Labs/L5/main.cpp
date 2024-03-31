@@ -1,8 +1,8 @@
 /*
     Loops Lab
-    Updated By: FIXME1
-    CSCI 111
-    Date: FIXME2
+    Updated By:Burton Besecke   
+    CSCI 130
+    Date: 30 Mar 2024
 
     Program prints geometric shapes of given height with * using loops
 */
@@ -14,7 +14,8 @@
 using namespace std;
 
 
-void printTriangle(int height) {
+void printTriangle(int height)
+ {
     //Function takes height as an argument to print the triangle
     //of that height with *
     int row = 1;
@@ -29,7 +30,8 @@ void printTriangle(int height) {
 }
 
 
-void printFlippedTriangle(int height) {
+void printFlippedTriangle(int height) 
+{
     /* 
     Implement the function that takes height as an argument
     and prints a triangle with * of given height.
@@ -61,16 +63,20 @@ Square of height 5, e.g., would look like the following.
 
 // function clears the screen system call
 // NOTE: system call is not a security best pracice!
-void clearScreen() {
-    // use "cls" in windows and "clear" command in Mac and Linux
+void clearScreen() 
+{
+    // use "cls" in windows
     #ifdef _WIN32
         system("clS");
-    #else
-        system("clear");
     #endif
+   
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) 
+
+ {
+    bool keepRunning = true;
+     while (keepRunning)
     // FIXME5 add a loop to make the program to continue to run until the user wants to quit
     // FIXME6 call clearScreen function to clear the screen for each round of the loop
     int height;
@@ -94,5 +100,8 @@ int main(int argc, char* argv[]) {
     // FIXME10
     // Use conditional statements to break the loop or continue the loop
 
+{
+    keepRunning = false;
+}
     return 0;
 }
