@@ -46,7 +46,7 @@ void test();
 // Clear screen when program is started
 void clearscreen();
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 
 {
     if (argc == 2 && string(argv[1]) == "test")
