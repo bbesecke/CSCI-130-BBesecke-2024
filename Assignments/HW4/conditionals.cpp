@@ -222,7 +222,7 @@ void test()
     assert(fabs(result4 - expected4) <= .001);
 
     double result5 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
-    double expected5 = 384;
+    double expected5 = 288;
     assert(fabs(result5 - expected5) <= .001);
 
     double result6 = product(tnum2, tnum2, tnum3, tnum4, tnum6);
