@@ -231,15 +231,15 @@ void test()
 
     // Average Function
     double result7 = avg(tnum2, tnum2, tnum3, tnum4, tnum6);
-    double expected7 = 8.5;
+    double expected7 = 3.4;
     assert(fabs(result7 - expected7) <= .001);
 
     double result8 = avg(tnum2, tnum1, tnum3, tnum4, tnum6);
-    double expected8 = 8;
+    double expected8 = 3.2;
     assert(fabs(result8 - expected8) <= .001);
 
     double result9 = avg(tnum5, tnum3, tnum5, tnum7, tnum6);
-    double expected9 = 13;
+    double expected9 = 5.2;
     assert(fabs(result9 - expected9) <= .001);
 
     // Largest function
