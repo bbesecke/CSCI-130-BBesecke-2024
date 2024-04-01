@@ -76,3 +76,15 @@ Status: Working version 15 Mar
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L4
 Self Grade: 100/100
 Notes: Got it working
+
+# CSCI-130-BBesecke-2024
+Homework 4
+Name: Burton Besecke
+Name: Conditionals/HW4
+Description: Use functions to make a calculator that gives various results of 5 numbers
+Due Date:Not sure
+Status: Working version 30 Mar
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW3
+Self Grade: 95/100
+Notes: It works, just not quite how I wanted it to. I was running behind,
+so it's good enough for govenrment work. 
