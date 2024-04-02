@@ -28,8 +28,8 @@ int main(int argc, char *argv[])
 {
    bool keeprunning= true;
    while(keeprunning)
-
- printTriangle();
+int height;
+ printTriangle(height);
 
    return 0;
 }
