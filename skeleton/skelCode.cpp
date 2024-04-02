@@ -9,13 +9,27 @@ Class: CSCI 130-002
 
 using namespace std;
 
-int main()
+void printTriangle(int height)
+{
+    
+    int row = 1;
+
+    while (row <= height)
+    {
+        
+        for (int col = 1; col <= row; col++)
+            cout << "* ";
+        row += 1;
+        cout << endl;
+    }
+}
+int main(int argc, char *argv[])
 
 {
-   for (int hgt = 1; hgt <= col; hgt++)
-            cout << "* ";
-        col += 1;
-        cout << endl;
+   bool keeprunning= true;
+   while(keeprunning)
+
+ printTriangle();
 
    return 0;
 }
