@@ -88,3 +88,14 @@ Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignmen
 Self Grade: 95/100
 Notes: It works, just not quite how I wanted it to. I was running behind,
 so it's good enough for govenrment work. 
+
+# CSCI-130-BBesecke-2024
+Lab 5
+Name: Burton Besecke
+Name: L5/Loops
+Description: Make loops for shapes
+Due Date: 03 Apr
+Status: Working version 03 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L5
+Self Grade: 100/100
+Notes: Got it working, it took Owens help, but it works
