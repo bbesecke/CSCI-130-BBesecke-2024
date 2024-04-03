@@ -43,6 +43,7 @@ void printTriangle(int height)
 // FIXME3 ... FIXED
 void printFlippedTriangle(int height)
 {
+    cout << endl;
     int row = height;
     while (row >= 0)
     {
@@ -53,39 +54,46 @@ void printFlippedTriangle(int height)
         cout << endl;
     }
 }
-    /*
-    FIXME4
-    Design and implement a function that takes an integer as height and
-    prints square of the given height with *.
-    Square of height 5, e.g., would look like the following.
+/*
+FIXME4 FIXED
+Design and implement a function that takes an integer as height and
+prints square of the given height with *.
+Square of height 5, e.g., would look like the following.
 
-    *  *  *  *  *
-    *  *  *  *  *
-    *  *  *  *  *
-    *  *  *  *  *
-    *  *  *  *  *
+*  *  *  *  *
+*  *  *  *  *
+*  *  *  *  *
+*  *  *  *  *
+*  *  *  *  *
 
-    */
-    void printSquare(int height)
+*/
+void printSquare(int height)
+{
+    int row = 1;
+    while (row <= height)
     {
-       for(int  )
-       {
-
-       }
+        // column
+        for (int col = 1; col <= height; col++)
+            cout << "* ";
+        row += 1;
+        cout << endl;
     }
-    // function clears the screen system call
-    // NOTE: system call is not a security best pracice!
-    void clearScreen()
-    {
+}
+// function clears the screen system call
+// NOTE: system call is not a security best pracice!
+void clearScreen()
+{
 // use "cls" in windows and "clear" command in Mac and Linux
 #ifdef _WIN32
-        system("clS");
+    system("clS");
 #else
-        system("clear");
+    system("clear");
 #endif
-    }
+}
 
-    int main(int argc, char *argv[])
+int main(int argc, char *argv[])
+{
+    for (int x = 0; x < 1;)
     {
         // FIXME5 add a loop to make the program to continue to run until the user wants to quit
         // FIXME6 call clearScreen function to clear the screen for each round of the loop
@@ -107,11 +115,24 @@ void printFlippedTriangle(int height)
 
         printSquare(height);
 
-        // FIXME9
+        // FIXME9 FIXED
         // prompt user to enter y/Y to continue anything else to quit
+        char quit, y1, y2;
+        cout << "To quit, enter Y or y:" << endl;
+        cin >> quit;
 
         // FIXME10
         // Use conditional statements to break the loop or continue the loop
-
-        return 0;
+        if (quit == y1 || quit == y2)
+        {
+            cout << "Press enter:";
+            cin.get();
+            getchar();
+        }
+        else
+        {
+            x++;
+        }
     }
+    return 0;
+}
