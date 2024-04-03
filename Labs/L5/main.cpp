@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
         char quit, y1, y2;
         y1 = 'Y';
         y2 = 'y';
-        cout << "To continue, enter Y or y, to quit, press the any key, then enter:" << endl;
+        cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
         cin >> quit;
 
         // FIXME10 FIXED
