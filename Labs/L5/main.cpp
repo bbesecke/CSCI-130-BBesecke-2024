@@ -95,8 +95,8 @@ int main(int argc, char *argv[])
 {
     for (int x = 0; x < 1;)
     {
-        // FIXME5 add a loop to make the program to continue to run until the user wants to quit
-        // FIXME6 call clearScreen function to clear the screen for each round of the loop
+        // FIXME5 add a loop to make the program to continue to run until the user wants to quit FIXED
+        // FIXME6 call clearScreen function to clear the screen for each round of the loop FIXED
         int height;
         cout << "Program prints geometric shapes of given height with *\n";
         cout << "Please enter the height of the shape: ";
@@ -118,14 +118,16 @@ int main(int argc, char *argv[])
         // FIXME9 FIXED
         // prompt user to enter y/Y to continue anything else to quit
         char quit, y1, y2;
-        cout << "To quit, enter Y or y:" << endl;
+        y1 = 'Y';
+        y2 = 'y';
+        cout << "To continue, enter Y or y, to quit, press the any key, then enter:" << endl;
         cin >> quit;
 
-        // FIXME10
+        // FIXME10 FIXED
         // Use conditional statements to break the loop or continue the loop
         if (quit == y1 || quit == y2)
         {
-            cout << "Press enter:";
+            cout << "Press enter to continue:";
             cin.get();
             getchar();
         }
