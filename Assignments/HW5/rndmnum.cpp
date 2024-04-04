@@ -54,14 +54,16 @@ c. Do NOT use global variables!
 #include <cassert>
 
 using namespace std;
- int rndmNum();
+int rndmNum();
 int main()
 
 {
   int num1 = rndmNum();
+  cout << endl;
 
   return 0;
 }
+
 // 2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
@@ -69,4 +71,3 @@ int rndmNum()
   srand(time(nullptr));
   return (rand() % 20) + 1;
 }
-
