@@ -1,13 +1,13 @@
 /* Name: Burton Besecke 03 April 2024
 Class: CSCI 130-002
-HW5 
+HW5
 
 
-3. Define a function called readNumber that prompts the user to take a guess and returnthe guessed number. 
+3. Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
    You must validate the guessed number to be between 1 and 20.
 
 4. Define a function called checkGuess that takes two integers compares the two numbers
-and returns the following result: 
+and returns the following result:
 a. returns 0 if the numbers are equal
 b. returns -1 if the first number is less than second
 c. returns 2 otherwise
@@ -32,7 +32,7 @@ high or too low by calling checkGuess function.
 game and reveal the secret random number picked by the computer, especially if they
 lose.
 
-8. Your game will continue to run until the user wants to quit when the game is over. 
+8. Your game will continue to run until the user wants to quit when the game is over.
 
 9. Bonus: When the user quits the program/game, your program provides the
 following stats of the player:
@@ -55,18 +55,29 @@ using namespace std;
 int main(int argc, char *argv[])
 
 {
-  //1. Your program will ask the player's name and greet the player.
- string name;
- cout << "What is your name? ";
- cin >> name;
- cout << "Welcome "<< name <<", do you wnat to play a game?" << endl;
- cout << endl;
- cout << "Just kidding, there is only one game to play here."<< endl;
- 
-   return 0;
+  // 1. Your program will ask the player's name and greet the player.
+  string name;
+  int num1;
+  cout << "What is your name? ";
+  cin >> name;
+  cout << "Welcome " << name << ", do you wnat to play a game?" << endl;
+  cout << endl;
+  cout << "Just kidding, there is only one game to play here.\n"
+          "Pick an integer ( whole number) between 1 and 20 that has been randomly generated:"
+       << endl;
+  cin >> num1;
+  if (num1 == rndmNum)
+  {
+    cout << "You guessed " << num1 << " which is the right number!"<< endl;
+  }
+else
+{
+  cout << "Wrong! " << num1 << " is not correct try again:";
 }
-//2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
-double rndmNum(double &num1)
+  return 0;
+}
+// 2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
+/*int rndmNum(int &num1)
 {
   srand(num1);
-}
+}*/
