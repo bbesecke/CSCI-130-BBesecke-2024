@@ -47,37 +47,26 @@ c. Do NOT use global variables!
 */
 
 #include <iostream>
-#include <iomanip>
+#include <random>
 #include <string>
+#include <cstdlib>
+#include <ctime>
+#include <cassert>
 
 using namespace std;
-
-int main(int argc, char *argv[])
+ int rndmNum();
+int main()
 
 {
-  // 1. Your program will ask the player's name and greet the player.
-  string name;
-  int num1;
-  cout << "What is your name? ";
-  cin >> name;
-  cout << "Welcome " << name << ", do you wnat to play a game?" << endl;
-  cout << endl;
-  cout << "Just kidding, there is only one game to play here.\n"
-          "Pick an integer ( whole number) between 1 and 20 that has been randomly generated:"
-       << endl;
-  cin >> num1;
-  if (num1 == rndmNum)
-  {
-    cout << "You guessed " << num1 << " which is the right number!"<< endl;
-  }
-else
-{
-  cout << "Wrong! " << num1 << " is not correct try again:";
-}
+  int num1 = rndmNum();
+
   return 0;
 }
 // 2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
-/*int rndmNum(int &num1)
+int rndmNum()
 {
-  srand(num1);
-}*/
+  // chatgpt used for reference
+  srand(time(nullptr));
+  return (rand() % 20) + 1;
+}
+
