@@ -4,7 +4,8 @@
         "iomanip": "cpp",
         "output": "c",
         "typeinfo": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

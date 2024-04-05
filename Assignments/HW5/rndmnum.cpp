@@ -57,29 +57,43 @@ using namespace std;
 int rndmNum();
 int main()
 {
-  //{
-    int num2;
-    string name;
-    cout << "What is your name? " << endl;
-    cin >> name;
-    cout << "Hello " << name << ", would you like to play a game?\n"
-    "Just kidding, there is only one game." << endl;
-    cout << "Choose an integer between 1 and 20: ";
-    cin >> num2;
-  /*}
-  if (num2 == num1)
-  {
-    int num2;
-    cout << num2 << " was an excellent choice as it was the correct one.";
-  }
-  else
-  {
-    int num2;
-    cout << num2 << " was a terrible choice because it is incorrect";
-  }*/
 
+  int num2;
+  string name;
   int num1 = rndmNum();
-  cout << num1;
+  cout << "What is your name? " << endl;
+  cin >> name;
+  cout << "Hello " << name << ", would you like to play a game?\n"
+
+  "Just kidding, there is only one game." << endl;
+
+  for (size_t i = 0; i < 5; i++)
+  {
+
+    for (size_t i2 = 0; i2 < 1;)
+    {
+      cout << "Choose an integer between 1 and 20: ";
+      cin >> num2;
+      if (num2 > 0 && num2 < 21)
+      {
+        i2++;
+      }
+      else
+      {
+        cout << "That isn't a valid choice, do it again and do it right!" << endl;
+      }
+    }
+    if (num1 == num2)
+    {
+      cout << num2 << " is an excellent choice as it was the correct one." << endl;
+    }
+    else
+    {
+      cout << num2 << " is a terrible choice because it is incorrect" << endl;
+    }
+  }
+
+  // cout << num1;//
   cout << endl;
 
   return 0;
