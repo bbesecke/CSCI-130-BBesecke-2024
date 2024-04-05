@@ -103,20 +103,21 @@ int readnum(int num2)
 }
 int validate(int num1, int num2)
 {
-  if (num1 == num2)
+  if (gsschk(num1, num2) == 0)
   {
     cout << "0 which means you guessed correctly." << endl;
   }
-  else
+  if (gsschk(num1, num2) == -1)
   {
-    cout << num2 << " is a terrible choice because it is incorrect" << endl;
+    cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
+  }
+  if (gsschk(num1, num2) == 2)
+  {
+    cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
   }
   return 0;
 }
 int gsschk(int num1, int num2)
-{
-  return 0; 
-}
 {
   if (num1 < num2)
   {
@@ -126,6 +127,7 @@ int gsschk(int num1, int num2)
   {
     return 2;
   }
+  return 0;
 }
 /*4. Define a function called checkGuess that takes two integers compares the two numbers
 and returns the following result:
