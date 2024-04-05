@@ -16,11 +16,6 @@ following stats of the player:
 a. number of times played
 b. percentage of times won
 c. percentage of times lost
-
-10. Follow the best programming practices:
-a. Write adequate comments
-b. Properly format source codes with adequate white spaces
-c. Do NOT use global variables!
 */
 
 #include <iostream>
@@ -36,31 +31,43 @@ int validate(int, int);
 int getnum(int);
 int rndmNum();
 int gsschk(int, int);
+void test();
+void clearscreen();
 
 int main()
 {
-  int num2;
-  string name;
-  int num1 = rndmNum();
-  cout << "What is your name? " << endl;
-  cin >> name;
-  cout << "Hello " << name << ", would you like to play a game?\n"
-       << endl;
-  // If the player guesses the number within six tries, the game is over and the player wins.
-  // If the player can't guess the number within six tries, the game is over and the player loses.
-  for (size_t i = 0; i < 5; i++)
+  if (argc == 2 && string(argv[1]) == "test")
   {
-    num2 = readnum(num2);
-
-    validate(num1, num2);
+    test();
+    exit(EXIT_SUCCESS);
   }
+  else
+  {
+    bool keepRunning = true;
+    clearscreen();
+    while (keepRunning)
+      int num2;
+    string name;
+    int num1 = rndmNum();
+    cout << "What is your name? " << endl;
+    cin >> name;
+    cout << "Hello " << name << ", would you like to play a game?\n"
+         << endl;
+    // If the player guesses the number within six tries, the game is over and the player wins.
+    // If the player can't guess the number within six tries, the game is over and the player loses.
+    for (size_t i = 0; i < 5; i++)
+    {
+      num2 = readnum(num2);
 
-  cout << num1;
-  cout << endl;
+      validate(num1, num2);
+    }
 
-  return 0;
+    cout << num1;
+    cout << endl;
+
+    return 0;
+  }
 }
-
 // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
@@ -68,14 +75,15 @@ int rndmNum()
   srand(time(nullptr));
   return (rand() % 20) + 1;
 }
-// Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
-// You must validate the guessed number to be between 1 and 20.
+/* Define a function called readNumber that prompts the user to take a guess between 1 and 20,
+ and returns the guessed number.*/
 int readnum(int num2)
 {
   for (size_t i2 = 0; i2 < 1;)
   {
     cout << "Choose an integer between 1 and 20: ";
     cin >> num2;
+    // You must validate the guessed number to be between 1 and 20.
     if (num2 > 0 && num2 < 21)
     {
       i2++;
@@ -87,9 +95,7 @@ int readnum(int num2)
   }
   return num2;
 }
-/*Define a function called readNumber that prompts the user to take a guess and returns the guessed number.
-You must validate the guessed number to be between 1 and 20.
-For every wrong guess, your program informs the player whether the guess is too
+/*For every wrong guess, your program informs the player whether the guess is too
 high or too low by calling checkGuess function.*/
 int validate(int num1, int num2)
 {
@@ -117,10 +123,32 @@ int gsschk(int num1, int num2)
     return -1;
   }
   // returns 2 otherwise
-  else if (num1 < num2)
+  else if (num1 > num2)
   {
     return 2;
   }
   // returns 0 if the numbers are equal
   return 0;
+}
+void test()
+{
+  // Testing the gsschk function//
+  int tnum1 = 2, tnum2 = 8 int result1 = gsschk(tnum1, tnum2);
+  int expected1 = 2;
+  assert(fabs(result1 - expected1) <= .001);
+
+  int tnum1 = 8, tnum2 = 1 int result1 = gsschk(tnum1, tnum2);
+  int expected1 = 2;
+  assert(fabs(result1 - expected1) <= .001);
+  
+  int tnum1 = 2, tnum2 = 8 int result1 = gsschk(tnum1, tnum2);
+  int expected1 = 2;
+  assert(fabs(result1 - expected1) <= .001);
+  
+ cout << " Test functions passed" << endl;
+}
+
+void clearscreen()
+{
+    system("clear");
 }
