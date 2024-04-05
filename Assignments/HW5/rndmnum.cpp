@@ -6,12 +6,6 @@ HW5
 3. Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
    You must validate the guessed number to be between 1 and 20.
 
-4. Define a function called checkGuess that takes two integers compares the two numbers
-and returns the following result:
-a. returns 0 if the numbers are equal
-b. returns -1 if the first number is less than second
-c. returns 2 otherwise
-
 5. Write 3 test cases for checkGuess function using assert statement.
 
 6. Define a function called game that implements the logic of the guess the number game.
@@ -52,8 +46,10 @@ c. Do NOT use global variables!
 #include <cstdlib>
 #include <ctime>
 #include <cassert>
-
 using namespace std;
+int readnum(int);
+int validate(int, int);
+int getnum(int);
 int rndmNum();
 int main()
 {
@@ -64,45 +60,75 @@ int main()
   cout << "What is your name? " << endl;
   cin >> name;
   cout << "Hello " << name << ", would you like to play a game?\n"
-
-  "Just kidding, there is only one game." << endl;
+       << endl;
 
   for (size_t i = 0; i < 5; i++)
   {
+    num2 = readnum(num2);
 
-    for (size_t i2 = 0; i2 < 1;)
-    {
-      cout << "Choose an integer between 1 and 20: ";
-      cin >> num2;
-      if (num2 > 0 && num2 < 21)
-      {
-        i2++;
-      }
-      else
-      {
-        cout << "That isn't a valid choice, do it again and do it right!" << endl;
-      }
-    }
-    if (num1 == num2)
-    {
-      cout << num2 << " is an excellent choice as it was the correct one." << endl;
-    }
-    else
-    {
-      cout << num2 << " is a terrible choice because it is incorrect" << endl;
-    }
+    validate(num1, num2);
   }
 
-  // cout << num1;//
+  cout << num1;
   cout << endl;
 
   return 0;
 }
 
-// 2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
+// Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
   // chatgpt used for reference
   srand(time(nullptr));
   return (rand() % 20) + 1;
 }
+// Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
+// You must validate the guessed number to be between 1 and 20.
+int readnum(int num2)
+{
+  for (size_t i2 = 0; i2 < 1;)
+  {
+    cout << "Choose an integer between 1 and 20: ";
+    cin >> num2;
+    if (num2 > 0 && num2 < 21)
+    {
+      i2++;
+    }
+    else
+    {
+      cout << "That isn't a valid choice, do it again and do it right!" << endl;
+    }
+  }
+  return num2;
+}
+int validate(int num1, int num2)
+{
+  if (num1 == num2)
+  {
+    cout << "0 which means you guessed correctly." << endl;
+  }
+  else
+  {
+    cout << num2 << " is a terrible choice because it is incorrect" << endl;
+  }
+  return 0;
+}
+int gsschk(int num1, int num2)
+{
+  return 0; 
+}
+{
+  if (num1 < num2)
+  {
+    return -1;
+  }
+  if (num1 < num2)
+  {
+    return 2;
+  }
+}
+/*4. Define a function called checkGuess that takes two integers compares the two numbers
+and returns the following result:
+a. returns 0 if the numbers are equal
+b. returns -1 if the first number is less than second
+c. returns 2 otherwise*/
