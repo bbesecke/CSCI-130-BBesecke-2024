@@ -36,71 +36,91 @@ void clearscreen();
 
 int main()
 {
-  clearscreen();
-
-  int num2;
-  string name;
-  int num1 = rndmNum();
-  cout << "What is your name? " << endl;
-  cin >> name;
-  cout << "Hello " << name << ", would you like to play a game?\n"
-       << endl;
-  // If the player guesses the number within six tries, the game is over and the player wins.
-  // If the player can't guess the number within six tries, the game is over and the player loses.
-  for (size_t i = 0; i < 5; i++)
+  for (int x = 0; x < 1;)
   {
-    num2 = readnum(num2);
+    clearscreen();
 
-    validate(num1, num2);
-  }
-
-  cout << num1;
-  cout << endl;
-
-  return 0;
-}
-// Define a function called randomNumber that generates and returns a random number between 1 and 20.
-int rndmNum()
-{
-  // chatgpt used for reference
-  srand(time(nullptr));
-  return (rand() % 20) + 1;
-}
-/* Define a function called readNumber that prompts the user to take a guess between 1 and 20,
- and returns the guessed number.*/
-int readnum(int num2)
-{
-  for (size_t i2 = 0; i2 < 1;)
-  {
-    cout << "Choose an integer between 1 and 20: ";
-    cin >> num2;
-    // You must validate the guessed number to be between 1 and 20.
-    if (num2 > 0 && num2 < 21)
+    int num2;
+    string name;
+    int num1 = rndmNum();
+    cout << "What is your name? " << endl;
+    cin >> name;
+    cout << "Hello " << name << ", would you like to play a game?\n"
+         << endl;
+    // If the player guesses the number within six tries, the game is over and the player wins.
+    // If the player can't guess the number within six tries, the game is over and the player loses.
+    for (size_t i = 0; i < 5; i++)
     {
-      i2++;
+      num2 = readnum(num2);
+
+      validate(num1, num2);
+    }
+
+    cout << num1;
+    cout << endl;
+
+    return 0;
+  }
+  // Define a function called randomNumber that generates and returns a random number between 1 and 20.
+  int rndmNum()
+  {
+    // chatgpt used for reference
+    srand(time(nullptr));
+    return (rand() % 20) + 1;
+  }
+  /* Define a function called readNumber that prompts the user to take a guess between 1 and 20,
+   and returns the guessed number.*/
+  int readnum(int num2)
+  {
+    for (size_t i2 = 0; i2 < 1;)
+    {
+      cout << "Choose an integer between 1 and 20: ";
+      cin >> num2;
+      // You must validate the guessed number to be between 1 and 20.
+      if (num2 > 0 && num2 < 21)
+      {
+        i2++;
+      }
+      else
+      {
+        cout << "That isn't a valid choice, do it again and do it right!" << endl;
+      }
+    }
+    return num2;
+  }
+  /*For every wrong guess, your program informs the player whether the guess is too
+  high or too low by calling checkGuess function.*/
+  int validate(int num1, int num2)
+  {
+    if (gsschk(num1, num2) == -1)
+    {
+      cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
+    }
+    else if (gsschk(num1, num2) == 2)
+    {
+      cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
+    }
+    else if (gsschk(num1, num2) == 0)
+    {
+      cout << num2 << " is correct, you figured it out." << endl;
+    }
+    // prompt user to enter y/Y
+    char quit, y1, y2;
+    y1 = 'Y';
+    y2 = 'y';
+    cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
+    cin >> quit;
+
+    if (quit == y1 || quit == y2)
+    {
+      cout << "Press enter to continue:";
+      cin.get();
+      getchar();
     }
     else
     {
-      cout << "That isn't a valid choice, do it again and do it right!" << endl;
+      x++;
     }
-  }
-  return num2;
-}
-/*For every wrong guess, your program informs the player whether the guess is too
-high or too low by calling checkGuess function.*/
-int validate(int num1, int num2)
-{
-  if (gsschk(num1, num2) == -1)
-  {
-    cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
-  }
-  else if (gsschk(num1, num2) == 2)
-  {
-    cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
-  }
-  else if (gsschk(num1, num2) == 0)
-  {
-    cout << num2 << " is correct, you figured it out." << endl;
   }
   return 0;
 }
