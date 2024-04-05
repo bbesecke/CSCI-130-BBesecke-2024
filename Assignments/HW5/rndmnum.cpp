@@ -3,24 +3,7 @@ Class: CSCI 130-002
 HW5
 
 
-3. Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
-   You must validate the guessed number to be between 1 and 20.
-
 5. Write 3 test cases for checkGuess function using assert statement.
-
-6. Define a function called game that implements the logic of the guess the number game.
-a. Call the randomNumber function defined above to generate a random number
-for the user to guess for each game.
-b. Until the game is over, your program will ask the player to guess the number
-using the readNumber function defined above.
-c. Use the function defined above called checkGuess to compare the user entered
-number with the hidden random number.
-d. If the player guesses the number within six tries, the game is over and the player
-wins.
-e. If the player can't guess the number within six tries, the game is over and the
-player loses.
-f. For every wrong guess, your program informs the player whether the guess is too
-high or too low by calling checkGuess function.
 
 7. When the game is over, your program will inform whether the player won or lost the
 game and reveal the secret random number picked by the computer, especially if they
@@ -47,13 +30,15 @@ c. Do NOT use global variables!
 #include <ctime>
 #include <cassert>
 using namespace std;
+
 int readnum(int);
 int validate(int, int);
 int getnum(int);
 int rndmNum();
+int gsschk(int, int);
+
 int main()
 {
-
   int num2;
   string name;
   int num1 = rndmNum();
@@ -61,7 +46,8 @@ int main()
   cin >> name;
   cout << "Hello " << name << ", would you like to play a game?\n"
        << endl;
-
+  // If the player guesses the number within six tries, the game is over and the player wins.
+  // If the player can't guess the number within six tries, the game is over and the player loses.
   for (size_t i = 0; i < 5; i++)
   {
     num2 = readnum(num2);
@@ -101,36 +87,40 @@ int readnum(int num2)
   }
   return num2;
 }
+/*Define a function called readNumber that prompts the user to take a guess and returns the guessed number.
+You must validate the guessed number to be between 1 and 20.
+For every wrong guess, your program informs the player whether the guess is too
+high or too low by calling checkGuess function.*/
 int validate(int num1, int num2)
 {
-  if (gsschk(num1, num2) == 0)
-  {
-    cout << "0 which means you guessed correctly." << endl;
-  }
   if (gsschk(num1, num2) == -1)
-  {
-    cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
-  }
-  if (gsschk(num1, num2) == 2)
   {
     cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
   }
+  else if (gsschk(num1, num2) == 2)
+  {
+    cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
+  }
+  else if (gsschk(num1, num2) == 0)
+  {
+    cout << num2 << " is correct, you figured it out." << endl;
+  }
   return 0;
 }
+/*Define a function called checkGuess that takes two integers compares the two numbers
+and returns the following result:*/
 int gsschk(int num1, int num2)
 {
+  // returns -1 if the first number is less than second
   if (num1 < num2)
   {
     return -1;
   }
-  if (num1 < num2)
+  // returns 2 otherwise
+  else if (num1 < num2)
   {
     return 2;
   }
+  // returns 0 if the numbers are equal
   return 0;
 }
-/*4. Define a function called checkGuess that takes two integers compares the two numbers
-and returns the following result:
-a. returns 0 if the numbers are equal
-b. returns -1 if the first number is less than second
-c. returns 2 otherwise*/
