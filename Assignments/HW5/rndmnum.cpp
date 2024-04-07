@@ -36,29 +36,44 @@ void clearscreen();
 
 int main()
 {
-  for (int x = 0; x < 1;)
-  {
-    clearscreen();
+  clearscreen();
 
-    int num2;
-    string name;
-    int num1 = rndmNum();
-    cout << "What is your name? " << endl;
-    cin >> name;
-    cout << "Hello " << name << ", would you like to play a game?\n"
-         << endl;
-    // If the player guesses the number within six tries, the game is over and the player wins.
-    // If the player can't guess the number within six tries, the game is over and the player loses.
-    for (size_t i = 0; i < 5; i++)
+  int num2;
+  string name;
+  int num1 = rndmNum();
+  cout << "What is your name? " << endl;
+  cin >> name;
+  cout << "Hello " << name << ", would you like to play a game?\n"
+       << endl;
+  // If the player guesses the number within six tries, the game is over and the player wins.
+  // If the player can't guess the number within six tries, the game is over and the player loses.
+  // for (size_t i = 0; i < 6; i++)
+  while (keeprunning)
+  {
+    num1 = rndmNum();
+    bool won = false;
+    int i = 0;
+    while (i < 6 && won == false)
     {
       num2 = readnum(num2);
 
       validate(num1, num2);
-    }
 
+      cout << endl;
+
+      i++;
+    }
+    if (keeprunning == won)
+    {
     cout << num1;
     cout << endl;
-
+    prompt user to enter y/Y
+    char quit, y1, y2;
+    y1 = 'Y';
+    y2 = 'y';
+    cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
+    cin >> quit;
+    }
     return 0;
   }
   // Define a function called randomNumber that generates and returns a random number between 1 and 20.
@@ -90,7 +105,7 @@ int main()
   }
   /*For every wrong guess, your program informs the player whether the guess is too
   high or too low by calling checkGuess function.*/
-  int validate(int num1, int num2)
+  int validate(int num1, int num2,bool & won)
   {
     if (gsschk(num1, num2) == -1)
     {
@@ -102,65 +117,50 @@ int main()
     }
     else if (gsschk(num1, num2) == 0)
     {
-      cout << num2 << " is correct, you figured it out." << endl;
+      cout << num2 << " is correct, you figured it out. You won!!" << endl;
+      won = true;
     }
-    // prompt user to enter y/Y
-    char quit, y1, y2;
-    y1 = 'Y';
-    y2 = 'y';
-    cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
-    cin >> quit;
+    
 
-    if (quit == y1 || quit == y2)
-    {
-      cout << "Press enter to continue:";
-      cin.get();
-      getchar();
-    }
-    else
-    {
-      x++;
-    }
+    return 0;
   }
-  return 0;
-}
-/*Define a function called checkGuess that takes two integers compares the two numbers
-and returns the following result:*/
-int gsschk(int num1, int num2)
-{
-  // returns -1 if the first number is less than second
-  if (num1 < num2)
+  /*Define a function called checkGuess that takes two integers compares the two numbers
+  and returns the following result:*/
+  int gsschk(int num1, int num2)
   {
-    return -1;
+    // returns -1 if the first number is less than second
+    if (num1 < num2)
+    {
+      return -1;
+    }
+    // returns 2 otherwise
+    else if (num1 > num2)
+    {
+      return 2;
+    }
+    // returns 0 if the numbers are equal
+    return 0;
   }
-  // returns 2 otherwise
-  else if (num1 > num2)
+  void test()
   {
-    return 2;
+    int tnum1 = 2, tnum2 = 4, tnum3 = 8;
+    // Testing the gsschk function//
+    int result1 = gsschk(tnum1, tnum2);
+    int expected1 = -1;
+    assert(fabs(result1 - expected1) == 0);
+
+    int result2 = gsschk(tnum3, tnum2);
+    int expected2 = 2;
+    assert(fabs(result2 - expected2) == 0);
+
+    int result3 = gsschk(tnum2, tnum2);
+    int expected3 = 0;
+    assert(fabs(result3 - expected3) == 0);
+
+    cout << " Test functions passed" << endl;
   }
-  // returns 0 if the numbers are equal
-  return 0;
-}
-void test()
-{
-  int tnum1 = 2, tnum2 = 4, tnum3 = 8;
-  // Testing the gsschk function//
-  int result1 = gsschk(tnum1, tnum2);
-  int expected1 = -1;
-  // assert(fabs(result1 - expected1) == -1);
 
-  int result1 = gsschk(tnum3, tnum2);
-  int expected1 = 2;
-  // assert(fabs(result1 - expected1) == 2);
-
-  int result1 = gsschk(tnum2, tnum2);
-  int expected1 = 0;
-  // assert(fabs(result1 - expected1) == 0);
-
-  cout << " Test functions passed" << endl;
-}
-
-void clearscreen()
-{
-  system("clear");
-}
+  void clearscreen()
+  {
+    system("clear");
+  }
