@@ -68,7 +68,7 @@ int main()
     {
       cout << num1;
       cout << endl;
-      //prompt user to enter y / Y 
+      // prompt user to enter y / Y
       char quit, y1, y2;
       y1 = 'Y';
       y2 = 'y';
