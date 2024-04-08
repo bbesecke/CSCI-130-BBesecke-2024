@@ -48,8 +48,8 @@ int main()
   // If the player guesses the number within six tries, the game is over and the player wins.
   // If the player can't guess the number within six tries, the game is over and the player loses.
   // for (size_t i = 0; i < 6; i++)
-  bool keeprunning;
-  while (keeprunning)
+  bool keeprunning = true;
+  while (keeprunning == true)
   {
     num1 = rndmNum();
     bool won = false;
@@ -64,8 +64,8 @@ int main()
 
       i++;
     }
-    if (keeprunning == won)
-    {
+    // if (keeprunning == won)
+    // {
       cout << num1;
       cout << endl;
       // prompt user to enter y / Y
@@ -74,11 +74,19 @@ int main()
       y2 = 'y';
       cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
       cin >> quit;
+    // }
+    if (quit == y1 || quit == y2)
+    {
+      keeprunning = true;
     }
+    
+    else 
+    {
+      keeprunning = false; 
+    }
+      return 0;
   }
-  return 0;
-}
-// Define a function called randomNumber that generates and returns a random number between 1 and 20.
+} // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
   // chatgpt used for reference
@@ -107,7 +115,7 @@ int readnum(int num2)
 }
 /*For every wrong guess, your program informs the player whether the guess is too
 high or too low by calling checkGuess function.*/
-int validate(int num1, int num2, bool &won)
+int validate(int num1, int num2)
 {
   if (gsschk(num1, num2) == -1)
   {
@@ -120,7 +128,6 @@ int validate(int num1, int num2, bool &won)
   else if (gsschk(num1, num2) == 0)
   {
     cout << num2 << " is correct, you figured it out. You won!!" << endl;
-    won = true;
   }
 
   return 0;
