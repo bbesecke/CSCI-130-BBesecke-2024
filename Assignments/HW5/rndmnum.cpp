@@ -1,22 +1,8 @@
-/* Name: Burton Besecke 03 April 2024
-Class: CSCI 130-002
-HW5
+//  Name: Burton Besecke 03 April 2024
+// Class: CSCI 130-002
+// HW5
 
-
-5. Write 3 test cases for checkGuess function using assert statement.
-
-7. When the game is over, your program will inform whether the player won or lost the
-game and reveal the secret random number picked by the computer, especially if they
-lose.
-
-8. Your game will continue to run until the user wants to quit when the game is over.
-
-9. Bonus: When the user quits the program/game, your program provides the
-following stats of the player:
-a. number of times played
-b. percentage of times won
-c. percentage of times lost
-*/
+// 8. Your game will continue to run until the user wants to quit when the game is over.
 
 #include <iostream>
 #include <random>
@@ -27,7 +13,7 @@ c. percentage of times lost
 using namespace std;
 
 int readnum(int);
-int validate(int, int, bool);
+void validate(int, int, bool &);
 int getnum(int);
 int rndmNum();
 int gsschk(int, int);
@@ -64,8 +50,6 @@ int main()
 
       i++;
     }
-    // if (keeprunning == won)
-    // {
     cout << num1;
     cout << endl;
     // prompt user to enter y / Y
@@ -74,7 +58,7 @@ int main()
     y2 = 'y';
     cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
     cin >> quit;
-    // }
+
     if (quit == y1 || quit == y2)
     {
       keeprunning = true;
@@ -83,8 +67,9 @@ int main()
     {
       keeprunning = false;
     }
-    return 0;
+    // test();
   }
+  return 0;
 } // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
@@ -114,7 +99,7 @@ int readnum(int num2)
 }
 /*For every wrong guess, your program informs the player whether the guess is too
 high or too low by calling checkGuess function.*/
-int validate(int num1, int num2, bool won)
+void validate(int num1, int num2, bool &won)
 {
   if (gsschk(num1, num2) == -1)
   {
@@ -129,7 +114,6 @@ int validate(int num1, int num2, bool won)
     cout << num2 << " is correct, you figured it out. You won!!" << endl;
   }
   won = true;
-  return 0;
 }
 /*Define a function called checkGuess that takes two integers compares the two numbers
 and returns the following result:*/
@@ -148,6 +132,7 @@ int gsschk(int num1, int num2)
   // returns 0 if the numbers are equal
   return 0;
 }
+// Write 3 test cases for checkGuess function using assert statement.
 void test()
 {
   int tnum1 = 2, tnum2 = 4, tnum3 = 8;
