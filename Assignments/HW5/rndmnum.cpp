@@ -66,25 +66,24 @@ int main()
     }
     // if (keeprunning == won)
     // {
-      cout << num1;
-      cout << endl;
-      // prompt user to enter y / Y
-      char quit, y1, y2;
-      y1 = 'Y';
-      y2 = 'y';
-      cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
-      cin >> quit;
+    cout << num1;
+    cout << endl;
+    // prompt user to enter y / Y
+    char quit, y1, y2;
+    y1 = 'Y';
+    y2 = 'y';
+    cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
+    cin >> quit;
     // }
     if (quit == y1 || quit == y2)
     {
       keeprunning = true;
     }
-    
-    else 
+    else
     {
-      keeprunning = false; 
+      keeprunning = false;
     }
-      return 0;
+    return 0;
   }
 } // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
