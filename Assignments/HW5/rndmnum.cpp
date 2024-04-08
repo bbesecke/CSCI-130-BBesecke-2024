@@ -27,7 +27,7 @@ c. percentage of times lost
 using namespace std;
 
 int readnum(int);
-int validate(int, int);
+int validate(int, int, bool);
 int getnum(int);
 int rndmNum();
 int gsschk(int, int);
@@ -58,7 +58,7 @@ int main()
     {
       num2 = readnum(num2);
 
-      validate(num1, num2);
+      validate(num1, num2, won);
 
       cout << endl;
 
@@ -114,7 +114,7 @@ int readnum(int num2)
 }
 /*For every wrong guess, your program informs the player whether the guess is too
 high or too low by calling checkGuess function.*/
-int validate(int num1, int num2)
+int validate(int num1, int num2, bool won)
 {
   if (gsschk(num1, num2) == -1)
   {
@@ -128,7 +128,7 @@ int validate(int num1, int num2)
   {
     cout << num2 << " is correct, you figured it out. You won!!" << endl;
   }
-
+  won = true;
   return 0;
 }
 /*Define a function called checkGuess that takes two integers compares the two numbers
