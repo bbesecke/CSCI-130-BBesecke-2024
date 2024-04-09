@@ -12,7 +12,7 @@
 #include <cassert>
 using namespace std;
 
-void game();
+int game();
 int readnum(int);
 void validate(int, int);
 int getnum(int);
@@ -30,11 +30,11 @@ int main()
 
   return 0;
 }
-void game()
+int game()
 {
-  int rndm = rndmNum();
+  int rndmNum
   int guess;
-  int validate;
+  int validate
 }
 // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
@@ -64,9 +64,9 @@ int readnum(int num2)
   }
   return num2;
 }
-int validate(int num1, int num2)
+void validate(int num1, int num2)
 {
- if (gsschk(num1, num2) == -1)
+  if (gsschk(num1, num2) == -1)
   {
     cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
   }
