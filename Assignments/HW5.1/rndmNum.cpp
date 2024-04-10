@@ -18,20 +18,35 @@ using namespace std;
 
 int rndmNum();
 int readnum();
+double game();
 
-int main()
+int main(int argc, char *argv[])
+{
+  game();
+
+  return 0;
+}
+
+// Define a function called randomNumber that generates and returns a random number between 1 and 20.
+int rndmNum()
+{
+  // chatgpt used for reference
+  srand(time(0));
+  return (rand() % 20) + 1;
+}
+double game()
 {
   // Greet the user and ask for name
   string name;
   int num1 = rndmNum();
-  cout << " What is your name? " << endl;
+  cout << "What is your name?" << endl;
   cin >> name;
-
   // Ask user to choose a number
   cout << "Welcome " << name << ", choose a whole number between 1 and 20; " << endl;
   int num2;
+  num2 = 0;
   // Validate that the number is between 1 and 20
-  while (true)
+  while (num2 != num1)
   {
     cin >> num2;
     if (num2 < 1 || num2 > 20)
@@ -56,17 +71,10 @@ int main()
       else if (num1 == num2)
       {
         cout << num1 << endl;
-        return 0;
       }
     }
   }
-}
-// Define a function called randomNumber that generates and returns a random number between 1 and 20.
-int rndmNum()
-{
-  // chatgpt used for reference
-  srand(time(nullptr));
-  return (rand() % 20) + 1;
+  return 0;
 }
 // int readnum()
 // {

@@ -1,41 +1,101 @@
-//  Name: Burton Besecke 03 April 2024
-// Class: CSCI 130-002
-// HW5
-
-// 8. Your game will continue to run until the user wants to quit when the game is over.
-
+/* Name: Burton Besecke 03 April 2024
+Class: CSCI 130-002
+HW5
+3. Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
+   You must validate the guessed number to be between 1 and 20.
+4. Define a function called checkGuess that takes two integers compares the two numbers
+and returns the following result:
+a. returns 0 if the numbers are equal
+b. returns -1 if the first number is less than second
+c. returns 2 otherwise
+5. Write 3 test cases for checkGuess function using assert statement.
+6. Define a function called game that implements the logic of the guess the number game.
+a. Call the randomNumber function defined above to generate a random number
+for the user to guess for each game.
+b. Until the game is over, your program will ask the player to guess the number
+using the readNumber function defined above.
+c. Use the function defined above called checkGuess to compare the user entered
+number with the hidden random number.
+d. If the player guesses the number within six tries, the game is over and the player
+wins.
+e. If the player can't guess the number within six tries, the game is over and the
+player loses.
+f. For every wrong guess, your program informs the player whether the guess is too
+high or too low by calling checkGuess function.
+7. When the game is over, your program will inform whether the player won or lost the
+game and reveal the secret random number picked by the computer, especially if they
+lose.
+8. Your game will continue to run until the user wants to quit when the game is over.
+9. Bonus: When the user quits the program/game, your program provides the
+following stats of the player:
+a. number of times played
+b. percentage of times won
+c. percentage of times lost
+10. Follow the best programming practices:
+a. Write adequate comments
+b. Properly format source codes with adequate white spaces
+c. Do NOT use global variables!
+*/
 #include <iostream>
 #include <random>
 #include <string>
 #include <cstdlib>
 #include <ctime>
 #include <cassert>
-using namespace std;
 
-int game();
+using namespace std;
 int readnum(int);
-void validate(int, int);
+int validate(int, int);
 int getnum(int);
 int rndmNum();
-int gsschk(int, int);
-void test();
-void clearscreen();
-
 int main()
 {
+  int num2;
+  string name;
+  int num1 = rndmNum();
+  cout << "What is your name? " << endl;
+  cin >> name;
+  cout << "Hello " << name << ", would you like to play a game?\n"
 
-  clearscreen();
-  game();
+  "Just kidding, there is only one game." << endl;
+       << endl;
+
+  for (size_t i = 0; i < 5; i++)
+  {
+    num2 = readnum(num2);
+
+    for (size_t i2 = 0; i2 < 1;)
+    {
+      cout << "Choose an integer between 1 and 20: ";
+      cin >> num2;
+      if (num2 > 0 && num2 < 21)
+      {
+        i2++;
+      }
+      else
+      {
+        cout << "That isn't a valid choice, do it again and do it right!" << endl;
+      }
+    }
+    if (num1 == num2)
+    {
+      cout << num2 << " is an excellent choice as it was the correct one." << endl;
+    }
+    else
+    {
+      cout << num2 << " is a terrible choice because it is incorrect" << endl;
+    }
+    validate(num1, num2);
+  }
+
+  // cout << num1;//
+  cout << num1;
   cout << endl;
 
   return 0;
 }
-int game()
-{
-  int rndmNum
-  int guess;
-  int validate
-}
+
+// 2. Define a function called randomNumber that generates and returns a random number between 1 and 20.
 // Define a function called randomNumber that generates and returns a random number between 1 and 20.
 int rndmNum()
 {
@@ -43,79 +103,53 @@ int rndmNum()
   srand(time(nullptr));
   return (rand() % 20) + 1;
 }
+// Define a function called readNumber that prompts the user to take a guess and returnthe guessed number.
+// You must validate the guessed number to be between 1 and 20.
 int readnum(int num2)
 {
   for (size_t i2 = 0; i2 < 1;)
   {
-    string name;
-    int num2;
-    cout << "What is your name?" << endl;
-    cin >> name;
-    cout << "Welcome " << name << " , please choose a number between 1 and 20:";
-    cin >> num2; // You must validate the guessed number to be between 1 and 20.
+    cout << "Choose an integer between 1 and 20: ";
+    cin >> num2;
     if (num2 > 0 && num2 < 21)
     {
       i2++;
     }
     else
     {
-      cout << "That isn't a valid choice, choose between 1 and 20!" << endl;
+      cout << "That isn't a valid choice, do it again and do it right!" << endl;
     }
   }
   return num2;
 }
-void validate(int num1, int num2)
+int validate(int num1, int num2)
 {
-  if (gsschk(num1, num2) == -1)
+  if (num1 == num2)
   {
-    cout << num2 << " is a terrible choice because it is more than the correct number" << endl;
+    cout << "0 which means you guessed correctly." << endl;
   }
-  else if (gsschk(num1, num2) == 2)
+  else
   {
-    cout << num2 << " is a terrible choice because it is less than the correct number" << endl;
+    cout << num2 << " is a terrible choice because it is incorrect" << endl;
   }
-  else if (gsschk(num1, num2) == 0)
-  {
-    cout << num2 << " is correct, you figured it out. You won!!" << endl;
-  }
+  return 0;
 }
 int gsschk(int num1, int num2)
 {
-  // returns -1 if the first number is less than second
+  return 0; 
+}
+{
   if (num1 < num2)
   {
     return -1;
   }
-  // returns 2 otherwise
-  else if (num1 > num2)
+  if (num1 < num2)
   {
     return 2;
   }
-  // returns 0 if the numbers are equal
-  return 0;
 }
-
-// Write 3 test cases for checkGuess function using assert statement.
-// void test()
-// {
-//   int tnum1 = 2, tnum2 = 4, tnum3 = 8;
-//   // Testing the gsschk function//
-//   int result1 = gsschk(tnum1, tnum2);
-//   int expected1 = -1;
-//   assert(fabs(result1 - expected1) == 0);
-
-//   int result2 = gsschk(tnum3, tnum2);
-//   int expected2 = 2;
-//   assert(fabs(result2 - expected2) == 0);
-
-//   int result3 = gsschk(tnum2, tnum2);
-//   int expected3 = 0;
-//   assert(fabs(result3 - expected3) == 0);
-
-//   cout << " Test functions passed" << endl;
-// }
-
-void clearscreen()
-{
-  system("clear");
-}
+/*4. Define a function called checkGuess that takes two integers compares the two numbers
+and returns the following result:
+a. returns 0 if the numbers are equal
+b. returns -1 if the first number is less than second
+c. returns 2 otherwise*/
