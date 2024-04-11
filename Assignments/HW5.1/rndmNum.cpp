@@ -17,12 +17,22 @@ After either the 6 chances are up, or the number is found, the user will have th
 using namespace std;
 
 int rndmNum();
-int readnum();
+void readnum(int &);
 double game();
+int gschk(int, int, int &);
+void test();
+#define clear() system("clear")
 
 int main(int argc, char *argv[])
 {
-  game();
+  if (argc == 2 && string(argv[1]) == "test")
+  {
+    test();
+  }
+  else
+  {
+    game();
+  }
 
   return 0;
 }
@@ -36,6 +46,7 @@ int rndmNum()
 }
 double game()
 {
+  clear();
   // Greet the user and ask for name
   string name;
   int num1 = rndmNum();
@@ -46,7 +57,71 @@ double game()
   int num2;
   num2 = 0;
   // Validate that the number is between 1 and 20
+  int game = 0;
   while (num2 != num1)
+  {
+    game++;
+    readnum(num2);
+    gschk(num1, num2, game);
+    if (game == 6)
+    {
+      break;
+    }
+  }
+  return 0;
+}
+
+int gschk(int num1, int num2, int &game)
+{
+  // Guesscheck returns -1 if the first number is less than second
+  if (num1 < num2)
+  {
+    if (game == 15)
+    {
+      return -1;
+    }
+    if (game == 6)
+    {
+      cout << "You didn't figure it out. You're a loser!!" << endl;
+      cout << "The random number is " << num1 << endl;
+      return -1;
+    }
+    cout << "The number you guessed is too high, try gain;" << endl;
+    return -1;
+  }
+  // returns 2 otherwise
+  else if (num1 > num2)
+  {
+    if (game == 15)
+    {
+      return 2;
+    }
+
+    if (game == 6)
+    {
+      cout << "You didn't figure it out. You're a loser!!" << endl;
+      cout << "The random number is " << num1 << endl;
+      return 2;
+    }
+    cout << "The number you guessed is too low, try gain;" << endl;
+    return 2;
+  }
+  // returns 0 if the numbers are equal
+  else if (num1 == num2)
+  {
+    if (game == 15)
+    {
+      return 0;
+    }
+    cout << "You win!!" << endl;
+    cout << "The random number is " << num1 << endl;
+  }
+  return 0;
+}
+
+void readnum(int &num2)
+{
+  for (size_t i = 0; i < 1;)
   {
     cin >> num2;
     if (num2 < 1 || num2 > 20)
@@ -55,32 +130,25 @@ double game()
     }
     else
     {
-      // Guesscheck returns -1 if the first number is less than second
-      if (num1 < num2)
-      {
-        return -1;
-        cout << "The number you guessed is too high, try gain;" << endl;
-      }
-      // returns 2 otherwise
-      else if (num1 > num2)
-      {
-        return 2;
-        cout << "The number you guessed is too low, try gain;" << endl;
-      }
-      // returns 0 if the numbers are equal
-      else if (num1 == num2)
-      {
-        cout << num1 << endl;
-      }
+      i++;
     }
   }
-  return 0;
 }
-// int readnum()
-// {
+void test()
+{
+  int tnum1 = 2, tnum2 = 4, tnum3 = 8, game = 15;
+  // Testing the gschk function//
+  int result1 = gschk(tnum1, tnum2, game);
+  int expected1 = -1;
+  assert(fabs(result1 - expected1) == 0);
 
-// }
-// int gsschk(int num1, int num2)
-// {
+  int result2 = gschk(tnum3, tnum2, game);
+  int expected2 = 2;
+  assert(fabs(result2 - expected2) == 0);
 
-// }
+  int result3 = gschk(tnum2, tnum2, game);
+  int expected3 = 0;
+  assert(fabs(result3 - expected3) == 0);
+
+  cout << " Test functions passed" << endl;
+}
