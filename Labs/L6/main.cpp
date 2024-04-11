@@ -165,29 +165,30 @@ int main(int argc, char *argv[])
                 op = QUIT;
             }
             return op;
+            clearScreen();
         }
         while (choice == 'y' || choice == 'Y')
-            ;
+        {
+            cout << "Goodbye!" << endl;
 
-        cout << "Goodbye!" << endl;
+            return 0;
+        }
 
-        return 0;
+        // must use MyFunctions namespace to resolve findSum function
+        big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
+        {
+            // deference pointers n1 and n2 before adding their values
+            return (*n1) + (*n2);
+        }
+
+        // FIXME8: define findLarger function declared inside MyFunctions namespace
+        // function returns the larger of the two given values
+
+        large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
+        {
+            return n1 * n2;
+        }
     }
-
-    // must use MyFunctions namespace to resolve findSum function
-    big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
-    {
-        // deference pointers n1 and n2 before adding their values
-        return (*n1) + (*n2);
-    }
-
-    // FIXME8: define findLarger function declared inside MyFunctions namespace
-    // function returns the larger of the two given values
-
-    large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
-    {
-        return n1 * n2;
-    }
-
-    // FIXME9: define findDifference function declared inside MyFunctions namespace
-    // return the value of second big_int subtracted from the first
+}
+// FIXME9: define findDifference function declared inside MyFunctions namespace
+// return the value of second big_int subtracted from the first
