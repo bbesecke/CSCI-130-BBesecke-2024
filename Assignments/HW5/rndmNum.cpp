@@ -46,26 +46,45 @@ int rndmNum()
 }
 double game()
 {
-  clear();
+  char quit, y1, y2;
+  y1 = 'Y';
+  y2 = 'y';
+  quit = y1;
+
   // Greet the user and ask for name
   string name;
   int num1 = rndmNum();
+  clear();
   cout << "What is your name?" << endl;
   cin >> name;
-  // Ask user to choose a number
-  cout << "Welcome " << name << ", choose a whole number between 1 and 20; " << endl;
-  int num2;
-  num2 = 0;
-  // Validate that the number is between 1 and 20
-  int game = 0;
-  while (num2 != num1)
+  while (quit == y1 || quit == y2)
   {
-    game++;
-    readnum(num2);
-    gschk(num1, num2, game);
-    if (game == 6)
+    clear();
+    // Ask user to choose a number
+    cout << "Welcome " << name << ", choose a whole number between 1 and 20; " << endl;
+    int num2;
+    num2 = 0;
+    // Validate that the number is between 1 and 20
+    int game = 0;
+    while (num2 != num1)
     {
-      break;
+      game++;
+      readnum(num2);
+      gschk(num1, num2, game);
+      if (game == 6)
+      {
+        break;
+      }
+    }
+
+    cout << "To continue, enter Y or y. To quit, press the any key, then enter:" << endl;
+    cin >> quit;
+
+    if (quit == y1 || quit == y2)
+    {
+      cout << "Press enter to continue:";
+      cin.get();
+      getchar();
     }
   }
   return 0;
