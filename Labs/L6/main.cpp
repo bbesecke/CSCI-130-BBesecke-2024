@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
         cout << "Good bye! Enter to exit the program...";
         cin.get();
         return 0;
-        // FIXME5: call clear function defined above to clear the screen FIXED
+        // FIXME5: call clear function defined above to clear the screen FIXED?
         void clearscreen()
         {
             system("clear");
