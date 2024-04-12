@@ -6,6 +6,8 @@
 
 #include <cstdio>
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -99,15 +101,15 @@ int main(int argc, char *argv[])
             cin >> *num1 >> *num2;
             // passing pointers to findSum function
             *diff = MyFunctions::findDifference(*num1, *num2);
-            printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
+            printf("%lld - %lld = %lld\n", *num1, *num2, *diff);
             break;
         case LARGER:
             cout << "Enter two whole numbers separated by space: ";
             // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
             // passing pointers to findSum function
-            *lrgr = MyFunctions::findLarger(*num1, *num2);
-            printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
+            *lrgr = MyFunctions::findLarger(num1, num2);
+            printf(max(num1, num2, lrgr+));
             break;
 
         default:
