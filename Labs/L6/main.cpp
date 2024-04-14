@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
         large_int *prod = new big_int;
         // FIXME3 - declare dynamic variables to store difference and larger values FIXED
         // Must use these variables to store the returned values from functions
-        large_int *diff = new big_int;
-        large_int *lrgr = new large_int;
+        large_int *difference = new large_int;
+        large_int *largerValue = new large_int;
 
         OPERATION oper;
 
@@ -89,96 +89,95 @@ int main(int argc, char *argv[])
             // FIXME6: complete the rest of the cases to perform other operations FIXED
         case MULTIPLY:
             cout << "Enter two whole numbers separated by space: ";
-            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
-            // passing pointers to findSum function
             *prod = MyFunctions::findProduct(*num1, *num2);
-            printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
+            cout << *num1 << " * " << *num2 << " = " << *prod << endl;
             break;
         case SUBTRACT:
             cout << "Enter two whole numbers separated by space: ";
-            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
-            // passing pointers to findSum function
-            *diff = MyFunctions::findDifference(*num1, *num2);
-            printf("%lld - %lld = %lld\n", *num1, *num2, *diff);
+            *difference = MyFunctions::findDifference(*num1, *num2);
+            cout << *num1 << " - " << *num2 << " = " << *difference << endl;
             break;
         case LARGER:
             cout << "Enter two whole numbers separated by space: ";
-            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
-            // passing pointers to findSum function
-            *lrgr = MyFunctions::findLarger(num1, num2);
-            printf(max(num1, num2, lrgr+));
+            *largerValue = MyFunctions::findLarger(num1, num2);
+            cout << "The larger value is: " << *largerValue << endl;
             break;
+        case QUIT:
+            cout << "Exiting the program. Goodbye!\n";
+            // Free allocated memory before exiting
+            delete num1;
+            delete num2;
+            delete sum;
+            delete prod;
+            delete difference;
+            delete largerValue;
 
-        default:
-            break;
+            return 0;
         }
-        delete num1;
-        delete num2;
-        delete sum;
-        delete prod;
-        cin.ignore(1000, '\n');
-        cout << "Good bye! Enter to exit the program...";
-        cin.get();
-        return 0;
-    }
 
-    void showMenu(void)
-    {
-        cout << "Enter one of the following menu options:\n";
-        cout << "[1] Add two integers\n";
-        cout << "[2] Multiply two integers\n";
-        cout << "[3] Subtract one integer from another\n";
-        cout << "[4] Which number is larger\n";
-        cout << "[5] Quit the program\n";
-        cout << "Enter your choice [1-4]: ";
-    }
-
-    // function returns OPERATION type given character choice
-    OPERATION getOperation(char choice)
-    {
-        OPERATION op;
-        switch (choice)
+        void showMenu(void)
         {
-        case '1':
-            op = ADD;
-            break;
-        case '2':
-            op = MULTIPLY;
-            break;
-        case '3':
-            op = SUBTRACT;
-            break;
-        case '4';
-            op = LARGER;
-            break;
-            // FIXME7 - add case for LARGER FIXED
-            default:
-            op = QUIT;
+            cout << "Enter one of the following menu options:\n";
+            cout << "[1] Add two integers\n";
+            cout << "[2] Multiply two integers\n";
+            cout << "[3] Subtract one integer from another\n";
+            cout << "[4] Which number is larger\n";
+            cout << "[5] Quit the program\n";
+            cout << "Enter your choice [1-4]: ";
         }
+
+        // function returns OPERATION type given character choice
+        OPERATION getOperation(char choice)
+        {
+            OPERATION op;
+            switch (choice)
+            {
+            case '1':
+                op = ADD;
+                break;
+            case '2':
+                op = MULTIPLY;
+                break;
+            case '3':
+                op = SUBTRACT;
+                break;
+            case '4';
+                op = LARGER;
+                break;
+                // FIXME7 - add case for LARGER FIXED
+                default:
+                op = QUIT;
+            }
+        }
+        while
+        {
+        }
+        return op;
     }
-    while
+
+    // must use MyFunctions namespace to resolve findSum function
+    big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
     {
+        // deference pointers n1 and n2 before adding their values
+        return (*n1) + (*n2);
     }
-    return op;
+
+    // FIXME8: define findLarger function declared inside MyFunctions namespace
+    // function returns the larger of the two given values
+
+    large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
+    {
+        return n1 * n2;
+    }
+
+    large_int MyFunctions::findLarger(const big_int *n1, const big_int *n2)
+    {
+        // Return the larger of the two values
+        return (*n1 > *n2) ? *n1 : *n2;
+    }
 }
-
-// must use MyFunctions namespace to resolve findSum function
-big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
-{
-    // deference pointers n1 and n2 before adding their values
-    return (*n1) + (*n2);
-}
-
-// FIXME8: define findLarger function declared inside MyFunctions namespace
-// function returns the larger of the two given values
-
-large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
-{
-    return n1 * n2;
-}
-
 // FIXME9: define findDifference function declared inside MyFunctions namespace
 // return the value of second big_int subtracted from the first

@@ -99,3 +99,14 @@ Status: Working version 03 Apr
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L5
 Self Grade: 100/100
 Notes: Got it working, it took Owens help, but it works
+
+# CSCI-130-BBesecke-2024
+HW 5
+Name: Burton Besecke
+Name: HW5/RandomNum
+Description: Make loops for shapes
+Due Date: 12 Apr
+Status: Working version 12 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW5
+Self Grade: 100/100
+Notes: Nothing productive to say about this assignment
