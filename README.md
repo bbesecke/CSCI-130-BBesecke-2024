@@ -110,3 +110,14 @@ Status: Working version 12 Apr
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW5
 Self Grade: 100/100
 Notes: Nothing productive to say about this assignment
+
+# CSCI-130-BBesecke-2024
+Lab 6
+Name: Burton Besecke
+Name: L6/Pointer
+Description: Make loops for shapes
+Due Date: 15 Apr
+Status: Working version 03 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L6
+Self Grade: 100/100
+Notes: Had to use ChatGPT for code checking as this one is very confusing. 
