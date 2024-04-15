@@ -1,13 +1,11 @@
 //  Pointers, enum type and namespace lab
 //  Updated by: Burton Besecke
-//  Date: 09 Apr
+//  Date: 14 Apr 2024
 //  Program demonstrates the use of preprocessor directive, namespace, enum type,
 //  and pointers.
 
 #include <cstdio>
 #include <iostream>
-#include <cmath>
-#include <iomanip>
 
 using namespace std;
 
@@ -50,32 +48,33 @@ OPERATION getOperation(char);
 
 int main(int argc, char *argv[])
 {
-    clear();
+    char input;
+    // a pointer to point that points to unsigned int aka big_int data type
+    big_int *num1;
+    // allocate memory in heap and store the address in num1
+    num1 = new big_int;
+    // declare num2 as a dynamic variable
+    big_int *num2 = new big_int;
+    // declare sum as a dynamic variable
+    large_int *sum = new large_int;
+    large_int *prod = new large_int;
+    // FIXME3 - declare dynamic variables to store difference and larger values FIXED
+    // Must use these variables to store the returned values from functions
+    large_int *diff = new large_int;
+    big_int *larger = new big_int;
+
+    OPERATION oper;
+
     do
     {
-
-        char input;
-        // a pointer to point that points to unsigned int aka big_int data type
-        big_int *num1;
-        // allocate memory in heap and store the address in num1
-        num1 = new big_int;
-        // declare num2 as a dynamic variable
-        big_int *num2 = new big_int;
-        // declare sum as a dynamic variable
-        large_int *sum = new large_int;
-        large_int *prod = new big_int;
-        // FIXME3 - declare dynamic variables to store difference and larger values FIXED
-        // Must use these variables to store the returned values from functions
-        large_int *difference = new large_int;
-        large_int *largerValue = new large_int;
-
-        OPERATION oper;
-
-        // FIXME4: Add do... while loop to continue the program until the user wants to quit FIXED????
+        clear();
+        // FIXME4: Add do... while loop to continue the program until the user wants to quit FIXED
         // FIXME5: call clear function defined above to clear the screen FIXED
+
         showMenu();
         cin >> input;
         oper = getOperation(input);
+
         switch (oper)
         {
         case ADD:
@@ -86,98 +85,114 @@ int main(int argc, char *argv[])
             *sum = MyFunctions::findSum(num1, num2);
             printf("%lld + %lld = %lld\n", *num1, *num2, *sum);
             break;
-            // FIXME6: complete the rest of the cases to perform other operations FIXED
+
+        // FIXME6: complete the rest of the cases to perform other operations FIXED
         case MULTIPLY:
             cout << "Enter two whole numbers separated by space: ";
+            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
+            // passing pointers to findSum function
             *prod = MyFunctions::findProduct(*num1, *num2);
-            cout << *num1 << " * " << *num2 << " = " << *prod << endl;
+            printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
             break;
+
         case SUBTRACT:
             cout << "Enter two whole numbers separated by space: ";
+            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
-            *difference = MyFunctions::findDifference(*num1, *num2);
-            cout << *num1 << " - " << *num2 << " = " << *difference << endl;
+            // passing pointers to findDifference function
+            *diff = MyFunctions::findDifference(*num1, *num2);
+            printf("%lld - %lld = %lld\n", *num1, *num2, *diff);
             break;
+
         case LARGER:
             cout << "Enter two whole numbers separated by space: ";
+            // store the data by dereferencing pointers
             cin >> *num1 >> *num2;
-            *largerValue = MyFunctions::findLarger(num1, num2);
-            cout << "The larger value is: " << *largerValue << endl;
+            // passing pointers to findLarger function
+            *larger = MyFunctions::findLarger(num1, num2);
+            printf("The larger of %lld and %lld is %lld\n", *num1, *num2, *larger);
             break;
-        case QUIT:
-            cout << "Exiting the program. Goodbye!\n";
-            // Free allocated memory before exiting
-            delete num1;
-            delete num2;
-            delete sum;
-            delete prod;
-            delete difference;
-            delete largerValue;
 
-            return 0;
+        default:
+            break;
         }
 
-        void showMenu(void)
-        {
-            cout << "Enter one of the following menu options:\n";
-            cout << "[1] Add two integers\n";
-            cout << "[2] Multiply two integers\n";
-            cout << "[3] Subtract one integer from another\n";
-            cout << "[4] Which number is larger\n";
-            cout << "[5] Quit the program\n";
-            cout << "Enter your choice [1-4]: ";
-        }
+        delete num1;
+        delete num2;
+        delete sum;
+        delete prod;
+        delete diff;
+        delete larger;
 
-        // function returns OPERATION type given character choice
-        OPERATION getOperation(char choice)
-        {
-            OPERATION op;
-            switch (choice)
-            {
-            case '1':
-                op = ADD;
-                break;
-            case '2':
-                op = MULTIPLY;
-                break;
-            case '3':
-                op = SUBTRACT;
-                break;
-            case '4';
-                op = LARGER;
-                break;
-                // FIXME7 - add case for LARGER FIXED
-                default:
-                op = QUIT;
-            }
-        }
-        while
-        {
-        }
-        return op;
-    }
+        cin.ignore(1000, '\n');
 
-    // must use MyFunctions namespace to resolve findSum function
-    big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
-    {
-        // deference pointers n1 and n2 before adding their values
-        return (*n1) + (*n2);
-    }
+        cout << "Good bye! Press enter to exit the program...";
+        cin.get();
 
-    // FIXME8: define findLarger function declared inside MyFunctions namespace
-    // function returns the larger of the two given values
-
-    large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
-    {
-        return n1 * n2;
-    }
-
-    large_int MyFunctions::findLarger(const big_int *n1, const big_int *n2)
-    {
-        // Return the larger of the two values
-        return (*n1 > *n2) ? *n1 : *n2;
-    }
+        return 0;
+    } while (oper != QUIT);
 }
-// FIXME9: define findDifference function declared inside MyFunctions namespace
+
+void showMenu(void)
+{
+    cout << "Enter one of the following menu options:\n";
+    cout << "[1] Add two integers\n";
+    cout << "[2] Multiply two integers\n";
+    cout << "[3] Subtract one integer from another\n";
+    cout << "[4] Find the larger of two integers\n";
+    cout << "[5] Quit the program\n";
+    cout << "Enter your choice [1-5]: ";
+}
+
+// function returns OPERATION type given character choice
+OPERATION getOperation(char choice)
+{
+    OPERATION op;
+    switch (choice)
+    {
+    case '1':
+        op = ADD;
+        break;
+    case '2':
+        op = MULTIPLY;
+        break;
+    case '3':
+        op = SUBTRACT;
+        break;
+        // FIXME7 - add case for LARGER FIXED
+    case '4':
+        op = LARGER;
+        break;
+    default:
+        op = QUIT;
+    }
+    return op;
+}
+
+// must use MyFunctions namespace to resolve findSum function
+big_int MyFunctions::findSum(const big_int *n1, const big_int *n2)
+{
+    // dereference pointers n1 and n2 before adding their values
+    return (*n1) + (*n2);
+}
+
+// FIXME8: define findLarger function declared inside MyFunctions namespace FIXED
+// function returns the larger of the two given values
+big_int MyFunctions::findLarger(const big_int *n1, const big_int *n2)
+
+{
+    return (*n1 > *n2) ? *n1 : *n2;
+}
+
+large_int MyFunctions::findProduct(const large_int &n1, const large_int &n2)
+{
+    return n1 * n2;
+}
+
+// FIXME9: define findDifference function declared inside MyFunctions namespace FIXED
 // return the value of second big_int subtracted from the first
+large_int MyFunctions::findDifference(const large_int &n1, const large_int &n2)
+{
+    return n1 - n2;
+}
