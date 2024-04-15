@@ -122,6 +122,7 @@ int main(int argc, char *argv[])
         delete num2;
         delete sum;
         delete prod;
+        // chatGPT used for code check and found that I missed this
         delete diff;
         delete larger;
 
@@ -129,9 +130,10 @@ int main(int argc, char *argv[])
 
         cout << "Good bye! Press enter to exit the program...";
         cin.get();
+    }
 
-        return 0;
-    } while (oper != QUIT);
+    while (oper != QUIT);
+    return 0;
 }
 
 void showMenu(void)
