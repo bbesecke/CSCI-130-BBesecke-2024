@@ -64,10 +64,11 @@ int main(int argc, char *argv[])
     big_int *larger = new big_int;
 
     OPERATION oper;
+    clear();
 
     do
     {
-        clear();
+
         // FIXME4: Add do... while loop to continue the program until the user wants to quit FIXED
         // FIXME5: call clear function defined above to clear the screen FIXED
 
@@ -84,6 +85,7 @@ int main(int argc, char *argv[])
             // passing pointers to findSum function
             *sum = MyFunctions::findSum(num1, num2);
             printf("%lld + %lld = %lld\n", *num1, *num2, *sum);
+            cout << endl;
             break;
 
         // FIXME6: complete the rest of the cases to perform other operations FIXED
@@ -94,6 +96,7 @@ int main(int argc, char *argv[])
             // passing pointers to findSum function
             *prod = MyFunctions::findProduct(*num1, *num2);
             printf("%lld * %lld = %lld\n", *num1, *num2, *prod);
+            cout << endl;
             break;
 
         case SUBTRACT:
@@ -103,6 +106,7 @@ int main(int argc, char *argv[])
             // passing pointers to findDifference function
             *diff = MyFunctions::findDifference(*num1, *num2);
             printf("%lld - %lld = %lld\n", *num1, *num2, *diff);
+            cout << endl;
             break;
 
         case LARGER:
@@ -112,27 +116,26 @@ int main(int argc, char *argv[])
             // passing pointers to findLarger function
             *larger = MyFunctions::findLarger(num1, num2);
             printf("The larger of %lld and %lld is %lld\n", *num1, *num2, *larger);
+            cout << endl;
             break;
-
         default:
             break;
         }
 
-        delete num1;
-        delete num2;
-        delete sum;
-        delete prod;
-        // chatGPT used for code check and found that I missed this
-        delete diff;
-        delete larger;
+    } while (oper != QUIT);
+    delete num1;
+    delete num2;
+    delete sum;
+    delete prod;
+    // chatGPT used for code check and found that I missed this
+    delete diff;
+    delete larger;
 
-        cin.ignore(1000, '\n');
+    cin.ignore(1000, '\n');
 
-        cout << "Good bye! Press enter to exit the program...";
-        cin.get();
-    }
+    cout << "Good bye! Press enter to exit the program...";
+    cin.get();
 
-    while (oper != QUIT);
     return 0;
 }
 
