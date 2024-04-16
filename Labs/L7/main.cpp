@@ -1,7 +1,7 @@
 /*
 Kattis - Hissing Microphone Problem
 
-By: Burton Besecke FIXED
+By: Burton Besecke
 Date: 15 Apr
 
 Hissing Microphone Problem Statement: https://open.kattis.com/problems/hissingmicrophone
