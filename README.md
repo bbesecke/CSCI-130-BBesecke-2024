@@ -121,3 +121,14 @@ Status: Working version 03 Apr
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L6
 Self Grade: 100/100
 Notes: Had to use ChatGPT for code checking as this one is very confusing. 
+
+# CSCI-130-BBesecke-2024
+HW6
+Name: Burton Besecke
+Name: HW6/String
+Description: Do the Kattis Apaxian challenge
+Due Date: 17 Apr
+Status: Working version 17 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW6
+Self Grade: 100/100
+Notes: This is silly. 
