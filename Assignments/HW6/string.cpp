@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
         cout << " Enter the name: " << endl;
         cin >> name;
         cout << shorter(name, shart) << " is the shortened version." << endl;
-        cout << shorter(name, shart);
         return 0;
     }
 }
@@ -33,10 +32,10 @@ int main(int argc, char *argv[])
 string shorter(string &name, string &shart)
 {
     shart = name[0];
-    for (size_t i = 1; i < name.size(); i++)
+    for (size_t n = 1; n < name.size(); n++)
     {
-        if (name[i] != name[i - 1])
-            shart += name[i];
+        if (name[n] != name[n - 1])
+            shart += name[n];
     }
     return shart;
 }
@@ -48,5 +47,5 @@ void test()
     assert(shorter(test2, shart) == "Norm");
     assert(shorter(test3, shart) == "Stan");
 
-    cout << "Tests worked." << endl;
+    cout << "Tests passed." << endl;
 }
