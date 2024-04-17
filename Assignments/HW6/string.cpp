@@ -2,7 +2,7 @@
 // Date: 16 Apr
 
 // Apaxxians on Kattis
-/* With all lowercase letters, take a name with multiple instances of recusrsive letters and 
+/* With all lowercase letters, take a name with multiple instances of recusrsive letters and
  make the recursive letter into one instance*/
 
 //  Write programmer info and briefly describe the program as comments.
@@ -28,3 +28,25 @@
 
 // Accepted verdict for the problem and submit it to D2L.
 
+#include <iostream>
+#include <cassert>
+#include <string>
+
+using namespace std;
+string shorter(string &);
+void test();
+
+int main()
+{
+    string name;
+    string short;
+    shorter(name, short);
+    cout << " Enter the name: " << endl;
+    cin >> name >> endl;
+    cout << shorter << " is the easier version." << endl;
+
+    return 0; // This exits the program, huzzah!
+}
+string shorter(string &name, string &short)
+{
+}
