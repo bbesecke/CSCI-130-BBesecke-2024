@@ -53,7 +53,7 @@ double game()
 
   // Greet the user and ask for name
   string name;
-  
+
   clear();
   cout << "What is your name?" << endl;
   cin >> name;
@@ -138,7 +138,6 @@ int gschk(int num1, int num2, int &game)
   }
   return 0;
 }
-
 void readnum(int &num2)
 {
   for (size_t i = 0; i < 1;)
@@ -154,6 +153,7 @@ void readnum(int &num2)
     }
   }
 }
+
 void test()
 {
   int tnum1 = 2, tnum2 = 4, tnum3 = 8, game = 15;
