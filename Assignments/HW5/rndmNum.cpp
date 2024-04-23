@@ -53,12 +53,13 @@ double game()
 
   // Greet the user and ask for name
   string name;
-  int num1 = rndmNum();
+  
   clear();
   cout << "What is your name?" << endl;
   cin >> name;
   while (quit == y1 || quit == y2)
   {
+    int num1 = rndmNum();
     clear();
     // Ask user to choose a number
     cout << "Welcome " << name << ", choose a whole number between 1 and 20; " << endl;
