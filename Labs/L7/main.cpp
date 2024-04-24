@@ -49,8 +49,8 @@ void testAnswer()
     // FIXME4 FIXED
     // write at least two test cases to test answer()
     // 1 test
-    assert(answer("snake") == "no hiss");
-    assert(answer("hiss") == "hiss");
+    assert(answer("snake") == "No hiss");
+    assert(answer("hiss") == "Hiss");
     // 2 test
     cerr << "All test cases passed!\n";
 }
