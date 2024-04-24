@@ -112,8 +112,9 @@ void bubbleSort(int nums[], int len)
             // if two adjacent numbers are not in order, swap 'em
             if (nums[j] > nums[j + 1])
             {
-                // FIXME5: swap the values of nums[j] and nums[j+1]
+                // FIXME5: swap the values of nums[j] and nums[j+1] FIXED
                 //  can use built-in swap or implement your own swap
+                swap (nums[j], nums[j+1]);
                 sorted = false;
             }
         }
