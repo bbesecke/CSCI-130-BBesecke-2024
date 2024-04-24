@@ -19,7 +19,7 @@ Algorithm steps:
 using namespace std;
 
 // function prototypes
-string answer(const string &line);
+string answer(const string &string2);
 void testAnswer();
 void solve();
 
@@ -31,13 +31,13 @@ int main(int argc, char *argv[])
         solve();
 }
 
-string answer(const string &line)
+string answer(const string &string2)
 {
     // FIXME3 FIXED
     // implment algorithm step 2
     // return "hiss" if ss is found in line
     // otherwise, return "no hiss"
-    if (line.find("ss") != string::npos)
+    if (string2.find("ss") != string::npos)
         return "Hiss";
     else
         return "No hiss";
