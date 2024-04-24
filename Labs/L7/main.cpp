@@ -52,7 +52,7 @@ void testAnswer()
     assert(answer("snake") == "No hiss");
     assert(answer("hiss") == "Hiss");
     // 2 test
-    cerr << "All test cases passed!\n";
+    cout << "All test cases passed!\n";
 }
 
 // solving the problem for kattis
