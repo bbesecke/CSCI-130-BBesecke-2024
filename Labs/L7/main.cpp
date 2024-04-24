@@ -58,10 +58,10 @@ void testAnswer()
 // solving the problem for kattis
 void solve()
 {
-    string line;
+    string string2;
     // string consists of only lowercase letters (no spaces) upto 30 chars
     // FIXME5 FIXED
     // read string into line
-    cin >> line;
-    cout << answer(line) << endl;
+    cin >> string2;
+    cout << answer(string2) << endl;
 }
