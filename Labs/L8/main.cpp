@@ -98,11 +98,10 @@ void findMaxAndMin(int nums[], int len, int &max, int &min)
             // compare max with each element and update max if necessary
             (max < nums[i])
             max = nums[i];
+        if
             // FIXEME4: compare min with each element and update min FIXED
-            ( nums[i] < min )
+            (nums[i] < min)
             min = nums[i];
-
-        
     }
 }
 
@@ -134,11 +133,9 @@ big_int findSum(int nums[], int len)
 {
     big_int sum = 0;
     // FIXME6: iterate through nums array and add each element to sum
-    for ( i = 0; i < len; i++)
+    for (i = 0; i < len; i++)
     {
-        
     }
-    
-    
+
     return sum;
 }
