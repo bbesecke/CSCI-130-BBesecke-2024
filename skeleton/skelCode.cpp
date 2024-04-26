@@ -1,24 +1,18 @@
 
 
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-  int rpt;
-  string word;
-  cin >> word;
-  cin >> rpt;
-
-  if (rpt <= 0)
-  {
-    cout << "Repeat count should be greater than 0." << endl;
-    return 1;
-  }
-
-  for (int i = 0; i < rpt; i++)
-  {
-    cout << word;
-  }
+  int num1;// initial velocity m/s
+  int num2;// acceleration m/s^2
+  int num3; // time traveled sec
+  double num4;
+  cin >> num1 >> num2 >> num3;
+  num4= num1(num3) + (.5 * (num2) * (pow(num3, 2)));
+  cout << fixed << setprecision(10) << num4 << endl;
 }

@@ -108,7 +108,7 @@ void findMaxAndMin(int nums[], int len, int &max, int &min)
 // Implements bubble sort
 void bubbleSort(int nums[], int len)
 {
-    int i, j, temp;
+    int i, j;
     bool sorted = false;
     for (i = 0; i < len; i++)
     {
@@ -131,10 +131,12 @@ void bubbleSort(int nums[], int len)
 
 big_int findSum(int nums[], int len)
 {
+    int i;
     big_int sum = 0;
     // FIXME6: iterate through nums array and add each element to sum
     for (i = 0; i < len; i++)
     {
+        sum += nums[i];
     }
 
     return sum;
