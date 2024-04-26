@@ -49,7 +49,7 @@ void program()
 {
     size_t size;
     cout << "This program finds statistical values of some integers entered by the user.\n";
-    cout << "How many nubers would like to enter? ";
+    cout << "How many numbers would like to enter? ";
     cin >> size;
     int *nums = new int[size]; // declare a dynamic int array of size
     int max, min;
@@ -58,11 +58,13 @@ void program()
     printArray(nums, size); // print the array to check if the values are there
     findMaxAndMin(nums, size, max, min);
     printf("Max = %u\n", max);
-    // FIXME2: print Min value
+    // FIXME2: print Min value FIXED
+    printf("Min = %u\n", min);
     printf("Sum = %lld\n", findSum(nums, size));
     cout << "Sorted list in ascending order:\n";
     bubbleSort(nums, size);
-    // FIXME3: print sorted array
+    // FIXME3: print sorted array FIXED
+    printArray(nums, size);
 
     delete[] nums;
 }
@@ -92,10 +94,15 @@ void findMaxAndMin(int nums[], int len, int &max, int &min)
     min = nums[0]; // say, min is the first element
     for (int i = 0; i < len; i++)
     {
-        if (max < nums[i]) // compare max with each element and update max if necessary
+        if
+            // compare max with each element and update max if necessary
+            (max < nums[i])
             max = nums[i];
+            // FIXEME4: compare min with each element and update min FIXED
+            ( nums[i] < min )
+            min = nums[i];
 
-        // FIXEME4: compare min with each element and update min
+        
     }
 }
 
@@ -114,7 +121,7 @@ void bubbleSort(int nums[], int len)
             {
                 // FIXME5: swap the values of nums[j] and nums[j+1] FIXED
                 //  can use built-in swap or implement your own swap
-                swap (nums[j], nums[j+1]);
+                swap(nums[j], nums[j + 1]);
                 sorted = false;
             }
         }
