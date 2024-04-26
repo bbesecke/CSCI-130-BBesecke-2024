@@ -118,7 +118,7 @@ void bubbleSort(int nums[], int len)
             // if two adjacent numbers are not in order, swap 'em
             if (nums[j] > nums[j + 1])
             {
-                // FIXME5: swap the values of nums[j] and nums[j+1] FIXED
+                // FIXME5: swap the values of nums[j] and nums[j+1] FIXED (thanks Owen)
                 //  can use built-in swap or implement your own swap
                 swap(nums[j], nums[j + 1]);
                 sorted = false;
@@ -133,7 +133,7 @@ big_int findSum(int nums[], int len)
 {
     int i;
     big_int sum = 0;
-    // FIXME6: iterate through nums array and add each element to sum
+    // FIXME6: iterate through nums array and add each element to sum FIXED
     for (i = 0; i < len; i++)
     {
         sum += nums[i];
