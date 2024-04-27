@@ -8,7 +8,7 @@ void bubblesort(vector<int> &arr);
 void alice_bob(const vector<int> &sorted_numbers, vector<int> &alice, vector<int> &bob);
 int sumVector(const vector<int> &vect);
 
-int main()
+int main(int argc, char *argv[])
 {
     int pieces;
     cin >> pieces;
