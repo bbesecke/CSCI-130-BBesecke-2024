@@ -132,3 +132,25 @@ Status: Working version 17 Apr
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW6
 Self Grade: 100/100
 Notes: This is silly. 
+
+# CSCI-130-BBesecke-2024
+Lab 7
+Name: Burton Besecke
+Name: L7/Kattis Hiss
+Description: Do the Kattis Hiss No Hiss thing
+Due Date: 04 Apr
+Status: Working version 20 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L7
+Self Grade: 100/100
+Notes: Owen really helped me with this.......again.  
+
+# CSCI-130-BBesecke-2024
+Lab 8
+Name: Burton Besecke
+Name: L8/Arrays
+Description: Bunch of stuff going on
+Due Date: 12 Apr
+Status: Working version 26 Apr
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L8
+Self Grade: 100/100
+Notes:   
