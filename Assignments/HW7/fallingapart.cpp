@@ -7,7 +7,7 @@ using namespace std;
 
 void bubblesort(vector<int> &arr);
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob);
-int sumVector(const vector<int> &vect);
+int sum(const vector<int> &vect);
 void test();
 
 int main(int argc, char *argv[])
@@ -40,8 +40,8 @@ int main(int argc, char *argv[])
         vector<int> bob;
         aliceBob(numbers, alice, bob);
 
-        int aliceSum = sumVector(alice);
-        int bobSum = sumVector(bob);
+        int aliceSum = sum(alice);
+        int bobSum = sum(bob);
 
         cout << aliceSum << " " << bobSum << endl;
         return 0;
@@ -78,7 +78,7 @@ void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
     }
 }
 
-int sumVector(const vector<int> &vect)
+int sum(const vector<int> &vect)
 {
     int sum = 0;
     for (int num : vect)
@@ -97,8 +97,8 @@ void test()
     aliceBob(testArray1, alice, bob);
     assert((alice == vector<int>{9, 5, 1}) && "Alice distribution failed");
     assert((bob == vector<int>{8, 3}) && "Bob distribution failed");
-    assert(sumVector(alice) == 15 && "Alice sum failed");
-    assert(sumVector(bob) == 11 && "Bob sum failed");
+    assert(sum(alice) == 15 && "Alice sum failed");
+    assert(sum(bob) == 11 && "Bob sum failed");
 
     vector<int> testArray2 = {10, 20, 15, 7, 3};
     bubblesort(testArray2);
