@@ -1,11 +1,25 @@
+// Burton Besecke CSCI-130
+// 30 April 2024
+// Based on the stupid Kattis problem Falling Apart. User chooses an integer between 1 and 15, 
+// then user chooses that many integers between 1 and 100. The inegers will be sorted highest to lowest,
+// then split into 2 arrays with the first one getting the first/highest integer, followed by everyother integer.
+// The 2 arrays are then summed up.*/
+// I relied heavily on Chatgpt for this assignement. I don't really understand how to use 
+// arrays or vectors even though I kind of understand what they are. After asking for a function or action,
+// I made the necessary corrections I could see to make it all work together.
+
+
+
 #include <iostream>
 #include <vector>
 #include <sstream>
 #include <cassert>
 
+
 using namespace std;
 
-void bubblesort(vector<int> &arr);
+
+void bubblesort(vector<int> &arng);
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob);
 int sum(const vector<int> &vect);
 void test();
@@ -48,21 +62,27 @@ int main(int argc, char *argv[])
     }
 }
 
-void bubblesort(vector<int> &arr)
+/// @brief Sorts integers from highest to lowest
+/// @param arng 
+void bubblesort(vector<int> &arng)
 {
-    size_t n = arr.size();
+    size_t n = arng.size();
     for (size_t i = 0; i < n - 1; ++i)
     {
         for (size_t j = 0; j < n - 1 - i; ++j)
         {
-            if (arr[j] < arr[j + 1])
+            if (arng[j] < arng[j + 1])
             {
-                swap(arr[j], arr[j + 1]);
+                swap(arng[j], arng[j + 1]);
             }
         }
     }
 }
 
+/// @brief Splits the integers between Alice and Bob
+/// @param sorted 
+/// @param alice 
+/// @param bob 
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
 {
     for (size_t i = 0; i < sorted.size(); ++i)
@@ -78,6 +98,9 @@ void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
     }
 }
 
+/// @brief Sums the integers that were split between Alice and Bob
+/// @param vect 
+/// @return The sums
 int sum(const vector<int> &vect)
 {
     int sum = 0;
@@ -87,6 +110,8 @@ int sum(const vector<int> &vect)
     }
     return sum;
 }
+
+/// @brief Tests the function
 void test()
 {
     vector<int> testArray1 = {5, 3, 8, 1, 9};
