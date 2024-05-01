@@ -17,7 +17,7 @@ using namespace std;
 
 void bubblesort(vector<int> &arng);
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob);
-int sum(const vector<int> &vect);
+int sum(const vector<int> &vector);
 void test();
 
 int main(int argc, char *argv[])
@@ -59,7 +59,8 @@ int main(int argc, char *argv[])
     }
 
 }
-
+/// @brief Sorts the entered ints from highest to lowest
+/// @param arng 
 void bubblesort(vector<int> &arng)
 {
     size_t n = arng.size();
@@ -74,7 +75,10 @@ void bubblesort(vector<int> &arng)
         }
     }
 }
-
+/// @brief Sorts the integers between alice and bob with alice getting the odd ones and bob the even ones
+/// @param sorted 
+/// @param alice 
+/// @param bob 
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
 {
     for (size_t i = 0; i < sorted.size(); ++i)
@@ -89,17 +93,19 @@ void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
         }
     }
 }
-
-int sum(const vector<int> &vect)
+/// @brief Sums up the 2 different arrays for alice and bob
+/// @param vector 
+/// @return 
+int sum(const vector<int> &vector)
 {
     int total = 0;
-    for (int num : vect)
+    for (int num : vector)
     {
         total += num;
     }
     return total;
 }
-
+/// @brief Test the sum function
 void test()
 {
     vector<int> vector1 = {1, 2, 3};
