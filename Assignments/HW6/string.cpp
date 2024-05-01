@@ -19,7 +19,6 @@ int main(int argc, char *argv[])
     else
     {
         // Enter a name with repeating letters to get a version with only a single instance of the repeating letters
-        // Variables for full Apaxian name and shortened version
         string name;
         string shart;
         cout << " Enter the name: " << endl;

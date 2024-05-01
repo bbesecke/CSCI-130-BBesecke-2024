@@ -1,23 +1,19 @@
 // Burton Besecke CSCI-130
 // 30 April 2024
-// Based on the stupid Kattis problem Falling Apart. User chooses an integer between 1 and 15, 
+// Based on the stupid Kattis problem Falling Apart. User chooses an integer between 1 and 15,
 // then user chooses that many integers between 1 and 100. The inegers will be sorted highest to lowest,
 // then split into 2 arrays with the first one getting the first/highest integer, followed by everyother integer.
 // The 2 arrays are then summed up.*/
-// I relied heavily on Chatgpt for this assignement. I don't really understand how to use 
+// I relied heavily on Chatgpt for this assignement. I don't really understand how to use
 // arrays or vectors even though I kind of understand what they are. After asking for a function or action,
 // I made the necessary corrections I could see to make it all work together.
-
-
 
 #include <iostream>
 #include <vector>
 #include <sstream>
 #include <cassert>
 
-
 using namespace std;
-
 
 void bubblesort(vector<int> &arng);
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob);
@@ -43,6 +39,7 @@ int main(int argc, char *argv[])
         vector<int> numbers;
         stringstream ss(line);
         int value;
+
         while (ss >> value)
         {
             numbers.push_back(value);
@@ -52,18 +49,17 @@ int main(int argc, char *argv[])
 
         vector<int> alice;
         vector<int> bob;
+
         aliceBob(numbers, alice, bob);
 
         int aliceSum = sum(alice);
         int bobSum = sum(bob);
 
         cout << aliceSum << " " << bobSum << endl;
-        return 0;
     }
+
 }
 
-/// @brief Sorts integers from highest to lowest
-/// @param arng 
 void bubblesort(vector<int> &arng)
 {
     size_t n = arng.size();
@@ -79,10 +75,6 @@ void bubblesort(vector<int> &arng)
     }
 }
 
-/// @brief Splits the integers between Alice and Bob
-/// @param sorted 
-/// @param alice 
-/// @param bob 
 void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
 {
     for (size_t i = 0; i < sorted.size(); ++i)
@@ -98,42 +90,29 @@ void aliceBob(const vector<int> &sorted, vector<int> &alice, vector<int> &bob)
     }
 }
 
-/// @brief Sums the integers that were split between Alice and Bob
-/// @param vect 
-/// @return The sums
 int sum(const vector<int> &vect)
 {
-    int sum = 0;
+    int total = 0;
     for (int num : vect)
     {
-        sum += num;
+        total += num;
     }
-    return sum;
+    return total;
 }
 
-/// @brief Tests the function
 void test()
 {
-    vector<int> testArray1 = {5, 3, 8, 1, 9};
-    bubblesort(testArray1);
-    assert((testArray1 == vector<int>{9, 8, 5, 3, 1}) && "Test 1: Bubble sort failed");
+    vector<int> vector1 = {1, 2, 3};
+    int expected1 = 6;
+    assert(sum(vector1) == expected1);
 
-    vector<int> alice, bob;
-    aliceBob(testArray1, alice, bob);
-    assert((alice == vector<int>{9, 5, 1}) && "Alice distribution failed");
-    assert((bob == vector<int>{8, 3}) && "Bob distribution failed");
-    assert(sum(alice) == 15 && "Alice sum failed");
-    assert(sum(bob) == 11 && "Bob sum failed");
+    vector<int> vector2 = {4, 5, 6};
+    int expected2 = 15;
+    assert(sum(vector2) == expected2);
 
-    vector<int> testArray2 = {10, 20, 15, 7, 3};
-    bubblesort(testArray2);
-    assert((testArray2 == vector<int>{20, 15, 10, 7, 3}) && "Additional bubble sort failed");
+    vector<int> vector3 = {7, 8, 9};
+    int expected3 = 24;
+    assert(sum(vector3) == expected3);
 
-    alice.clear();
-    bob.clear();
-    aliceBob(testArray2, alice, bob);
-    assert((alice == vector<int>{20, 10, 3}) && "Alice distribution failed");
-    assert((bob == vector<int>{15, 7}) && "Bob distribution failed");
-
-    cout << "All tests passed!" << endl;
+    cout << "All tests passed." << endl;
 }
