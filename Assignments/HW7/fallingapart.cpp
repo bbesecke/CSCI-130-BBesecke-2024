@@ -4,7 +4,7 @@
 // then user chooses that many integers between 1 and 100. The inegers will be sorted highest to lowest,
 // then split into 2 arrays with the first one getting the first/highest integer, followed by everyother integer.
 // The 2 arrays are then summed up.*/
-// I relied heavily on Chatgpt for this assignement. I don't really understand how to use
+// I relied heavily on the interwebs and Chatgpt for this assignement. I don't really understand how to use
 // arrays or vectors even though I kind of understand what they are. After asking for a function or action,
 // I made the necessary corrections I could see to make it all work together.
 
