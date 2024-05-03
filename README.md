@@ -154,3 +154,14 @@ Status: Working version 26 Apr
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Labs/L8
 Self Grade: 100/100
 Notes:   
+
+# CSCI-130-BBesecke-2024
+HW7
+Name: Burton Besecke
+Name: HW7/Falling apart
+Description: Do the Kattis falling apart challenge
+Due Date:A couple of weeks ago
+Status: Working version 02 May
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW7
+Self Grade: 70/100
+Notes: Pertinent notes in the code comments
