@@ -1,32 +1,170 @@
-/* Burton Besecke CSCI-130-001
-Final Project of Tic Tak Tow*/
+/*Burton Besecke CSCI 130-001
+Final Tick Tack Tow program
+Build grid and number spaces 0-8
+Player vs. computer game with player going first as x
+Show win, lose or draw
+I used this base code I found online that was terrible and
+tried to make it work with some help from ChatGPT.
+I had it get rid of the goto's since I don't remember hearing about them and wasn't
+sure what to replace them with.
+https://www.quora.com/How-do-I-construct-a-Tic-Tac-Toe-game-player-vs-AI-in-C++
+*/
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-int main(int argc, char *argv[])
+// Function Prototypes
+void Board(char board[3][3]);
+void showBoard(const char board[3][3]);
+bool win(const char board[3][3], char player);
+bool draw(const char board[3][3]);
+void playTurn(char board[3][3], char player);
+void compTurn(char board[3][3]);
+
+int main()
 {
- int space[3][3] = { {0, 1, 2}, {3, 4, 5}, {6, 7, 8} };
+    char board[3][3];
+    Board(board);
+    bool isPlayerTurn = true;
     string player;
-    cout << "What is your name? ";
+    cout << "What is your name? " << endl;
     cin >> player;
-    cout << "Hello "<<player<<", please choose a space 0-8\n";
-   
-cout << "  "  <<space [0][0]<<  "     "  <<space [0][1]<<  "     "  <<space[0][2]<<  "\n";
-cout << "     |     |    \n";
-cout << "     |     |    \n";
-cout << "_____|_____|_____\n";
-cout << "  "<<space [1][0]<<"     "<<space [1][1]<<"     "<<space[1][2]<<"\n";
-cout << "     |     |    \n";
-cout << "     |     |    \n";
-cout << "_____|_____|____\n";
-cout << "  "<<space [2][0]<<"     "<<space [2][1]<<"     "<<space[2][2]<<"\n";
-cout << "     |     |    \n";
-cout << "     |     |    \n";
-cout << "     |     |    \n";
-return 0;
+    cout << "Welcome to Tick Tack Tow " << player << endl;
 
+    while (true)
+    {
+        showBoard(board);
 
+        if (isPlayerTurn)
+        {
+            playTurn(board, 'X');
+        }
+        else
+        {
+            compTurn(board);
+        }
 
+        if (win(board, 'X'))
+        {
+            showBoard(board);
+            cout << "Player Wins\n";
+            break;
+        }
+        else if (win(board, 'O'))
+        {
+            showBoard(board);
+            cout << "Computer Wins\n";
+            break;
+        }
+        else if (draw(board))
+        {
+            showBoard(board);
+            cout << "Draw\n";
+            break;
+        }
+
+        isPlayerTurn = !isPlayerTurn;
+    }
+
+    return 0;
+}
+
+// Function Definitions
+void Board(char board[3][3])
+{
+    char value = '1';
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            board[i][j] = value++;
+        }
+    }
+}
+
+void showBoard(const char board[3][3])
+{
+    cout << "      |     |     \n";
+    cout << "   " << board[0][0] << "  |  " << board[0][1] << "  |  " << board[0][2] << "\n";
+    cout << " _____|_____|_____\n";
+    cout << "      |     |     \n";
+    cout << "   " << board[1][0] << "  |  " << board[1][1] << "  |  " << board[1][2] << "\n";
+    cout << " _____|_____|_____\n";
+    cout << "      |     |    \n";
+    cout << "   " << board[2][0] << "  |  " << board[2][1] << "  |  " << board[2][2] << "\n";
+    cout << "      |     |    \n";
+}
+
+bool win(const char board[3][3], char player)
+{
+
+    for (int i = 0; i < 3; ++i)
+    {
+        if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
+            (board[0][i] == player && board[1][i] == player && board[2][i] == player))
+        {
+            return true;
+        }
+    }
+    return (board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+           (board[0][2] == player && board[1][1] == player && board[2][0] == player);
+}
+
+bool draw(const char board[3][3])
+{
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            if (board[i][j] != 'X' && board[i][j] != 'O')
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+void playTurn(char board[3][3], char player)
+{
+    while (true)
+    {
+        int position;
+        
+        cout << "Choose an empty space 0-8: ";
+        cin >> position;
+        if (position < 1 || position > 9)
+        {
+            cout << "Not a playable space, try again.\n";
+            continue;
+        }
+        int row = (position - 1) / 3;
+        int col = (position - 1) % 3;
+        if (board[row][col] == 'X' || board[row][col] == 'O')
+        {
+            cout << "Not a playable space, try again.\n\n";
+            continue;
+        }
+        board[row][col] = player;
+        break;
+    }
+}
+
+void compTurn(char board[3][3])
+{
+    srand(time(0));
+    while (true)
+    {
+        int randomPosition = (rand() % 9) + 1;
+        int row = (randomPosition - 1) / 3;
+        int col = (randomPosition - 1) % 3;
+        if (board[row][col] != 'X' && board[row][col] != 'O')
+        {
+            board[row][col] = 'O';
+            break;
+        }
+    }
 }
