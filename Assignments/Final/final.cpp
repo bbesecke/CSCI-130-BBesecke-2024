@@ -16,16 +16,16 @@ sure what to replace them with. ChatGPT told me what I needed to do there.
 using namespace std;
 
 // Function Prototypes
-void Board(char board[3][3]);
-void showBoard(const char board[3][3]);
-bool win(const char board[3][3], char player);
-bool draw(const char board[3][3]);
-void playTurn(char board[3][3], char player);
-void compTurn(char board[3][3]);
+void Board(int board[3][3]);
+void showBoard(const int board[3][3]);
+bool win(const int board[3][3], char player);
+bool draw(const int board[3][3]);
+void playTurn(int board[3][3], char player);
+void compTurn(int board[3][3]);
 
 int main()
 {
-    char board[3][3];
+    int board[3][3];
     Board(board);
     bool isPlayerTurn = true;
     string player;
@@ -72,7 +72,7 @@ int main()
 }
 
 // Function Definitions
-void Board(char board[3][3])
+void Board(int board[3][3])
 {
     char value = '1';
     for (int i = 0; i < 3; ++i)
@@ -84,7 +84,7 @@ void Board(char board[3][3])
     }
 }
 
-void showBoard(const char board[3][3])
+void showBoard(const int board[3][3])
 {
     cout << "      |     |     \n";
     cout << "   " << board[0][0] << "  |  " << board[0][1] << "  |  " << board[0][2] << "\n";
@@ -97,7 +97,7 @@ void showBoard(const char board[3][3])
     cout << "      |     |    \n";
 }
 
-bool win(const char board[3][3], char player)
+bool win(const int board[3][3], char player)
 {
 
     for (int i = 0; i < 3; ++i)
@@ -112,7 +112,7 @@ bool win(const char board[3][3], char player)
            (board[0][2] == player && board[1][1] == player && board[2][0] == player);
 }
 
-bool draw(const char board[3][3])
+bool draw(const int board[3][3])
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -127,7 +127,7 @@ bool draw(const char board[3][3])
     return true;
 }
 
-void playTurn(char board[3][3], char player)
+void playTurn(int board[3][3], char player)
 {
     while (true)
     {
@@ -152,7 +152,7 @@ void playTurn(char board[3][3], char player)
     }
 }
 
-void compTurn(char board[3][3])
+void compTurn(int board[3][3])
 {
     for (size_t i = 0; i < 3; i++)
     {
