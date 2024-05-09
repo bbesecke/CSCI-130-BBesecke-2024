@@ -6,7 +6,7 @@ Show win, lose or draw
 I used this base code I found online that was terrible, then worked at making it function how I wanted it to work.
 https://www.quora.com/How-do-I-construct-a-Tic-Tac-Toe-game-player-vs-AI-in-C++
 I had it get rid of the goto's since I don't remember hearing about them and wasn't
-sure what to replace them with. ChatGPT told me what I needed to do there. 
+sure what to replace them with. ChatGPT told me what I needed to do there.
 */
 
 #include <iostream>
@@ -132,8 +132,8 @@ void playTurn(char board[3][3], char player)
     while (true)
     {
         int position;
-        
-        cout << "Choose an empty space 0-8: ";
+
+        cout << "Choose an empty space 1-9: ";
         cin >> position;
         if (position < 1 || position > 9)
         {
@@ -154,16 +154,26 @@ void playTurn(char board[3][3], char player)
 
 void compTurn(char board[3][3])
 {
-    srand(time(0));
-    while (true)
+    for (size_t i = 0; i < 3; i++)
     {
-        int randomPosition = (rand() % 9) + 1;
-        int row = (randomPosition - 1) / 3;
-        int col = (randomPosition - 1) % 3;
-        if (board[row][col] != 'X' && board[row][col] != 'O')
-        {
-            board[row][col] = 'O';
-            break;
-        }
+        if (board[i][0] == board[i][1] && board[i][0] == 'X')
+
+            else if (board[i][0] == = board[i][2] && board[i][0] == 'X')
+          
+          else if(board[i][1] == board[i][2] && board[i][1] == 'X')
+          board[i][0] == 'O';
     }
+
+    // srand(time(0));
+    // while (true)
+    // {
+    //     int randomPosition = (rand() % 9) + 1;
+    //     int row = (randomPosition - 1) / 3;
+    //     int col = (randomPosition - 1) % 3;
+    //     if (board[row][col] != 'X' && board[row][col] != 'O')
+    //     {
+    //         board[row][col] = 'O';
+    //         break;
+    //     }
+    // }
 }
