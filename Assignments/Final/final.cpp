@@ -15,7 +15,6 @@ sure what to replace them with. ChatGPT told me what I needed to do there.
 
 using namespace std;
 
-// Function Prototypes
 void Board(int board[3][3]);
 void showBoard(const int board[3][3]);
 bool win(const int board[3][3], char player);
@@ -71,7 +70,6 @@ int main()
     return 0;
 }
 
-// Function Definitions
 void Board(int board[3][3])
 {
     char value = '1';
@@ -151,29 +149,62 @@ void playTurn(int board[3][3], char player)
         break;
     }
 }
-
 void compTurn(int board[3][3])
 {
-    for (size_t i = 0; i < 3; i++)
+
+    for (int i = 0; i < 3; ++i)
     {
         if (board[i][0] == board[i][1] && board[i][0] == 'X')
+        {
+            board[i][2] = 'O';
+        }
+        else if (board[i][0] == board[i][2] && board[i][0] == 'X')
+        {
+            board[i][1] = 'O';
+        }
+        else if (board[i][1] == board[i][2] && board[i][1] == 'X')
+        {
+            board[i][0] = 'O';
 
-            else if (board[i][0] == = board[i][2] && board[i][0] == 'X')
-          
-          else if(board[i][1] == board[i][2] && board[i][1] == 'X')
-          board[i][0] == 'O';
+            if (board[0][i] == board[1][i] && board[0][i] == 'X')
+            {
+                board[2][i] = 'O';
+            }
+            else if (board[0][i] == board[2][i] && board[0][i] == 'X')
+            {
+                board[1][i] = 'O';
+            }
+            else if (board[1][i] == board[2][i] && board[1][i] == 'X')
+            {
+                board[0][i] = 'O';
+            }
+        }
+
+        //     while (true)
+        //     {
+        //         int randomPosition = (rand() % 9) + 1;
+        //         int row = (randomPosition - 1) / 3;
+        //         int col = (randomPosition - 1) % 3;
+
+        //         if (board[row][col] != 'X' && board[row][col] != 'O')
+        //         {
+        //             board[row][col] = 'O';
+        //             break;
+        //         }
+        //     }
+        // }
+
+        srand(time(0));
+        while (true)
+        {
+            int randomPosition = (rand() % 9) + 1;
+            int row = (randomPosition - 1) / 3;
+            int col = (randomPosition - 1) % 3;
+            if (board[row][col] != 'X' && board[row][col] != 'O')
+            {
+                board[row][col] = 'O';
+                break;
+            }
+        }
     }
-
-    // srand(time(0));
-    // while (true)
-    // {
-    //     int randomPosition = (rand() % 9) + 1;
-    //     int row = (randomPosition - 1) / 3;
-    //     int col = (randomPosition - 1) % 3;
-    //     if (board[row][col] != 'X' && board[row][col] != 'O')
-    //     {
-    //         board[row][col] = 'O';
-    //         break;
-    //     }
-    // }
 }
