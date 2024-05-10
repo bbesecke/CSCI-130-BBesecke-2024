@@ -3,12 +3,13 @@ Final Tick Tack Tow program
 Build grid and number spaces 1-9
 Player vs. computer game with player going first as X
 Show win, lose or tie
-I used this base code I found online that was terrible, then worked at making it function how I wanted it to work.
+I used this base code I found online that was terrible, then worked at making it as functional as I was able to.
 https://www.quora.com/How-do-I-construct-a-Tic-Tac-Toe-game-player-vs-AI-in-C++
 ChatGPT was used to help with the what I am still struggling on how to use. Mainly setting up the array needed
 to get started.
-I don't give the user choice of being X's or O's, nor do the stats show when the user quits.
-That's -10 points according to the directions. Just to save you some time.  
+Just to save you some time, I don't give the user choice of being X's or O's, 
+nor do the stats show when the user quits the game.
+That's -10 points according to the directions.   
 */
 
 #include <iostream>
