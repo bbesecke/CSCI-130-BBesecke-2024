@@ -1,12 +1,12 @@
 /*Burton Besecke CSCI 130-001
 Final Tick Tack Tow program
-Build grid and number spaces 0-8
-Player vs. computer game with player going first as x
-Show win, lose or draw
+Build grid and number spaces 1-9
+Player vs. computer game with player going first as X
+Show win, lose or tie
 I used this base code I found online that was terrible, then worked at making it function how I wanted it to work.
 https://www.quora.com/How-do-I-construct-a-Tic-Tac-Toe-game-player-vs-AI-in-C++
-I had it get rid of the goto's since I don't remember hearing about them and wasn't
-sure what to replace them with. ChatGPT told me what I needed to do there.
+ChatGPT was used to help with the what I am still struggling on how to use. Mainly setting up the array needed
+to get started.
 */
 
 #include <iostream>
@@ -18,12 +18,15 @@ using namespace std;
 void Board(char board[3][3]);
 void showBoard(const char board[3][3]);
 bool win(const char board[3][3], char player);
-bool draw(const char board[3][3]);
+bool tie(const char board[3][3]);
 void playTurn(char board[3][3], char player);
 void compTurn(char board[3][3]);
+bool filled(const char board[3][3], int row, int col);
+#define clear() system("clear")
 
 int main()
 {
+    clear();
     char board[3][3];
     Board(board);
     bool isPlayerTurn = true;
@@ -42,6 +45,7 @@ int main()
         }
         else
         {
+
             compTurn(board);
         }
 
@@ -57,10 +61,10 @@ int main()
             cout << "Computer Wins\n";
             break;
         }
-        else if (draw(board))
+        else if (tie(board))
         {
             showBoard(board);
-            cout << "Draw\n";
+            cout << "It's a tie\n";
             break;
         }
 
@@ -70,6 +74,8 @@ int main()
     return 0;
 }
 
+/// @brief Makes the board with [3][3] grid
+/// @param board
 void Board(char board[3][3])
 {
     char value = '1';
@@ -81,7 +87,8 @@ void Board(char board[3][3])
         }
     }
 }
-
+/// @brief Shows the updated board after each turn
+/// @param board
 void showBoard(const char board[3][3])
 {
     cout << "      |     |     \n";
@@ -92,9 +99,12 @@ void showBoard(const char board[3][3])
     cout << " _____|_____|_____\n";
     cout << "      |     |    \n";
     cout << "   " << board[2][0] << "  |  " << board[2][1] << "  |  " << board[2][2] << "\n";
-    cout << "      |     |    \n";
+    cout << "      |     |    \n\n";
 }
-
+/// @brief Shows if the player wins
+/// @param board
+/// @param player
+/// @return
 bool win(const char board[3][3], char player)
 {
 
@@ -110,7 +120,10 @@ bool win(const char board[3][3], char player)
            (board[0][2] == player && board[1][1] == player && board[2][0] == player);
 }
 
-bool draw(const char board[3][3])
+/// @brief Shows if the game is a tie
+/// @param board
+/// @return
+bool tie(const char board[3][3])
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -125,13 +138,16 @@ bool draw(const char board[3][3])
     return true;
 }
 
+/// @brief Player chooses a space and can't choose one already filled
+/// @param board
+/// @param player
 void playTurn(char board[3][3], char player)
 {
     while (true)
     {
         int position;
 
-        cout << "Choose an empty space 1-9: ";
+        cout << "Your turn: ";
         cin >> position;
         if (position < 1 || position > 9)
         {
@@ -149,63 +165,146 @@ void playTurn(char board[3][3], char player)
         break;
     }
 }
+/// @brief Computer can't choose a space already filled
+/// @param board
+/// @param row
+/// @param col
+/// @return
+bool filled(const char board[3][3], int row, int col)
+{
+    return board[row][col] == 'X' || board[row][col] == 'O';
+}
+/// @brief Computer takes a turn
+/// @param board
 void compTurn(char board[3][3])
 {
 
-    for (int i = 0; i < 3; ++i)
+    cout << "Computers turn: " << endl;
+    // Hard code for the blocking moves
+    //  row 1
+    if (!filled(board, 0, 2) && board[0][0] == board[0][1] && board[0][0] == 'X')
     {
-        if (board[i][0] == board[i][1] && board[i][0] == 'X')
-        {
-            board[i][2] = 'O';
-        }
-        else if (board[i][0] == board[i][2] && board[i][0] == 'X')
-        {
-            board[i][1] = 'O';
-        }
-        else if (board[i][1] == board[i][2] && board[i][1] == 'X')
-        {
-            board[i][0] = 'O';
-        }
-
-        if (board[0][i] == board[1][i] && board[0][i] == 'X')
-        {
-            board[2][i] = 'O';
-        }
-        else if (board[0][i] == board[2][i] && board[0][i] == 'X')
-        {
-            board[1][i] = 'O';
-        }
-        else if (board[1][i] == board[2][i] && board[1][i] == 'X')
-        {
-            board[0][i] = 'O';
-        }
+        board[0][2] = 'O';
+    }
+    else if (!filled(board, 0, 1) && board[0][0] == board[0][2] && board[0][0] == 'X')
+    {
+        board[0][1] = 'O';
+    }
+    else if (!filled(board, 0, 0) && board[0][1] == board[0][2] && board[0][1] == 'X')
+    {
+        board[0][0] = 'O';
     }
 
-    //     while (true)
-    //     {
-    //         int randomPosition = (rand() % 9) + 1;
-    //         int row = (randomPosition - 1) / 3;
-    //         int col = (randomPosition - 1) % 3;
-
-    //         if (board[row][col] != 'X' && board[row][col] != 'O')
-    //         {
-    //             board[row][col] = 'O';
-    //             break;
-    //         }
-    //     }
-    // }
-
-    srand(time(0));
-    while (true)
+    // row 2
+    else if (!filled(board, 1, 2) && board[1][0] == board[1][1] && board[1][0] == 'X')
     {
-        int randomPosition = (rand() % 9) + 1;
-        int row = (randomPosition - 1) / 3;
-        int col = (randomPosition - 1) % 3;
-        if (board[row][col] != 'X' && board[row][col] != 'O')
+        board[1][2] = 'O';
+    }
+    else if (!filled(board, 1, 1) && board[1][0] == board[1][2] && board[0][0] == 'X')
+    {
+        board[1][1] = 'O';
+    }
+    else if (!filled(board, 1, 0) && board[1][1] == board[1][2] && board[0][1] == 'X')
+    {
+        board[1][0] = 'O';
+    }
+
+    // row 3
+    else if (!filled(board, 2, 2) && board[2][0] == board[2][1] && board[2][0] == 'X')
+    {
+        board[2][2] = 'O';
+    }
+    else if (!filled(board, 2, 1) && board[2][0] == board[2][2] && board[2][0] == 'X')
+    {
+        board[2][1] = 'O';
+    }
+    else if (!filled(board, 2, 0) && board[2][1] == board[2][2] && board[2][1] == 'X')
+    {
+        board[2][0] = 'O';
+    }
+
+    // colomn 1
+    else if (!filled(board, 2, 0) && board[0][0] == board[1][0] && board[0][0] == 'X')
+    {
+        board[2][0] = 'O';
+    }
+    else if (!filled(board, 1, 0) && board[0][0] == board[2][0] && board[0][0] == 'X')
+    {
+        board[1][0] = 'O';
+    }
+    else if (!filled(board, 0, 0) && board[1][0] == board[2][0] && board[1][0] == 'X')
+    {
+        board[0][0] = 'O';
+    }
+
+    // colomn 2
+    else if (!filled(board, 2, 1) && board[0][1] == board[1][1] && board[0][1] == 'X')
+    {
+        board[2][1] = 'O';
+    }
+    else if (!filled(board, 1, 1) && board[0][1] == board[2][1] && board[0][1] == 'X')
+    {
+        board[1][1] = 'O';
+    }
+    else if (!filled(board, 0, 1) && board[1][1] == board[2][1] && board[1][1] == 'X')
+    {
+        board[0][1] = 'O';
+    }
+
+    // colomn 3
+    else if (!filled(board, 2, 2) && board[0][2] == board[1][2] && board[0][2] == 'X')
+    {
+        board[2][2] = 'O';
+    }
+    else if (!filled(board, 1, 2) && board[0][2] == board[2][2] && board[0][2] == 'X')
+    {
+        board[1][2] = 'O';
+    }
+    else if (!filled(board, 0, 2) && board[1][2] == board[2][2] && board[1][2] == 'X')
+    {
+        board[0][2] = 'O';
+    }
+
+    // diaganols
+    else if (!filled(board, 2, 2) && board[0][0] == board[1][1] && board[1][1] == 'X')
+    {
+        board[2][2] = 'O';
+    }
+    else if (!filled(board, 0, 0) && board[1][1] == board[2][2] && board[1][1] == 'X')
+    {
+        board[0][0] = 'O';
+    }
+    else if (!filled(board, 1, 1) && board[0][0] == board[2][2] && board[0][0] == 'X')
+    {
+        board[1][1] = 'O';
+    }
+
+    else if (!filled(board, 2, 0) && board[1][1] == board[0][2] && board[1][1] == 'X')
+    {
+        board[2][0] = 'O';
+    }
+    else if (!filled(board, 0, 0) && board[1][1] == board[2][0] && board[1][1] == 'X')
+    {
+        board[0][2] = 'O';
+    }
+    else if (!filled(board, 1, 1) && board[2][0] == board[0][2] && board[2][0] == 'X')
+    {
+        board[1][1] = 'O';
+    }
+    // Needs a random choice for the computers first turn
+    else
+    {
+        srand(time(0));
+        while (true)
         {
-            board[row][col] = 'O';
-            break;
+            int row = rand() % 3;
+            int col = rand() % 3;
+
+            if (!filled(board, row, col))
+            {
+                board[row][col] = 'O';
+                break;
+            }
         }
     }
 }
-
