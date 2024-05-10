@@ -165,3 +165,16 @@ Status: Working version 02 May
 Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/HW7
 Self Grade: 70/100
 Notes: Pertinent notes in the code comments
+
+# CSCI-130-BBesecke-2024
+Final Tick Tack Tow
+Name: Burton Besecke
+Name: Final
+Description: Make a Tic Tac Toe game
+Due Date:15 May 2024
+Status: Best working version 10 May
+Location: https://github.com/bbesecke/CSCI-130-BBesecke-2024/tree/main/Assignments/Final
+Self Grade: 90/100
+Notes: Not sure if I'll get around to doing the final 2 parts as stated in the comments
+
+
