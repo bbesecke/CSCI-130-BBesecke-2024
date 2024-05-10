@@ -7,6 +7,8 @@ I used this base code I found online that was terrible, then worked at making it
 https://www.quora.com/How-do-I-construct-a-Tic-Tac-Toe-game-player-vs-AI-in-C++
 ChatGPT was used to help with the what I am still struggling on how to use. Mainly setting up the array needed
 to get started.
+I don't give the user choice of being X's or O's, nor do the stats show when the user quits.
+That's -10 points according to the directions. Just to save you some time.  
 */
 
 #include <iostream>
