@@ -70,7 +70,7 @@ int main()
             else if (tie(board))
             {
                 showBoard(board);
-                cout << "You tied with the computer.\n";
+                cout << "You tied with the computer, try harder next time.\n";
                 break;
             }
 
