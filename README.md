@@ -167,6 +167,17 @@ Self Grade: 70/100
 Notes: Pertinent notes in the code comments
 
 # CSCI-130-BBesecke-2024
+HW8
+Name: Burton Besecke
+Name: Matlab
+Description: Random number guess game
+Due Date:15 May
+Status: Finished
+Location: No GitHub info
+Self Grade: 90/100
+Notes: Pertinent notes in the code comments
+
+# CSCI-130-BBesecke-2024
 Final Tick Tack Tow
 Name: Burton Besecke
 Name: Final
